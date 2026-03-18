@@ -349,14 +349,6 @@ edintkos-vars:DayEveningNightNoiseLevel a skos:Concept, sosa:ObservableProperty,
 # CALIDAD DEL AGUA
 # ---------------------------------------------------------------------------
 
-edintkos-vars:WaterSupplyFlowRate a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos-vars:SensorVariables ;
-    skos:prefLabel "Water supply flow rate"@en ;
-    skos:prefLabel "Caudal de red de abastecimiento"@es ;
-    skos:altLabel "Water flow rate"@en ;
-    skos:altLabel "Caudal de agua"@es ;
-    qudt:applicableUnit unit:L-PER-SEC .
-
 edintkos-vars:ResidualFreeChlorine a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
     skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Residual free chlorine concentration in water"@en ;
