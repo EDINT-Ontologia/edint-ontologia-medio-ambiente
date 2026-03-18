@@ -2,7 +2,7 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,7 +11,7 @@
 # ---------------------------------------------------------------------------
 # ESQUEMA PRINCIPAL (Concept Scheme)
 # ---------------------------------------------------------------------------
-edintkos:SensorVariables a skos:ConceptScheme ;
+edintkos-vars:SensorVariables a skos:ConceptScheme ;
     dct:issued "2026-03-18"^^xsd:date ;
     dct:modified "2026-03-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -28,97 +28,99 @@ edintkos:SensorVariables a skos:ConceptScheme ;
 # METEOROLOGÍA Y FÍSICA
 # ---------------------------------------------------------------------------
 
-edintkos:AirTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:AirTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Air temperature"@en ;
     skos:prefLabel "Temperatura del aire"@es ;
     qudt:applicableUnit unit:DEG_C .
 
-edintkos:SoilTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:SoilTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Soil temperature"@en ;
     skos:prefLabel "Temperatura del suelo"@es ;
     qudt:applicableUnit unit:DEG_C .
 
-edintkos:RoadTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:RoadTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Road temperature"@en ;
     skos:prefLabel "Temperatura de la calzada"@es ;
     skos:altLabel "Asphalt temperature"@en ;
     skos:altLabel "Temperatura del asfalto"@es ;
     qudt:applicableUnit unit:DEG_C .
 
-edintkos:RelativeHumidity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:RelativeHumidity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Relative humidity"@en ;
     skos:prefLabel "Humedad relativa"@es ;
     qudt:applicableUnit unit:PERCENT .
 
-edintkos:SoilMoistureTension a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:SoilMoistureTension a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Soil moisture tension"@en ;
     skos:prefLabel "Tensión de humedad del suelo"@es ;
     qudt:applicableUnit unit:KiloPA .
 
-edintkos:AtmosphericPressure a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:AtmosphericPressure a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Atmospheric pressure"@en ;
     skos:prefLabel "Presión atmosférica"@es ;
     qudt:applicableUnit unit:HectoPA .
 
-edintkos:WindSpeed a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WindSpeed a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Wind speed"@en ;
     skos:prefLabel "Velocidad del viento"@es ;
     qudt:applicableUnit unit:M-PER-SEC .
 
-edintkos:MaximumWindSpeed a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:MaximumWindSpeed a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Maximum wind speed"@en ;
     skos:prefLabel "Velocidad máxima del viento"@es ;
     skos:altLabel "Wind gust"@en ;
     skos:altLabel "Racha máxima de viento"@es ;
     qudt:applicableUnit unit:M-PER-SEC .
 
-edintkos:WindDirection a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WindDirection a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Wind direction"@en ;
     skos:prefLabel "Dirección del viento"@es ;
     qudt:applicableUnit unit:DEG .
 
-edintkos:Precipitation a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Precipitation"@en ;
-    skos:prefLabel "Precipitación"@es ;
-    skos:altLabel "Rain"@en ;
+edintkos-vars:PrecipitationAmount a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Precipitation amount"@en ;
+    skos:prefLabel "Cantidad de precipitación"@es ;
+    skos:altLabel "Rainfall"@en ;
     skos:altLabel "Lluvia"@es ;
     qudt:applicableUnit unit:MilliM , 
                         unit:L-PER-M2 .
 
-edintkos:SolarRadiation a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Solar radiation"@en ;
-    skos:prefLabel "Radiación solar"@es ;
+edintkos-vars:SolarIrradiance a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Solar irradiance"@en ;
+    skos:prefLabel "Irradiancia solar"@es ;
+    skos:altLabel "Solar radiation"@en ;
+    skos:altLabel "Radiación solar"@es ;
     qudt:applicableUnit unit:W-PER-M2 .
 
-edintkos:UVIndex a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:UVIndex a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "UV index"@en ;
     skos:prefLabel "Índice UV"@es ;
     skos:altLabel "Ultraviolet radiation"@en ;
     skos:altLabel "Radiación ultravioleta"@es ;
     qudt:applicableUnit unit:UNITLESS .
 
-edintkos:PhotosyntheticallyActiveRadiation a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:PhotosyntheticallyActiveRadiation a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Photosynthetically active radiation"@en ;
     skos:prefLabel "Radiación fotosintéticamente activa"@es ;
     skos:altLabel "PAR"@en ;
     skos:altLabel "Radiación PAR"@es ;
     qudt:applicableUnit unit:MicroMOL-PER-M2-SEC .
 
-edintkos:Illuminance a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:Illuminance a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Illuminance"@en ;
     skos:prefLabel "Iluminancia"@es ;
     skos:altLabel "Ambient street lighting"@en ;
@@ -126,165 +128,165 @@ edintkos:Illuminance a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind 
     qudt:applicableUnit unit:LUX .
 
 # ---------------------------------------------------------------------------
-# CALIDAD DEL AIRE - CONTAMINANTES GASEOSOS
+# CALIDAD DEL AIRE - CONTAMINANTES GASEOSOS (CONCENTRACIONES)
 # ---------------------------------------------------------------------------
 
-edintkos:NitrogenDioxide a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Nitrogen dioxide"@en ;
-    skos:prefLabel "Dióxido de nitrógeno"@es ;
+edintkos-vars:NO2Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Nitrogen dioxide concentration"@en ;
+    skos:prefLabel "Concentración de dióxido de nitrógeno"@es ;
     skos:altLabel "NO2"@en ;
     skos:altLabel "NO2"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:NitrogenMonoxide a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Nitrogen monoxide"@en ;
-    skos:prefLabel "Monóxido de nitrógeno"@es ;
+edintkos-vars:NOConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Nitrogen monoxide concentration"@en ;
+    skos:prefLabel "Concentración de monóxido de nitrógeno"@es ;
     skos:altLabel "NO"@en ;
     skos:altLabel "NO"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:TotalNitrogenOxides a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Total nitrogen oxides"@en ;
-    skos:prefLabel "Óxidos de nitrógeno totales"@es ;
+edintkos-vars:NOxConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Total nitrogen oxides concentration"@en ;
+    skos:prefLabel "Concentración de óxidos de nitrógeno totales"@es ;
     skos:altLabel "NOx"@en ;
     skos:altLabel "NOx"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:TroposphericOzone a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Tropospheric ozone"@en ;
-    skos:prefLabel "Ozono troposférico"@es ;
+edintkos-vars:O3Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Tropospheric ozone concentration"@en ;
+    skos:prefLabel "Concentración de ozono troposférico"@es ;
     skos:altLabel "O3"@en ;
     skos:altLabel "O3"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:SulfurDioxide a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Sulfur dioxide"@en ;
-    skos:prefLabel "Dióxido de azufre"@es ;
+edintkos-vars:SO2Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Sulfur dioxide concentration"@en ;
+    skos:prefLabel "Concentración de dióxido de azufre"@es ;
     skos:altLabel "SO2"@en ;
     skos:altLabel "SO2"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:CarbonMonoxide a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Carbon monoxide"@en ;
-    skos:prefLabel "Monóxido de carbono"@es ;
+edintkos-vars:COConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Carbon monoxide concentration"@en ;
+    skos:prefLabel "Concentración de monóxido de carbono"@es ;
     skos:altLabel "CO"@en ;
     skos:altLabel "CO"@es ;
     qudt:applicableUnit unit:MilliGM-PER-M3 .
 
-edintkos:Ammonia a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Ammonia"@en ;
-    skos:prefLabel "Amoníaco"@es ;
+edintkos-vars:NH3Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Ammonia concentration"@en ;
+    skos:prefLabel "Concentración de amoníaco"@es ;
     skos:altLabel "NH3"@en ;
     skos:altLabel "NH3"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# CALIDAD DEL AIRE - COMPUESTOS ORGÁNICOS VOLÁTILES (COV)
+# CALIDAD DEL AIRE - COMPUESTOS ORGÁNICOS VOLÁTILES (CONCENTRACIONES)
 # ---------------------------------------------------------------------------
 
-edintkos:Benzene a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Benzene"@en ;
-    skos:prefLabel "Benceno"@es ;
+edintkos-vars:BenzeneConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Benzene concentration"@en ;
+    skos:prefLabel "Concentración de benceno"@es ;
     skos:altLabel "C6H6"@en ;
     skos:altLabel "C6H6"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:Toluene a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Toluene"@en ;
-    skos:prefLabel "Tolueno"@es ;
+edintkos-vars:TolueneConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Toluene concentration"@en ;
+    skos:prefLabel "Concentración de tolueno"@es ;
     skos:altLabel "C7H8"@en ;
     skos:altLabel "C7H8"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:Xylene a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Xylene"@en ;
-    skos:prefLabel "Xileno"@es ;
+edintkos-vars:XyleneConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Xylene concentration"@en ;
+    skos:prefLabel "Concentración de xileno"@es ;
     skos:altLabel "C8H10"@en ;
     skos:altLabel "C8H10"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# CALIDAD DEL AIRE - PARTÍCULAS EN SUSPENSIÓN
+# CALIDAD DEL AIRE - PARTÍCULAS EN SUSPENSIÓN (CONCENTRACIONES)
 # ---------------------------------------------------------------------------
 
-edintkos:UltrafineParticles a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Ultrafine particles"@en ;
-    skos:prefLabel "Partículas ultrafinas"@es ;
+edintkos-vars:PM1Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Ultrafine particles mass concentration"@en ;
+    skos:prefLabel "Concentración de partículas ultrafinas"@es ;
     skos:altLabel "PM1"@en ;
     skos:altLabel "PM1"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:FineParticles a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Fine particles"@en ;
-    skos:prefLabel "Partículas finas"@es ;
+edintkos-vars:PM25Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Fine particles mass concentration"@en ;
+    skos:prefLabel "Concentración de partículas finas"@es ;
     skos:altLabel "PM2.5"@en ;
     skos:altLabel "PM2.5"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
-edintkos:SuspendedParticulates a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Suspended particulates"@en ;
-    skos:prefLabel "Partículas en suspensión"@es ;
+edintkos-vars:PM10Concentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Suspended particulates mass concentration"@en ;
+    skos:prefLabel "Concentración de partículas en suspensión"@es ;
     skos:altLabel "PM10"@en ;
     skos:altLabel "PM10"@es ;
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# CALIDAD DEL AIRE - METALES PESADOS Y METALOIDES
+# CALIDAD DEL AIRE - METALES PESADOS Y METALOIDES (CONCENTRACIONES)
 # ---------------------------------------------------------------------------
 
-edintkos:Arsenic a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Arsenic"@en ;
-    skos:prefLabel "Arsénico"@es ;
+edintkos-vars:ArsenicConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Arsenic concentration"@en ;
+    skos:prefLabel "Concentración de arsénico"@es ;
     skos:altLabel "As"@en ;
     skos:altLabel "As"@es ;
     qudt:applicableUnit unit:NanoGM-PER-M3 .
 
-edintkos:Nickel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Nickel"@en ;
-    skos:prefLabel "Níquel"@es ;
+edintkos-vars:NickelConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Nickel concentration"@en ;
+    skos:prefLabel "Concentración de níquel"@es ;
     skos:altLabel "Ni"@en ;
     skos:altLabel "Ni"@es ;
     qudt:applicableUnit unit:NanoGM-PER-M3 .
 
-edintkos:Cadmium a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Cadmium"@en ;
-    skos:prefLabel "Cadmio"@es ;
+edintkos-vars:CadmiumConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Cadmium concentration"@en ;
+    skos:prefLabel "Concentración de cadmio"@es ;
     skos:altLabel "Cd"@en ;
     skos:altLabel "Cd"@es ;
     qudt:applicableUnit unit:NanoGM-PER-M3 .
 
-edintkos:Lead a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Lead"@en ;
-    skos:prefLabel "Plomo"@es ;
+edintkos-vars:LeadConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Lead concentration"@en ;
+    skos:prefLabel "Concentración de plomo"@es ;
     skos:altLabel "Pb"@en ;
     skos:altLabel "Pb"@es ;
     qudt:applicableUnit unit:NanoGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# CALIDAD DEL AIRE - HAP
+# CALIDAD DEL AIRE - HAP (CONCENTRACIÓN)
 # ---------------------------------------------------------------------------
 
-edintkos:BenzoAPyrene a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Benzo(a)pyrene"@en ;
-    skos:prefLabel "Benzo(a)pireno"@es ;
+edintkos-vars:BenzoAPyreneConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Benzo(a)pyrene concentration"@en ;
+    skos:prefLabel "Concentración de benzo(a)pireno"@es ;
     skos:altLabel "B(a)p"@en ;
     skos:altLabel "B(a)p"@es ;
     qudt:applicableUnit unit:NanoGM-PER-M3 .
@@ -293,8 +295,8 @@ edintkos:BenzoAPyrene a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind
 # CALIDAD DEL AIRE - POLEN Y ALÉRGENOS
 # ---------------------------------------------------------------------------
 
-edintkos:PollenConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:PollenConcentration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Pollen concentration"@en ;
     skos:prefLabel "Concentración de polen"@es ;
     qudt:applicableUnit unit:NUM-PER-M3 .
@@ -303,40 +305,40 @@ edintkos:PollenConcentration a skos:Concept, sosa:ObservableProperty, qudt:Quant
 # RUIDO Y ACÚSTICA
 # ---------------------------------------------------------------------------
 
-edintkos:EquivalentSoundPressureLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:EquivalentSoundPressureLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Equivalent continuous sound pressure level"@en ;
     skos:prefLabel "Nivel de presión sonora equivalente"@es ;
     skos:altLabel "LAeq"@en ;
     skos:altLabel "LAeq"@es ;
     qudt:applicableUnit unit:DeciB .
 
-edintkos:DayTimeNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:DayTimeNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Day-time noise level"@en ;
     skos:prefLabel "Nivel de ruido diurno"@es ;
     skos:altLabel "Ld"@en ;
     skos:altLabel "Ld"@es ;
     qudt:applicableUnit unit:DeciB .
 
-edintkos:NightTimeNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:NightTimeNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Night-time noise level"@en ;
     skos:prefLabel "Nivel de ruido nocturno"@es ;
     skos:altLabel "Ln"@en ;
     skos:altLabel "Ln"@es ;
     qudt:applicableUnit unit:DeciB .
 
-edintkos:MorningNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:MorningNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Morning noise level"@en ;
     skos:prefLabel "Nivel de ruido matutino"@es ;
     skos:altLabel "La"@en ;
     skos:altLabel "La"@es ;
     qudt:applicableUnit unit:DeciB .
 
-edintkos:DayEveningNightNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:DayEveningNightNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Day-evening-night noise level"@en ;
     skos:prefLabel "Nivel de ruido día-tarde-noche"@es ;
     skos:altLabel "Lden"@en ;
@@ -347,52 +349,52 @@ edintkos:DayEveningNightNoiseLevel a skos:Concept, sosa:ObservableProperty, qudt
 # CALIDAD DEL AGUA
 # ---------------------------------------------------------------------------
 
-edintkos:WaterSupplyFlowRate a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WaterSupplyFlowRate a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Water supply flow rate"@en ;
     skos:prefLabel "Caudal de red de abastecimiento"@es ;
     skos:altLabel "Water flow rate"@en ;
     skos:altLabel "Caudal de agua"@es ;
     qudt:applicableUnit unit:L-PER-SEC .
 
-edintkos:ResidualFreeChlorine a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Residual free chlorine in water"@en ;
-    skos:prefLabel "Cloro libre residual en agua"@es ;
+edintkos-vars:ResidualFreeChlorine a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Residual free chlorine concentration in water"@en ;
+    skos:prefLabel "Concentración de cloro libre residual en agua"@es ;
     skos:altLabel "Free chlorine"@en ;
     skos:altLabel "Cloro libre"@es ;
     qudt:applicableUnit unit:MilliGM-PER-L .
 
-edintkos:WaterTurbidity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WaterTurbidity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Water turbidity"@en ;
     skos:prefLabel "Turbidez del agua"@es ;
     qudt:applicableUnit unit:NTU .
 
-edintkos:WaterPH a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WaterPH a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Water hydrogen potential"@en ;
     skos:prefLabel "Potencial de hidrógeno en agua"@es ;
     skos:altLabel "pH"@en ;
     skos:altLabel "pH"@es ;
     qudt:applicableUnit unit:PH .
 
-edintkos:WaterElectricalConductivity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WaterElectricalConductivity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Water electrical conductivity"@en ;
     skos:prefLabel "Conductividad eléctrica del agua"@es ;
     qudt:applicableUnit unit:MicroS-PER-CentiM .
 
-edintkos:DissolvedOxygen a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
-    skos:prefLabel "Dissolved oxygen in water"@en ;
-    skos:prefLabel "Oxígeno disuelto en agua"@es ;
+edintkos-vars:DissolvedOxygen a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
+    skos:prefLabel "Dissolved oxygen concentration in water"@en ;
+    skos:prefLabel "Concentración de oxígeno disuelto en agua"@es ;
     skos:altLabel "Dissolved oxygen"@en ;
     skos:altLabel "Oxígeno disuelto"@es ;
     qudt:applicableUnit unit:MilliGM-PER-L .
 
-edintkos:WaterTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:WaterTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Water temperature"@en ;
     skos:prefLabel "Temperatura del agua"@es ;
     qudt:applicableUnit unit:DEG_C .
@@ -401,22 +403,22 @@ edintkos:WaterTemperature a skos:Concept, sosa:ObservableProperty, qudt:Quantity
 # ESTADO DEL SENSOR
 # ---------------------------------------------------------------------------
 
-edintkos:BatteryLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:BatteryLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "IoT sensor battery level"@en ;
     skos:prefLabel "Nivel de batería del sensor IoT"@es ;
     skos:altLabel "Battery level"@en ;
     skos:altLabel "Nivel de batería"@es ;
     qudt:applicableUnit unit:PERCENT .
 
-edintkos:BatteryVoltage a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:BatteryVoltage a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Battery voltage"@en ;
     skos:prefLabel "Voltaje de batería"@es ;
     qudt:applicableUnit unit:V .
 
-edintkos:InternalSensorTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
-    skos:inScheme edintkos:SensorVariables ;
+edintkos-vars:InternalSensorTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
+    skos:inScheme edintkos-vars:SensorVariables ;
     skos:prefLabel "Internal sensor temperature"@en ;
     skos:prefLabel "Temperatura interna del sensor"@es ;
     qudt:applicableUnit unit:DEG_C .
