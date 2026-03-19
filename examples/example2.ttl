@@ -7,6 +7,7 @@
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
@@ -63,6 +64,20 @@ ex:Observation_Ld_001_Morning a sosa:Observation ;
     sosa:observedProperty edintkos-vars:DayTimeNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-18T08:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T19:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "65.2"^^xsd:decimal ;
@@ -77,6 +92,20 @@ ex:Observation_Ld_001_Evening a sosa:Observation ;
     sosa:observedProperty edintkos-vars:DayTimeNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-18T18:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T19:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "72.8"^^xsd:decimal ;
@@ -91,6 +120,20 @@ ex:Observation_Ln_001 a sosa:Observation ;
     sosa:observedProperty edintkos-vars:NightTimeNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-18T23:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T23:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T07:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "52.4"^^xsd:decimal ;
@@ -105,6 +148,20 @@ ex:Observation_LAeq_001_Morning a sosa:Observation ;
     sosa:observedProperty edintkos-vars:EquivalentSoundPressureLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-18T08:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T08:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "62.5"^^xsd:decimal ;
@@ -119,6 +176,20 @@ ex:Observation_LAeq_001_Evening a sosa:Observation ;
     sosa:observedProperty edintkos-vars:EquivalentSoundPressureLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-18T18:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T18:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "68.9"^^xsd:decimal ;
@@ -133,6 +204,20 @@ ex:Observation_Lden_001 a sosa:Observation ;
     sosa:observedProperty edintkos-vars:DayEveningNightNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-18T23:59:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T00:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T23:59:59+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "67.3"^^xsd:decimal ;
@@ -151,6 +236,20 @@ ex:Observation_Ld_002_Morning a sosa:Observation ;
     sosa:observedProperty edintkos-vars:DayTimeNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-19T08:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T19:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "66.1"^^xsd:decimal ;
@@ -165,6 +264,20 @@ ex:Observation_Ld_002_Afternoon a sosa:Observation ;
     sosa:observedProperty edintkos-vars:DayTimeNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-19T14:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T07:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T19:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "69.5"^^xsd:decimal ;
@@ -179,6 +292,20 @@ ex:Observation_Ln_002 a sosa:Observation ;
     sosa:observedProperty edintkos-vars:NightTimeNoiseLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-19T23:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T23:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-20T07:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "48.7"^^xsd:decimal ;
@@ -193,6 +320,20 @@ ex:Observation_LAeq_002 a sosa:Observation ;
     sosa:observedProperty edintkos-vars:EquivalentSoundPressureLevel ;
     sosa:hasFeatureOfInterest edintkos-foi:AcousticEnvironment ;
     sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T11:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "64.2"^^xsd:decimal ;

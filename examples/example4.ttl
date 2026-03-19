@@ -7,6 +7,7 @@
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
 
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
@@ -81,6 +82,20 @@ ex:Observation_WindSpeed_001_Morning a sosa:Observation ;
     sosa:observedProperty edintkos-vars:WindSpeed ;
     sosa:hasFeatureOfInterest edintkos-foi:Wind ;
     sosa:resultTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T08:50:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "4.2"^^xsd:decimal ;
@@ -95,6 +110,20 @@ ex:Observation_WindSpeed_001_Evening a sosa:Observation ;
     sosa:observedProperty edintkos-vars:WindSpeed ;
     sosa:hasFeatureOfInterest edintkos-foi:Wind ;
     sosa:resultTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T16:50:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "6.8"^^xsd:decimal ;
@@ -151,6 +180,20 @@ ex:Observation_PrecipAmount_001 a sosa:Observation ;
     sosa:observedProperty edintkos-vars:PrecipitationAmount ;
     sosa:hasFeatureOfInterest edintkos-foi:Precipitation ;
     sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T00:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "2.5"^^xsd:decimal ;
@@ -267,6 +310,20 @@ ex:Observation_WindSpeed_002 a sosa:Observation ;
     sosa:observedProperty edintkos-vars:WindSpeed ;
     sosa:hasFeatureOfInterest edintkos-foi:Wind ;
     sosa:resultTime "2026-03-19T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T08:50:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T09:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "3.8"^^xsd:decimal ;
