@@ -1,0 +1,222 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix ex: <http://example.org/> .
+
+# ---------------------------------------------------------------------------
+# ESTACION AGUA POTABLE
+# ---------------------------------------------------------------------------
+
+ex:Station_Water_001 a edintmed:MeasuringStation ;
+    rdfs:label "Estación de calidad del agua potable - Planta de tratamiento Norte"@es ;
+    rdfs:label "Drinking water quality station - North treatment plant"@en ;
+    dct:identifier "WATER-001-MAD" ;
+    geo:lat "40.4650"^^xsd:float ;
+    geo:long "-3.6850"^^xsd:float ;
+    geo:alt "655"^^xsd:float ;
+    rdfs:comment "Estación de monitorización de agua potable para consumo humano"@es ;
+    rdfs:comment "Drinking water monitoring station for human consumption"@en ;
+
+    # estaciones aloja sensores
+    sosa:hosts ex:Sensor_Temp_001 ;
+    sosa:hosts ex:Sensor_PH_001 ;
+    sosa:hosts ex:Sensor_DO_001 ;
+    sosa:hosts ex:Sensor_Turbidity_001 ;
+    sosa:hosts ex:Sensor_Chl_001 .
+
+# ---------------------------------------------------------------------------
+# SENSORS
+# ---------------------------------------------------------------------------
+
+ex:Sensor_Temp_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de temperatura del agua - Termistor PT1000"@es ;
+    rdfs:label "Water temperature sensor - PT1000 thermistor"@en ;
+    dct:identifier "WTEMP-001-PT1000" ;
+    sosa:isHostedBy ex:Station_Water_001 ;
+    sosa:observes edintkos-vars:WaterTemperature .
+
+ex:Sensor_PH_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de pH del agua - Electrodo combinado"@es ;
+    rdfs:label "Water pH sensor - Combined electrode"@en ;
+    dct:identifier "WPH-001-COMB" ;
+    sosa:isHostedBy ex:Station_Water_001 ;
+    sosa:observes edintkos-vars:WaterPH .
+
+ex:Sensor_DO_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de oxígeno disuelto - Óptica fluorescencia"@es ;
+    rdfs:label "Dissolved oxygen sensor - Optical fluorescence"@en ;
+    dct:identifier "WDO-001-OPT" ;
+    sosa:isHostedBy ex:Station_Water_001 ;
+    sosa:observes edintkos-vars:DissolvedOxygen .
+
+ex:Sensor_Turbidity_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de turbidez del agua - Nefelómetro"@es ;
+    rdfs:label "Water turbidity sensor - Nephelometer"@en ;
+    dct:identifier "WTURB-001-NEPH" ;
+    sosa:isHostedBy ex:Station_Water_001 ;
+    sosa:observes edintkos-vars:WaterTurbidity .
+
+ex:Sensor_Chl_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de cloro libre residual - Amperométrico"@es ;
+    rdfs:label "Residual free chlorine sensor - Amperometric"@en ;
+    dct:identifier "WCL-001-AMP" ;
+    sosa:isHostedBy ex:Station_Water_001 ;
+    sosa:observes edintkos-vars:ResidualFreeChlorine .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES - 18/03/2026
+# ---------------------------------------------------------------------------
+
+# Medición temperatura agua
+ex:Observation_WTemp_001 a sosa:Observation ;
+    rdfs:label "Medición de temperatura del agua - 18/03/2026 10:00"@es ;
+    rdfs:label "Water temperature measurement - 18/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:WaterTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-18T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "14.2"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+# Medición pH
+ex:Observation_WPH_001 a sosa:Observation ;
+    rdfs:label "Medición de pH del agua - 18/03/2026 10:00"@es ;
+    rdfs:label "Water pH measurement - 18/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_PH_001 ;
+    sosa:observedProperty edintkos-vars:WaterPH ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-18T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "7.65"^^xsd:decimal ;
+        qudt:unit unit:PH
+    ] .
+
+# Medición oxígeno disuelto
+ex:Observation_DO_001 a sosa:Observation ;
+    rdfs:label "Medición de oxígeno disuelto - 18/03/2026 10:00"@es ;
+    rdfs:label "Dissolved oxygen measurement - 18/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_DO_001 ;
+    sosa:observedProperty edintkos-vars:DissolvedOxygen ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-18T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "9.8"^^xsd:decimal ;
+        qudt:unit unit:MilliGM-PER-L
+    ] .
+
+# Medición turbidez
+ex:Observation_Turbidity_001 a sosa:Observation ;
+    rdfs:label "Medición de turbidez del agua - 18/03/2026 10:00"@es ;
+    rdfs:label "Water turbidity measurement - 18/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_Turbidity_001 ;
+    sosa:observedProperty edintkos-vars:WaterTurbidity ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-18T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "0.35"^^xsd:decimal ;
+        qudt:unit unit:NTU
+    ] .
+
+# Medición cloro libre
+ex:Observation_Chl_001 a sosa:Observation ;
+    rdfs:label "Medición de cloro libre residual - 18/03/2026 10:00"@es ;
+    rdfs:label "Residual free chlorine measurement - 18/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_Chl_001 ;
+    sosa:observedProperty edintkos-vars:ResidualFreeChlorine ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-18T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "0.45"^^xsd:decimal ;
+        qudt:unit unit:MilliGM-PER-L
+    ] .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES - 19/03/2026
+# ---------------------------------------------------------------------------
+
+# Medición temperatura agua dia2
+ex:Observation_WTemp_002 a sosa:Observation ;
+    rdfs:label "Medición de temperatura del agua - 19/03/2026 10:00"@es ;
+    rdfs:label "Water temperature measurement - 19/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:WaterTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-19T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "14.5"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+# Medición pH dia2
+ex:Observation_WPH_002 a sosa:Observation ;
+    rdfs:label "Medición de pH del agua - 19/03/2026 10:00"@es ;
+    rdfs:label "Water pH measurement - 19/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_PH_001 ;
+    sosa:observedProperty edintkos-vars:WaterPH ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-19T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "7.58"^^xsd:decimal ;
+        qudt:unit unit:PH
+    ] .
+
+# Medición oxígeno disuelto dia2
+ex:Observation_DO_002 a sosa:Observation ;
+    rdfs:label "Medición de oxígeno disuelto - 19/03/2026 10:00"@es ;
+    rdfs:label "Dissolved oxygen measurement - 19/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_DO_001 ;
+    sosa:observedProperty edintkos-vars:DissolvedOxygen ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-19T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "9.5"^^xsd:decimal ;
+        qudt:unit unit:MilliGM-PER-L
+    ] .
+
+# Medición turbidez dia2
+ex:Observation_Turbidity_002 a sosa:Observation ;
+    rdfs:label "Medición de turbidez del agua - 19/03/2026 10:00"@es ;
+    rdfs:label "Water turbidity measurement - 19/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_Turbidity_001 ;
+    sosa:observedProperty edintkos-vars:WaterTurbidity ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-19T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "0.28"^^xsd:decimal ;
+        qudt:unit unit:NTU
+    ] .
+
+# Medición cloro libre dia2
+ex:Observation_Chl_002 a sosa:Observation ;
+    rdfs:label "Medición de cloro libre residual - 19/03/2026 10:00"@es ;
+    rdfs:label "Residual free chlorine measurement - 19/03/2026 10:00"@en ;
+    sosa:madeBySensor ex:Sensor_Chl_001 ;
+    sosa:observedProperty edintkos-vars:ResidualFreeChlorine ;
+    sosa:hasFeatureOfInterest edintkos-foi:DrinkingWater ;
+    sosa:resultTime "2026-03-19T10:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "0.52"^^xsd:decimal ;
+        qudt:unit unit:MilliGM-PER-L
+    ] .
