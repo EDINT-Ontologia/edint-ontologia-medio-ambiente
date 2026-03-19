@@ -143,7 +143,7 @@ edintkos-vars:SensorStatusVariables a skos:Concept ;
     skos:narrower edintkos-vars:SensorUptime .
 
 # ===========================================================================
-# METEOROLOGICAL VARIABLES
+# VARIABLES METEOROLÓGICAS
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
@@ -452,7 +452,7 @@ edintkos-vars:CloudBaseHeight a skos:Concept, sosa:ObservableProperty, qudt:Quan
     qudt:applicableUnit unit:M .
 
 # ===========================================================================
-# AIR QUALITY VARIABLES
+# VARIABLES DE CALIDAD DEL AIRE
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
@@ -805,7 +805,7 @@ edintkos-vars:OdorConcentration a skos:Concept, sosa:ObservableProperty, qudt:Qu
     qudt:applicableUnit unit:UNITLESS .
 
 # ===========================================================================
-# ACOUSTIC VARIABLES
+# VARIABLES ACÚSTICAS
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
@@ -923,7 +923,7 @@ edintkos-vars:DayEveningNightNoiseLevel a skos:Concept, sosa:ObservableProperty,
     qudt:applicableUnit unit:DeciB .
 
 # ===========================================================================
-# WATER QUALITY VARIABLES
+# VARIABLES DE CALIDAD DEL AGUA
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
@@ -1127,7 +1127,7 @@ edintkos-vars:BlueGreenAlgaeConcentration a skos:Concept, sosa:ObservablePropert
     qudt:applicableUnit unit:NUM-PER-MilliL .
 
 # ===========================================================================
-# SOIL VARIABLES
+# VARIABLES DEL SUELO
 # ===========================================================================
 
 edintkos-vars:SoilTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1175,7 +1175,7 @@ edintkos-vars:SoilSalinity a skos:Concept, sosa:ObservableProperty, qudt:Quantit
     qudt:applicableUnit unit:MilliGM-PER-KiloGM .
 
 # ===========================================================================
-# TRAFFIC VARIABLES
+# VARIABLES DE TRÁFICO
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
@@ -1259,7 +1259,7 @@ edintkos-vars:ParkingOccupancy a skos:Concept, sosa:ObservableProperty, qudt:Qua
     qudt:applicableUnit unit:PERCENT .
 
 # ===========================================================================
-# ENERGY VARIABLES
+# VARIABLES ENERGÉTICAS
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
@@ -1357,7 +1357,7 @@ edintkos-vars:GasConsumption a skos:Concept, sosa:ObservableProperty, qudt:Quant
     qudt:applicableUnit unit:M3 .
 
 # ===========================================================================
-# WASTE MANAGEMENT VARIABLES
+# VARIABLES DE GESTIÓN DE RESIDUOS
 # ===========================================================================
 
 edintkos-vars:ContainerFillLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1382,7 +1382,7 @@ edintkos-vars:ContainerWeight a skos:Concept, sosa:ObservableProperty, qudt:Quan
     qudt:applicableUnit unit:KiloGM .
 
 # ===========================================================================
-# SENSOR STATUS VARIABLES
+# VARIABLES DE ESTADO DEL SENSOR
 # ===========================================================================
 
 edintkos-vars:BatteryLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;

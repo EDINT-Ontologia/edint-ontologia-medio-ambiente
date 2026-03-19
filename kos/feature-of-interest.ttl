@@ -174,7 +174,6 @@ edintkos-foi:AcousticEnvironment a skos:Concept, sosa:FeatureOfInterest ;
     sosa:hasProperty edintkos-vars:EquivalentSoundPressureLevel ;
     sosa:hasProperty edintkos-vars:DayTimeNoiseLevel ;
     sosa:hasProperty edintkos-vars:NightTimeNoiseLevel ;
-    sosa:hasProperty edintkos-vars:MorningNoiseLevel ;
     sosa:hasProperty edintkos-vars:DayEveningNightNoiseLevel .
 
 # ---------------------------------------------------------------------------
