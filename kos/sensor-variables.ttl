@@ -147,7 +147,7 @@ edintkos-vars:SensorStatusVariables a skos:Concept ;
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Temperature Variables
+# Variables de Temperatura
 # ---------------------------------------------------------------------------
 
 edintkos-vars:TemperatureVariables a skos:Concept ;
@@ -209,7 +209,7 @@ edintkos-vars:WindChill a skos:Concept, sosa:ObservableProperty, qudt:QuantityKi
     qudt:applicableUnit unit:DEG_C .
 
 # ---------------------------------------------------------------------------
-# Humidity Variables
+# Variables de Humedad
 # ---------------------------------------------------------------------------
 
 edintkos-vars:HumidityVariables a skos:Concept ;
@@ -235,7 +235,7 @@ edintkos-vars:AbsoluteHumidity a skos:Concept, sosa:ObservableProperty, qudt:Qua
     qudt:applicableUnit unit:GM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# Pressure Variables
+# Variables de Presión
 # ---------------------------------------------------------------------------
 
 edintkos-vars:PressureVariables a skos:Concept ;
@@ -261,7 +261,7 @@ edintkos-vars:SeaLevelPressure a skos:Concept, sosa:ObservableProperty, qudt:Qua
     qudt:applicableUnit unit:HectoPA .
 
 # ---------------------------------------------------------------------------
-# Wind Variables
+# Variables de Viento
 # ---------------------------------------------------------------------------
 
 edintkos-vars:WindVariables a skos:Concept ;
@@ -305,7 +305,7 @@ edintkos-vars:WindGustDirection a skos:Concept, sosa:ObservableProperty, qudt:Qu
     qudt:applicableUnit unit:DEG .
 
 # ---------------------------------------------------------------------------
-# Precipitation Variables
+# Variables de Precipitación
 # ---------------------------------------------------------------------------
 
 edintkos-vars:PrecipitationVariables a skos:Concept ;
@@ -351,7 +351,7 @@ edintkos-vars:SnowWaterEquivalent a skos:Concept, sosa:ObservableProperty, qudt:
     qudt:applicableUnit unit:MilliM .
 
 # ---------------------------------------------------------------------------
-# Radiation Variables
+# Variables de Radiación
 # ---------------------------------------------------------------------------
 
 edintkos-vars:RadiationVariables a skos:Concept ;
@@ -396,7 +396,7 @@ edintkos-vars:NetRadiation a skos:Concept, sosa:ObservableProperty, qudt:Quantit
     qudt:applicableUnit unit:W-PER-M2 .
 
 # ---------------------------------------------------------------------------
-# Light Variables
+# Variables de Luz
 # ---------------------------------------------------------------------------
 
 edintkos-vars:LightVariables a skos:Concept ;
@@ -424,7 +424,7 @@ edintkos-vars:SunshineDuration a skos:Concept, sosa:ObservableProperty, qudt:Qua
     qudt:applicableUnit unit:HR .
 
 # ---------------------------------------------------------------------------
-# Visibility Variables
+# Variables de Visibilidad
 # ---------------------------------------------------------------------------
 
 edintkos-vars:VisibilityVariables a skos:Concept ;
@@ -456,7 +456,7 @@ edintkos-vars:CloudBaseHeight a skos:Concept, sosa:ObservableProperty, qudt:Quan
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Gaseous Pollutants
+# Contaminantes Gaseosos
 # ---------------------------------------------------------------------------
 
 edintkos-vars:GaseousPollutants a skos:Concept ;
@@ -538,7 +538,7 @@ edintkos-vars:H2SConcentration a skos:Concept, sosa:ObservableProperty, qudt:Qua
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# Greenhouse Gases
+# Gases de Efecto Invernadero
 # ---------------------------------------------------------------------------
 
 edintkos-vars:GreenhouseGases a skos:Concept ;
@@ -575,7 +575,7 @@ edintkos-vars:N2OConcentration a skos:Concept, sosa:ObservableProperty, qudt:Qua
     qudt:applicableUnit unit:PPM .
 
 # ---------------------------------------------------------------------------
-# Volatile Organic Compounds
+# Compuestos Orgánicos Volátiles
 # ---------------------------------------------------------------------------
 
 edintkos-vars:VolatileOrganicCompounds a skos:Concept ;
@@ -632,7 +632,7 @@ edintkos-vars:TotalVOCConcentration a skos:Concept, sosa:ObservableProperty, qud
     qudt:applicableUnit unit:MicroGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# Particulate Matter
+# Material Particulado
 # ---------------------------------------------------------------------------
 
 edintkos-vars:ParticulateMatterVariables a skos:Concept ;
@@ -687,7 +687,7 @@ edintkos-vars:ParticleNumberConcentration a skos:Concept, sosa:ObservablePropert
     qudt:applicableUnit unit:NUM-PER-CentiM3 .
 
 # ---------------------------------------------------------------------------
-# Heavy Metals
+# Metales Pesados
 # ---------------------------------------------------------------------------
 
 edintkos-vars:HeavyMetalVariables a skos:Concept ;
@@ -751,7 +751,7 @@ edintkos-vars:BenzoAPyreneConcentration a skos:Concept, sosa:ObservableProperty,
     qudt:applicableUnit unit:NanoGM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# Pollen Variables
+# Variables de Polen
 # ---------------------------------------------------------------------------
 
 edintkos-vars:PollenVariables a skos:Concept ;
@@ -777,7 +777,7 @@ edintkos-vars:SporeConcentration a skos:Concept, sosa:ObservableProperty, qudt:Q
     qudt:applicableUnit unit:NUM-PER-M3 .
 
 # ---------------------------------------------------------------------------
-# Odor Variables
+# Variables de Olor
 # ---------------------------------------------------------------------------
 
 edintkos-vars:OdorVariables a skos:Concept ;
@@ -809,7 +809,7 @@ edintkos-vars:OdorConcentration a skos:Concept, sosa:ObservableProperty, qudt:Qu
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Equivalent Sound Level
+# Nivel de Presión Sonora Equivalente
 # ---------------------------------------------------------------------------
 
 edintkos-vars:EquivalentSoundPressureLevel a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -821,7 +821,7 @@ edintkos-vars:EquivalentSoundPressureLevel a skos:Concept, sosa:ObservableProper
     qudt:applicableUnit unit:DeciB .
 
 # ---------------------------------------------------------------------------
-# Statistical Noise Levels
+# Niveles Estadísticos de Ruido
 # ---------------------------------------------------------------------------
 
 edintkos-vars:StatisticalNoiseLevels a skos:Concept ;
@@ -877,7 +877,7 @@ edintkos-vars:Lmin a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
     qudt:applicableUnit unit:DeciB .
 
 # ---------------------------------------------------------------------------
-# Temporal Noise Levels
+# Niveles Temporales de Ruido
 # ---------------------------------------------------------------------------
 
 edintkos-vars:TemporalNoiseLevels a skos:Concept ;
@@ -927,7 +927,7 @@ edintkos-vars:DayEveningNightNoiseLevel a skos:Concept, sosa:ObservableProperty,
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Water Physicochemical Variables
+# Variables Fisicoquímicas del Agua
 # ---------------------------------------------------------------------------
 
 edintkos-vars:WaterPhysicochemicalVariables a skos:Concept ;
@@ -1011,7 +1011,7 @@ edintkos-vars:WaterRedoxPotential a skos:Concept, sosa:ObservableProperty, qudt:
     qudt:applicableUnit unit:MilliV .
 
 # ---------------------------------------------------------------------------
-# Water Hydraulic Variables
+# Variables Hidráulicas del Agua
 # ---------------------------------------------------------------------------
 
 edintkos-vars:WaterHydraulicVariables a skos:Concept ;
@@ -1053,7 +1053,7 @@ edintkos-vars:WaterPressure a skos:Concept, sosa:ObservableProperty, qudt:Quanti
     qudt:applicableUnit unit:BAR .
 
 # ---------------------------------------------------------------------------
-# Water Nutrient Variables
+# Variables de Nutrientes del Agua
 # ---------------------------------------------------------------------------
 
 edintkos-vars:WaterNutrientVariables a skos:Concept ;
@@ -1099,7 +1099,7 @@ edintkos-vars:AmmoniumConcentration a skos:Concept, sosa:ObservableProperty, qud
     qudt:applicableUnit unit:MilliGM-PER-L .
 
 # ---------------------------------------------------------------------------
-# Water Biological Variables
+# Variables Biológicas del Agua
 # ---------------------------------------------------------------------------
 
 edintkos-vars:WaterBiologicalVariables a skos:Concept ;
@@ -1179,7 +1179,7 @@ edintkos-vars:SoilSalinity a skos:Concept, sosa:ObservableProperty, qudt:Quantit
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Traffic Flow Variables
+# Variables de Flujo de Tráfico
 # ---------------------------------------------------------------------------
 
 edintkos-vars:TrafficFlowVariables a skos:Concept ;
@@ -1207,7 +1207,7 @@ edintkos-vars:TrafficFlow a skos:Concept, sosa:ObservableProperty, qudt:Quantity
     qudt:applicableUnit unit:NUM-PER-HR .
 
 # ---------------------------------------------------------------------------
-# Traffic Speed Variables
+# Variables de Velocidad de Tráfico
 # ---------------------------------------------------------------------------
 
 edintkos-vars:TrafficSpeedVariables a skos:Concept ;
@@ -1233,7 +1233,7 @@ edintkos-vars:MaximumTrafficSpeed a skos:Concept, sosa:ObservableProperty, qudt:
     qudt:applicableUnit unit:KiloM-PER-HR .
 
 # ---------------------------------------------------------------------------
-# Traffic Occupancy Variables
+# Variables de Ocupación de Tráfico
 # ---------------------------------------------------------------------------
 
 edintkos-vars:TrafficOccupancyVariables a skos:Concept ;
@@ -1263,7 +1263,7 @@ edintkos-vars:ParkingOccupancy a skos:Concept, sosa:ObservableProperty, qudt:Qua
 # ===========================================================================
 
 # ---------------------------------------------------------------------------
-# Electricity Variables
+# Variables Eléctricas
 # ---------------------------------------------------------------------------
 
 edintkos-vars:ElectricityVariables a skos:Concept ;
@@ -1323,7 +1323,7 @@ edintkos-vars:PowerFactor a skos:Concept, sosa:ObservableProperty, qudt:Quantity
     qudt:applicableUnit unit:UNITLESS .
 
 # ---------------------------------------------------------------------------
-# Gas Variables
+# Variables de Gas
 # ---------------------------------------------------------------------------
 
 edintkos-vars:GasVariables a skos:Concept ;
