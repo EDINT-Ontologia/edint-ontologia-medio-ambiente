@@ -1,0 +1,387 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix ex: <http://example.org/> .
+
+# ---------------------------------------------------------------------------
+# ESTACION METEOROLOGICA
+# ---------------------------------------------------------------------------
+
+ex:Station_Met_001 a edintmed:MeasuringStation ;
+    rdfs:label "Estación meteorológica automática - Parque del Retiro"@es ;
+    rdfs:label "Automatic weather station - Retiro Park"@en ;
+    dct:identifier "MET-001-MAD" ;
+    geo:lat "40.4153"^^xsd:float ;
+    geo:long "-3.6845"^^xsd:float ;
+    geo:alt "609"^^xsd:float ;
+    rdfs:comment "Estación meteorológica automática para monitorización de parámetros climáticos"@es ;
+    rdfs:comment "Automatic weather station for climate parameters monitoring"@en ;
+
+    # estaciones aloja sensores
+    sosa:hosts ex:Sensor_Wind_001 ;
+    sosa:hosts ex:Sensor_Rain_001 ;
+    sosa:hosts ex:Sensor_Radiation_001 ;
+    sosa:hosts ex:Sensor_Humidity_001 .
+
+# ---------------------------------------------------------------------------
+# SENSORS
+# ---------------------------------------------------------------------------
+
+ex:Sensor_Wind_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de viento - Anemómetro y veleta"@es ;
+    rdfs:label "Wind sensor - Anemometer and wind vane"@en ;
+    dct:identifier "WIND-001-AUTO" ;
+    sosa:isHostedBy ex:Station_Met_001 ;
+    sosa:observes edintkos-vars:WindSpeed ,
+                  edintkos-vars:MaximumWindSpeed ,
+                  edintkos-vars:WindDirection .
+
+ex:Sensor_Rain_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de precipitación - Pluviómetro"@es ;
+    rdfs:label "Precipitation sensor - Rain gauge"@en ;
+    dct:identifier "RAIN-001-GAUGE" ;
+    sosa:isHostedBy ex:Station_Met_001 ;
+    sosa:observes edintkos-vars:PrecipitationAmount ,
+                  edintkos-vars:PrecipitationIntensity .
+
+ex:Sensor_Radiation_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de radiación solar - Piranómetro"@es ;
+    rdfs:label "Solar radiation sensor - Pyranometer"@en ;
+    dct:identifier "RAD-001-PYRANO" ;
+    sosa:isHostedBy ex:Station_Met_001 ;
+    sosa:observes edintkos-vars:SolarIrradiance ,
+                  edintkos-vars:UVIndex .
+
+ex:Sensor_Humidity_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de humedad relativa - Capacitivo"@es ;
+    rdfs:label "Relative humidity sensor - Capacitive"@en ;
+    dct:identifier "HUM-001-CAP" ;
+    sosa:isHostedBy ex:Station_Met_001 ;
+    sosa:observes edintkos-vars:RelativeHumidity .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES - 18/03/2026
+# ---------------------------------------------------------------------------
+
+# Medición velocidad viento mañana
+ex:Observation_WindSpeed_001_Morning a sosa:Observation ;
+    rdfs:label "Medición de velocidad del viento - 18/03/2026 09:00"@es ;
+    rdfs:label "Wind speed measurement - 18/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:WindSpeed ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T08:50:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "4.2"^^xsd:decimal ;
+        qudt:unit unit:M-PER-SEC
+    ] .
+
+# Medición velocidad viento tarde
+ex:Observation_WindSpeed_001_Evening a sosa:Observation ;
+    rdfs:label "Medición de velocidad del viento - 18/03/2026 17:00"@es ;
+    rdfs:label "Wind speed measurement - 18/03/2026 17:00"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:WindSpeed ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T16:50:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "6.8"^^xsd:decimal ;
+        qudt:unit unit:M-PER-SEC
+    ] .
+
+# Medición velocidad maxima viento
+ex:Observation_MaxWind_001 a sosa:Observation ;
+    rdfs:label "Medición de velocidad máxima del viento - 18/03/2026 15:30"@es ;
+    rdfs:label "Maximum wind speed measurement - 18/03/2026 15:30"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:MaximumWindSpeed ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-18T15:30:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "12.5"^^xsd:decimal ;
+        qudt:unit unit:M-PER-SEC
+    ] .
+
+# Medición direccion viento mañana
+ex:Observation_WindDirection_001_Morning a sosa:Observation ;
+    rdfs:label "Medición de dirección del viento - 18/03/2026 09:00"@es ;
+    rdfs:label "Wind direction measurement - 18/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:WindDirection ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "270"^^xsd:decimal ;
+        qudt:unit unit:DEG
+    ] .
+
+# Medición direccion viento tarde
+ex:Observation_WindDirection_001_Evening a sosa:Observation ;
+    rdfs:label "Medición de dirección del viento - 18/03/2026 17:00"@es ;
+    rdfs:label "Wind direction measurement - 18/03/2026 17:00"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:WindDirection ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "290"^^xsd:decimal ;
+        qudt:unit unit:DEG
+    ] .
+
+# Medición lluvia
+ex:Observation_PrecipAmount_001 a sosa:Observation ;
+    rdfs:label "Medición de precipitación acumulada - 18/03/2026 12:00"@es ;
+    rdfs:label "Precipitation amount measurement - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Rain_001 ;
+    sosa:observedProperty edintkos-vars:PrecipitationAmount ;
+    sosa:hasFeatureOfInterest edintkos-foi:Precipitation ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T00:00:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "2.5"^^xsd:decimal ;
+        qudt:unit unit:MilliM
+    ] .
+
+# Medición intensidad lluvia
+ex:Observation_PrecipIntensity_001 a sosa:Observation ;
+    rdfs:label "Medición de intensidad de precipitación - 18/03/2026 12:00"@es ;
+    rdfs:label "Precipitation intensity measurement - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Rain_001 ;
+    sosa:observedProperty edintkos-vars:PrecipitationIntensity ;
+    sosa:hasFeatureOfInterest edintkos-foi:Precipitation ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "5.0"^^xsd:decimal ;
+        qudt:unit unit:MilliM-PER-HR
+    ] .
+
+# Medición irradiancia solar mañana
+ex:Observation_SolarIrradiance_001_Morning a sosa:Observation ;
+    rdfs:label "Medición de irradiancia solar - 18/03/2026 09:00"@es ;
+    rdfs:label "Solar irradiance measurement - 18/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Radiation_001 ;
+    sosa:observedProperty edintkos-vars:SolarIrradiance ;
+    sosa:hasFeatureOfInterest edintkos-foi:SolarRadiation ;
+    sosa:resultTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "420.5"^^xsd:decimal ;
+        qudt:unit unit:W-PER-M2
+    ] .
+
+# Medición irradiancia solar mediodia
+ex:Observation_SolarIrradiance_001_Noon a sosa:Observation ;
+    rdfs:label "Medición de irradiancia solar - 18/03/2026 13:00"@es ;
+    rdfs:label "Solar irradiance measurement - 18/03/2026 13:00"@en ;
+    sosa:madeBySensor ex:Sensor_Radiation_001 ;
+    sosa:observedProperty edintkos-vars:SolarIrradiance ;
+    sosa:hasFeatureOfInterest edintkos-foi:SolarRadiation ;
+    sosa:resultTime "2026-03-18T13:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "850.2"^^xsd:decimal ;
+        qudt:unit unit:W-PER-M2
+    ] .
+
+# Medición indice UV mañana
+ex:Observation_UVIndex_001_Morning a sosa:Observation ;
+    rdfs:label "Medición de índice UV - 18/03/2026 09:00"@es ;
+    rdfs:label "UV index measurement - 18/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Radiation_001 ;
+    sosa:observedProperty edintkos-vars:UVIndex ;
+    sosa:hasFeatureOfInterest edintkos-foi:SolarRadiation ;
+    sosa:resultTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "2.5"^^xsd:decimal ;
+        qudt:unit unit:UNITLESS
+    ] .
+
+# Medición indice UV mediodia
+ex:Observation_UVIndex_001_Noon a sosa:Observation ;
+    rdfs:label "Medición de índice UV - 18/03/2026 13:00"@es ;
+    rdfs:label "UV index measurement - 18/03/2026 13:00"@en ;
+    sosa:madeBySensor ex:Sensor_Radiation_001 ;
+    sosa:observedProperty edintkos-vars:UVIndex ;
+    sosa:hasFeatureOfInterest edintkos-foi:SolarRadiation ;
+    sosa:resultTime "2026-03-18T13:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "6.8"^^xsd:decimal ;
+        qudt:unit unit:UNITLESS
+    ] .
+
+# Medición humedad relativa mañana
+ex:Observation_RelHumidity_001_Morning a sosa:Observation ;
+    rdfs:label "Medición de humedad relativa - 18/03/2026 09:00"@es ;
+    rdfs:label "Relative humidity measurement - 18/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Humidity_001 ;
+    sosa:observedProperty edintkos-vars:RelativeHumidity ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "72.5"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+# Medición humedad relativa tarde
+ex:Observation_RelHumidity_001_Evening a sosa:Observation ;
+    rdfs:label "Medición de humedad relativa - 18/03/2026 17:00"@es ;
+    rdfs:label "Relative humidity measurement - 18/03/2026 17:00"@en ;
+    sosa:madeBySensor ex:Sensor_Humidity_001 ;
+    sosa:observedProperty edintkos-vars:RelativeHumidity ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T17:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "48.3"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES - 19/03/2026
+# ---------------------------------------------------------------------------
+
+# Medición velocidad viento dia2
+ex:Observation_WindSpeed_002 a sosa:Observation ;
+    rdfs:label "Medición de velocidad del viento - 19/03/2026 09:00"@es ;
+    rdfs:label "Wind speed measurement - 19/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:WindSpeed ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-19T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:phenomenonTime [
+        a time:InstantaneousEvent ;
+        time:inXSDTimeInterval [
+            a time:TimePeriod ;
+            time:hasBeginning [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T08:50:00+01:00"^^xsd:dateTime
+            ] ;
+            time:hasEnd [
+                a time:Instant ;
+                time:inXSDDateTime "2026-03-19T09:00:00+01:00"^^xsd:dateTime
+            ]
+        ]
+    ] ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "3.8"^^xsd:decimal ;
+        qudt:unit unit:M-PER-SEC
+    ] .
+
+# Medición direccion viento dia2
+ex:Observation_WindDirection_002 a sosa:Observation ;
+    rdfs:label "Medición de dirección del viento - 19/03/2026 09:00"@es ;
+    rdfs:label "Wind direction measurement - 19/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Wind_001 ;
+    sosa:observedProperty edintkos-vars:WindDirection ;
+    sosa:hasFeatureOfInterest edintkos-foi:Wind ;
+    sosa:resultTime "2026-03-19T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "245"^^xsd:decimal ;
+        qudt:unit unit:DEG
+    ] .
+
+# Medición irradiancia solar dia2
+ex:Observation_SolarIrradiance_002 a sosa:Observation ;
+    rdfs:label "Medición de irradiancia solar - 19/03/2026 13:00"@es ;
+    rdfs:label "Solar irradiance measurement - 19/03/2026 13:00"@en ;
+    sosa:madeBySensor ex:Sensor_Radiation_001 ;
+    sosa:observedProperty edintkos-vars:SolarIrradiance ;
+    sosa:hasFeatureOfInterest edintkos-foi:SolarRadiation ;
+    sosa:resultTime "2026-03-19T13:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "780.5"^^xsd:decimal ;
+        qudt:unit unit:W-PER-M2
+    ] .
+
+# Medición indice UV dia2
+ex:Observation_UVIndex_002 a sosa:Observation ;
+    rdfs:label "Medición de índice UV - 19/03/2026 13:00"@es ;
+    rdfs:label "UV index measurement - 19/03/2026 13:00"@en ;
+    sosa:madeBySensor ex:Sensor_Radiation_001 ;
+    sosa:observedProperty edintkos-vars:UVIndex ;
+    sosa:hasFeatureOfInterest edintkos-foi:SolarRadiation ;
+    sosa:resultTime "2026-03-19T13:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "6.2"^^xsd:decimal ;
+        qudt:unit unit:UNITLESS
+    ] .
+
+# Medición humedad relativa dia2
+ex:Observation_RelHumidity_002 a sosa:Observation ;
+    rdfs:label "Medición de humedad relativa - 19/03/2026 09:00"@es ;
+    rdfs:label "Relative humidity measurement - 19/03/2026 09:00"@en ;
+    sosa:madeBySensor ex:Sensor_Humidity_001 ;
+    sosa:observedProperty edintkos-vars:RelativeHumidity ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-19T09:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "65.8"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .

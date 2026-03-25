@@ -9,7 +9,8 @@
 @prefix unit: <http://qudt.org/vocab/unit/> .
 
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
-@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
 @prefix ex: <http://example.org/> .
 
 # ---------------------------------------------------------------------------
@@ -28,39 +29,46 @@ ex:Station_AQ_001 a edintmed:MeasuringStation ;
     
     # La estación aloja sensores
     sosa:hosts ex:Sensor_Temp_001 ;
-    sosa:hosts ex:Sensor_NO2_001 .
+    sosa:hosts ex:Sensor_NO2_001 ;
+    sosa:hosts ex:Sensor_Press_001 .
 
 # ---------------------------------------------------------------------------
 # SENSORES
 # ---------------------------------------------------------------------------
-
-# Un mismo sensor puede observar varias propiedades, incluidas las propias internas
 
 ex:Sensor_Temp_001 a edintmed:Sensor ;
     rdfs:label "Sensor de temperatura del aire - PT100"@es ;
     rdfs:label "Air temperature sensor - PT100"@en ;
     dct:identifier "TEMP-001-PT100" ;
     sosa:isHostedBy ex:Station_AQ_001 ;
-    sosa:observes edintkos:AirTemperature ,
-                  edintkos:BatteryLevel .
+    sosa:observes edintkos-vars:AirTemperature ,
+                  edintkos-vars:BatteryLevel .
 
 ex:Sensor_NO2_001 a edintmed:Sensor ;
     rdfs:label "Sensor de dióxido de nitrógeno - Chemiluminiscencia"@es ;
     rdfs:label "Nitrogen dioxide sensor - Chemiluminescence"@en ;
     dct:identifier "NO2-001-CHEM" ;
     sosa:isHostedBy ex:Station_AQ_001 ;
-    sosa:observes edintkos:NitrogenDioxide .
+    sosa:observes edintkos-vars:NO2Concentration .
+
+ex:Sensor_Press_001 a edintmed:Sensor ;
+    rdfs:label "Sensor de presión atmosférica - Barométrico"@es ;
+    rdfs:label "Atmospheric pressure sensor - Barometric"@en ;
+    dct:identifier "PRESS-001-BARO" ;
+    sosa:isHostedBy ex:Station_AQ_001 ;
+    sosa:observes edintkos-vars:AtmosphericPressure .
 
 # ---------------------------------------------------------------------------
 # OBSERVACIONES
 # ---------------------------------------------------------------------------
 
-# Sensor temperatura
+# Temperatura del aire
 
 ex:Observation_Temp_001_20260318 a sosa:Observation ;
     rdfs:label "Medición de temperatura - 18/03/2026 14:00"@es ;
     sosa:madeBySensor ex:Sensor_Temp_001 ;
-    sosa:observedProperty edintkos:AirTemperature ;
+    sosa:observedProperty edintkos-vars:AirTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
     sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
     sosa:hasResult [
         a qudt:QuantityValue ;
@@ -68,11 +76,13 @@ ex:Observation_Temp_001_20260318 a sosa:Observation ;
         qudt:unit unit:DEG_C
     ] .
 
+# Estado interno del sensor
+
 ex:Observation_BatteryLevel_001 a sosa:Observation ;
     rdfs:label "Nivel de batería del sensor - 18/03/2026 14:00"@es ;
     sosa:madeBySensor ex:Sensor_Temp_001 ;
-    sosa:observedProperty edintkos:BatteryLevel ;
-    sosa:hasFeatureOfInterest ex:Sensor_Temp_001 ;  # El sensor se "observa" a sí mismo
+    sosa:observedProperty edintkos-vars:BatteryLevel ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
     sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
     sosa:hasResult [
         a qudt:QuantityValue ;
@@ -80,16 +90,30 @@ ex:Observation_BatteryLevel_001 a sosa:Observation ;
         qudt:unit unit:PERCENT
     ] .
 
-
-# Sensor NO2
+# NO2
 
 ex:Observation_NO2_001_20260318 a sosa:Observation ;
     rdfs:label "Medición de NO2 - 18/03/2026 14:00"@es ;
     sosa:madeBySensor ex:Sensor_NO2_001 ;
-    sosa:observedProperty edintkos:NitrogenDioxide ;
+    sosa:observedProperty edintkos-vars:NO2Concentration ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
     sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "42.3"^^xsd:decimal ;
         qudt:unit unit:MicroGM-PER-M3
+    ] .
+
+# Presión atmosférica
+
+ex:Observation_Press_001_20260318 a sosa:Observation ;
+    rdfs:label "Medición de presión atmosférica - 18/03/2026 14:00"@es ;
+    sosa:madeBySensor ex:Sensor_Press_001 ;
+    sosa:observedProperty edintkos-vars:AtmosphericPressure ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "1018.5"^^xsd:decimal ;
+        qudt:unit unit:HectoPA
     ] .
