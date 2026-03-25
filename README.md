@@ -1,47 +1,37 @@
-# XXX Ontology
+# Ontología EDINT de Sensores Medioambientales (EDINT Environmental Sensors Ontology)
 
-The XXX ontology describes the domain of XXX
+Esta ontología tiene como propósito definir y representar estaciones de medición y sensores medioambientales en el contexto de las ciudades inteligentes y la gestión del medio ambiente. Se ha diseñado como una extensión ligera y modular de la ontología SOSA (Sensor, Observation, Sample, and Actuator) y de GeoSPARQL, restringiendo sus mediciones a vocabularios controlados específicos.
 
+# Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
-# Purpose and scope of the vocabulary
+Actualmente, existen vocabularios consolidados para la representación de sensores y observaciones (SOSA) y geometrías o localizaciones (GeoSPARQL). Sin embargo, existía la necesidad de un modelo específico para representar de forma unificada infraestructuras de medición física (como cabinas de calidad del aire, boyas acuáticas o torres meteorológicas) y vincular de forma estricta los sensores que albergan con el vocabulario controlado SKOS de EDINT para variables medioambientales. Esta ontología cubre dicho propósito.
 
-The purpose of the XXX ontology is to YYYY. 
-The scope of the XXX ontology is limited to ZZZ.
+# Prefijo y espacio de nombres (Prefix and namespace)
 
-# Ontology prefix and namespace
+El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` publicado bajo el espacio de nombres:[http://vocab.linkeddata.es/datosabiertos/def/medioambiente/](http://vocab.linkeddata.es/datosabiertos/def/medioambiente/)
 
-The XXX ontology prefix is: XXX and it is published under the namespace: https://webdomain.ext/def/domain/subdomain# 
-
-# Ontology Conceptualization Image
-
-Every ontology development repository should include, in this root README, a visual representation of the ontology conceptualization.
-This image helps users and contributors quickly understand the ontology’s structure, key concepts, and relationships.
-- The image should be located in the conceptualization folder.
-- Accepted formats: .svg, .png, or .drawio.
-- It should be referenced in this README using Markdown syntax, for example:
+# Modelo conceptual (Ontology conceptualization)
 
 ![Ontology Conceptualization Diagram](diagrams/diagram.png)
 
-# Reposity structure
-
-The repository should contain (at least) the following folders:
+# Estructura del repositorio (Repository structure)
 
 | Folder | Description |
 |--------|--------------|
 | **diagrams/** | Stores diagrams and other resources representing the conceptual model of the ontology (e.g., class hierarchies, relationships). |
-| **documentation/** | Stores the HTML or human oriented documentation of the ontology and related artefacts. |
+| **docs/** | Stores the HTML or human oriented documentation of the ontology and related artefacts. |
 | **examples/** | Includes examples that demonstrate how to instantiate or apply the ontology in real data scenarios. |
 | **kos/** | Stores controlled vocabularies or KOS implementation, usually SKOS implementations in rdf. |
 | **ontology/** | Contains the actual ontology implementation files in formats such as `.owl`, `.rdf`, `.ttl`, or `.jsonld`. |
 | **requirements/** | Contains all documents used to define the ontology’s requirements: data example, competency questions, functional requirements, use cases, etc. |
 | **shapes/** | Contains the SHACL shapes used to define and validate ontology constraints. |
 
-# Project maintenance
+# Mantenimiento y evolución (Maintenance and evolution)
 
-To manage those incidents or suggested improvements with respect to the vocabulary, we recommend you to follow
-the guides provided in [Issues Management](https://github.com/nombre-repositorio/wiki/issues-management) to
-generate an issue (work in progress)
+Para manejar las incidencias o mejoras sugeridas con respecto a la ontología, recomendamos seguir las guías proporcionadas en ([Issues Management](https://github.com/telefonicasc/edint-ontologia-medioambiente/wiki/issues-management)) para generar una incidencia (trabajo en progreso).
 
-# Funding
+# Financiación (Funding)
 
-Add here project funding and needed images.
+Esta ontología ha sido desarrollada en el contexto del Espacio de Datos para las Infraestructuras Urbanas Inteligentes ([EDINT](https://edint.es)).
+
+![Logos](EDINT_UE_V-Color.png)
