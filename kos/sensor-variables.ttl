@@ -1,6 +1,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
@@ -183,6 +184,7 @@ edintkos-vars:DewPointTemperature a skos:Concept, sosa:ObservableProperty, qudt:
     skos:broader edintkos-vars:TemperatureVariables ;
     skos:prefLabel "Dew point temperature"@en ;
     skos:prefLabel "Temperatura de punto de rocío"@es ;
+    skos:exactMatch quantitykind:DewPointTemperature ;
     qudt:applicableUnit unit:DEG_C .
 
 edintkos-vars:WetBulbTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -190,6 +192,7 @@ edintkos-vars:WetBulbTemperature a skos:Concept, sosa:ObservableProperty, qudt:Q
     skos:broader edintkos-vars:TemperatureVariables ;
     skos:prefLabel "Wet bulb temperature"@en ;
     skos:prefLabel "Temperatura de bulbo húmedo"@es ;
+    skos:exactMatch quantitykind:WetBulbTemperature ;
     qudt:applicableUnit unit:DEG_C .
 
 edintkos-vars:HeatIndex a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -225,6 +228,7 @@ edintkos-vars:RelativeHumidity a skos:Concept, sosa:ObservableProperty, qudt:Qua
     skos:broader edintkos-vars:HumidityVariables ;
     skos:prefLabel "Relative humidity"@en ;
     skos:prefLabel "Humedad relativa"@es ;
+    skos:exactMatch quantitykind:RelativeHumidity ;
     qudt:applicableUnit unit:PERCENT .
 
 edintkos-vars:AbsoluteHumidity a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -232,6 +236,7 @@ edintkos-vars:AbsoluteHumidity a skos:Concept, sosa:ObservableProperty, qudt:Qua
     skos:broader edintkos-vars:HumidityVariables ;
     skos:prefLabel "Absolute humidity"@en ;
     skos:prefLabel "Humedad absoluta"@es ;
+    skos:exactMatch quantitykind:AbsoluteHumidity ;
     qudt:applicableUnit unit:GM-PER-M3 .
 
 # ---------------------------------------------------------------------------
@@ -251,6 +256,7 @@ edintkos-vars:AtmosphericPressure a skos:Concept, sosa:ObservableProperty, qudt:
     skos:broader edintkos-vars:PressureVariables ;
     skos:prefLabel "Atmospheric pressure"@en ;
     skos:prefLabel "Presión atmosférica"@es ;
+    skos:exactMatch quantitykind:AtmosphericPressure ;
     qudt:applicableUnit unit:HectoPA .
 
 edintkos-vars:SeaLevelPressure a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -414,6 +420,7 @@ edintkos-vars:Illuminance a skos:Concept, sosa:ObservableProperty, qudt:Quantity
     skos:prefLabel "Iluminancia"@es ;
     skos:altLabel "Ambient light level"@en ;
     skos:altLabel "Nivel de luz ambiental"@es ;
+    skos:exactMatch quantitykind:Illuminance ;
     qudt:applicableUnit unit:LUX .
 
 edintkos-vars:SunshineDuration a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -971,6 +978,7 @@ edintkos-vars:WaterTurbidity a skos:Concept, sosa:ObservableProperty, qudt:Quant
     skos:broader edintkos-vars:WaterPhysicochemicalVariables ;
     skos:prefLabel "Water turbidity"@en ;
     skos:prefLabel "Turbidez del agua"@es ;
+    skos:exactMatch quantitykind:Turbidity ;
     qudt:applicableUnit unit:NTU .
 
 edintkos-vars:TotalDissolvedSolids a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1283,6 +1291,7 @@ edintkos-vars:ActivePower a skos:Concept, sosa:ObservableProperty, qudt:Quantity
     skos:broader edintkos-vars:ElectricityVariables ;
     skos:prefLabel "Active power"@en ;
     skos:prefLabel "Potencia activa"@es ;
+    skos:exactMatch quantitykind:ActivePower ;
     qudt:applicableUnit unit:KiloW .
 
 edintkos-vars:ReactivePower a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1290,6 +1299,7 @@ edintkos-vars:ReactivePower a skos:Concept, sosa:ObservableProperty, qudt:Quanti
     skos:broader edintkos-vars:ElectricityVariables ;
     skos:prefLabel "Reactive power"@en ;
     skos:prefLabel "Potencia reactiva"@es ;
+    skos:exactMatch quantitykind:ReactivePower ;
     qudt:applicableUnit unit:KiloV-A-REACTIVE .
 
 edintkos-vars:ActiveEnergy a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1299,6 +1309,7 @@ edintkos-vars:ActiveEnergy a skos:Concept, sosa:ObservableProperty, qudt:Quantit
     skos:prefLabel "Energía activa"@es ;
     skos:altLabel "Electricity consumption"@en ;
     skos:altLabel "Consumo eléctrico"@es ;
+    skos:exactMatch quantitykind:ActiveEnergy ;
     qudt:applicableUnit unit:KiloW-HR .
 
 edintkos-vars:Voltage a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1306,6 +1317,7 @@ edintkos-vars:Voltage a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind
     skos:broader edintkos-vars:ElectricityVariables ;
     skos:prefLabel "Voltage"@en ;
     skos:prefLabel "Voltaje"@es ;
+    skos:exactMatch quantitykind:Voltage ;
     qudt:applicableUnit unit:V .
 
 edintkos-vars:ElectricCurrent a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1313,6 +1325,7 @@ edintkos-vars:ElectricCurrent a skos:Concept, sosa:ObservableProperty, qudt:Quan
     skos:broader edintkos-vars:ElectricityVariables ;
     skos:prefLabel "Electric current"@en ;
     skos:prefLabel "Corriente eléctrica"@es ;
+    skos:exactMatch quantitykind:ElectricCurrent ;
     qudt:applicableUnit unit:A .
 
 edintkos-vars:PowerFactor a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1320,6 +1333,7 @@ edintkos-vars:PowerFactor a skos:Concept, sosa:ObservableProperty, qudt:Quantity
     skos:broader edintkos-vars:ElectricityVariables ;
     skos:prefLabel "Power factor"@en ;
     skos:prefLabel "Factor de potencia"@es ;
+    skos:exactMatch quantitykind:PowerFactor ;
     qudt:applicableUnit unit:UNITLESS .
 
 # ---------------------------------------------------------------------------
@@ -1397,6 +1411,7 @@ edintkos-vars:BatteryVoltage a skos:Concept, sosa:ObservableProperty, qudt:Quant
     skos:broader edintkos-vars:SensorStatusVariables ;
     skos:prefLabel "Battery voltage"@en ;
     skos:prefLabel "Voltaje de batería"@es ;
+    skos:exactMatch quantitykind:Voltage ;
     qudt:applicableUnit unit:V .
 
 edintkos-vars:InternalSensorTemperature a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
@@ -1404,6 +1419,7 @@ edintkos-vars:InternalSensorTemperature a skos:Concept, sosa:ObservableProperty,
     skos:broader edintkos-vars:SensorStatusVariables ;
     skos:prefLabel "Internal sensor temperature"@en ;
     skos:prefLabel "Temperatura interna del sensor"@es ;
+    skos:exactMatch quantitykind:Temperature ;
     qudt:applicableUnit unit:DEG_C .
 
 edintkos-vars:SignalStrength a skos:Concept, sosa:ObservableProperty, qudt:QuantityKind ;
