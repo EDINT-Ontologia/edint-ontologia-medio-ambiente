@@ -28,7 +28,7 @@ El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` public
 
 # Mantenimiento y evolución (Maintenance and evolution)
 
-Para manejar las incidencias o mejoras sugeridas con respecto a la ontología, recomendamos seguir las guías proporcionadas en ([Issues Management](https://github.com/telefonicasc/edint-ontologia-medioambiente/wiki/issues-management)) para generar una incidencia (trabajo en progreso).
+Para manejar las incidencias o mejoras sugeridas con respecto a la ontología, recomendamos seguir las guías proporcionadas en ([Issues Management](./ISSUES.md)) para generar una incidencia.
 
 # Financiación (Funding)
 
