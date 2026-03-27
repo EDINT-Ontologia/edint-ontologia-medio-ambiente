@@ -1,0 +1,60 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# ESQUEMA PRINCIPAL (Concept Scheme)
+# ---------------------------------------------------------------------------
+edintkos-sensortypes:SensorTypes a skos:ConceptScheme ;
+    dct:issued "2026-03-27"^^xsd:date ;
+    dct:modified "2026-03-27"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Sensor types"@en ;
+    rdfs:label "Tipos de sensor"@es ;
+    dct:title "Concept scheme grouping sensor types according to their measurement domain"@en ;
+    dct:title "Esquema de conceptos agrupando tipos de sensor según su dominio de medición"@es ;
+    skos:note "Hierarchical vocabulary of environmental sensor types classified by their measurement domain: climatic, air quality, and noise."@en ;
+    skos:note "Vocabulario jerárquico de tipos de sensores medioambientales clasificados por su dominio de medición: climáticos, calidad del aire y ruido."@es .
+
+# ---------------------------------------------------------------------------
+# CLIMATIC SENSORS
+# ---------------------------------------------------------------------------
+
+edintkos-sensortypes:ClimaticSensor a skos:Concept ;
+    skos:inScheme edintkos-sensortypes:SensorTypes ;
+    skos:prefLabel "Climatic sensor"@en ;
+    skos:prefLabel "Sensor climático"@es ;
+    skos:definition "A sensor designed to measure meteorological and atmospheric conditions such as temperature, humidity, pressure, wind, and precipitation."@en ;
+    skos:definition "Un sensor diseñado para medir condiciones meteorológicas y atmosféricas como temperatura, humedad, presión, viento y precipitación."@es ;
+    skos:related edintkos-vars:MeteorologicalVariables .
+
+# ---------------------------------------------------------------------------
+# AIR QUALITY SENSORS
+# ---------------------------------------------------------------------------
+
+edintkos-sensortypes:AirQualitySensor a skos:Concept ;
+    skos:inScheme edintkos-sensortypes:SensorTypes ;
+    skos:prefLabel "Air quality sensor"@en ;
+    skos:prefLabel "Sensor de calidad del aire"@es ;
+    skos:definition "A sensor designed to measure air pollution levels and atmospheric composition, including gaseous pollutants, particulate matter, and volatile organic compounds."@en ;
+    skos:definition "Un sensor diseñado para medir niveles de contaminación del aire y composición atmosférica, incluyendo gases contaminantes, material particulado y compuestos orgánicos volátiles."@es ;
+    skos:related edintkos-vars:AirQualityVariables .
+
+# ---------------------------------------------------------------------------
+# NOISE SENSORS
+# ---------------------------------------------------------------------------
+
+edintkos-sensortypes:NoiseSensor a skos:Concept ;
+    skos:inScheme edintkos-sensortypes:SensorTypes ;
+    skos:prefLabel "Noise sensor"@en ;
+    skos:prefLabel "Sensor de ruido"@es ;
+    skos:definition "A sensor designed to measure sound levels and acoustic conditions in the environment, including equivalent sound pressure levels and statistical noise levels."@en ;
+    skos:definition "Un sensor diseñado para medir niveles de sonido y condiciones acústicas en el entorno, incluyendo niveles de presión sonora equivalente y niveles de ruido estadísticos."@es ;
+    skos:related edintkos-vars:AcousticVariables .
