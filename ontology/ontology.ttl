@@ -5,7 +5,7 @@
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix schema: <http://schema.org/> .
@@ -42,7 +42,7 @@ edintmed: a owl:Ontology ;
 ### Estación de Medición
 edintmed:SensorPlatform a owl:Class ;
     rdfs:subClassOf sosa:Platform ;
-    rdfs:subClassOf geo:Feature ;
+    rdfs:subClassOf gsp:Feature ;
     rdfs:label "Sensor platform"@en ;
     rdfs:label "Plataforma de sensor"@es ;
     rdfs:comment "Physical platform or facility that hosts environmental sensors for monitoring."@en ;
@@ -56,8 +56,8 @@ edintmed:SensorPlatform a owl:Class ;
     
     rdfs:subClassOf[
         a owl:Restriction ;
-        owl:onProperty geo:hasGeometry ;
-        owl:someValuesFrom geo:Geometry
+        owl:onProperty gsp:hasGeometry ;
+        owl:someValuesFrom gsp:Geometry
     ] .
 
 
@@ -84,6 +84,16 @@ edintmed:EnvironmentalSensor a owl:Class ;
         a owl:Restriction ;
         owl:onProperty schema:manufacturer ;
         owl:someValuesFrom schema:Organization
+    ] ;
+
+    rdfs:subClassOf[
+        a owl:Restriction ;
+        owl:onProperty sosa:observes ;
+        owl:allValuesFrom[
+            a owl:Restriction ;
+            owl:onProperty skos:inScheme ;
+            owl:hasValue edintkos-vars:SensorVariables
+        ]
     ] .
 
 ### Environmental Observation
@@ -92,7 +102,17 @@ edintmed:EnvironmentalObservation a owl:Class ;
     rdfs:label "Environmental observation"@en ;
     rdfs:label "Observación medioambiental"@es ;
     rdfs:comment "An observation of an environmental property made by an environmental sensor."@en ;
-    rdfs:comment "Una observación de una propiedad medioambiental realizada por un sensor medioambiental."@es .
+    rdfs:comment "Una observación de una propiedad medioambiental realizada por un sensor medioambiental."@es ;
+    
+    rdfs:subClassOf[
+        a owl:Restriction ;
+        owl:onProperty sosa:hasFeatureOfInterest ;
+        owl:allValuesFrom[
+            a owl:Restriction ;
+            owl:onProperty skos:inScheme ;
+            owl:hasValue edintkos-foi:FeaturesOfInterest
+        ]
+    ] .
 
 ### Environmental Property
 edintmed:EnvironmentalProperty a owl:Class ;
