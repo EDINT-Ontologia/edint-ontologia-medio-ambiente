@@ -123,6 +123,13 @@ edintmed:EnvironmentalProperty a owl:Class ;
     rdfs:comment "A physical, chemical, or acoustic property of the environment that can be observed by sensors."@en ;
     rdfs:comment "Una propiedad física, química o acústica del medio ambiente que puede ser observada por sensores."@es .
 
+edintmed:EnvironmentalFeatureOfInterest a owl:Class ;
+    rdfs:subClassOf sosa:FeatureOfInterest ;
+    rdfs:label "Environmental Feature of Interest"@en ;
+    rdfs:label "Característica de interés de la propiedad medioambiental"@es ;
+
+
+
 # ---------------------------------------------------------------------------
 # OBJECT PROPERTIES
 # ---------------------------------------------------------------------------

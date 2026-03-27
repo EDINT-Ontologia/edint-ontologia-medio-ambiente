@@ -1,5 +1,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -27,7 +28,7 @@ edintkos-foi:FeaturesOfInterest a skos:ConceptScheme ;
 # AIRE
 # ---------------------------------------------------------------------------
 
-edintkos-foi:Air a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:Air a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Air"@en ;
     skos:prefLabel "Aire"@es ;
@@ -55,7 +56,7 @@ edintkos-foi:Air a skos:Concept, sosa:FeatureOfInterest ;
 # MATERIAL PARTICULADO
 # ---------------------------------------------------------------------------
 
-edintkos-foi:ParticulateMatter a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:ParticulateMatter a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Particulate matter"@en ;
     skos:prefLabel "Material particulado"@es ;
@@ -74,7 +75,7 @@ edintkos-foi:ParticulateMatter a skos:Concept, sosa:FeatureOfInterest ;
 # SUELO
 # ---------------------------------------------------------------------------
 
-edintkos-foi:Soil a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:Soil a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Soil"@en ;
     skos:prefLabel "Suelo"@es ;
@@ -87,7 +88,7 @@ edintkos-foi:Soil a skos:Concept, sosa:FeatureOfInterest ;
 # CALZADA
 # ---------------------------------------------------------------------------
 
-edintkos-foi:RoadSurface a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:RoadSurface a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Road surface"@en ;
     skos:prefLabel "Calzada"@es ;
@@ -101,7 +102,7 @@ edintkos-foi:RoadSurface a skos:Concept, sosa:FeatureOfInterest ;
 # VIENTO
 # ---------------------------------------------------------------------------
 
-edintkos-foi:Wind a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:Wind a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Wind"@en ;
     skos:prefLabel "Viento"@es ;
@@ -115,7 +116,7 @@ edintkos-foi:Wind a skos:Concept, sosa:FeatureOfInterest ;
 # PRECIPITACIÓN
 # ---------------------------------------------------------------------------
 
-edintkos-foi:Precipitation a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:Precipitation a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Precipitation"@en ;
     skos:prefLabel "Precipitación"@es ;
@@ -127,7 +128,7 @@ edintkos-foi:Precipitation a skos:Concept, sosa:FeatureOfInterest ;
 # RADIACIÓN SOLAR
 # ---------------------------------------------------------------------------
 
-edintkos-foi:SolarRadiation a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:SolarRadiation a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Solar radiation"@en ;
     skos:prefLabel "Radiación solar"@es ;
@@ -141,7 +142,7 @@ edintkos-foi:SolarRadiation a skos:Concept, sosa:FeatureOfInterest ;
 # LUZ AMBIENTAL
 # ---------------------------------------------------------------------------
 
-edintkos-foi:AmbientLight a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:AmbientLight a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Ambient light"@en ;
     skos:prefLabel "Luz ambiental"@es ;
@@ -153,7 +154,7 @@ edintkos-foi:AmbientLight a skos:Concept, sosa:FeatureOfInterest ;
 # POLEN
 # ---------------------------------------------------------------------------
 
-edintkos-foi:AirbornePollen a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:AirbornePollen a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Airborne pollen"@en ;
     skos:prefLabel "Polen atmosférico"@es ;
@@ -165,7 +166,7 @@ edintkos-foi:AirbornePollen a skos:Concept, sosa:FeatureOfInterest ;
 # ENTORNO ACÚSTICO
 # ---------------------------------------------------------------------------
 
-edintkos-foi:AcousticEnvironment a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:AcousticEnvironment a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Acoustic environment"@en ;
     skos:prefLabel "Entorno acústico"@es ;
@@ -180,7 +181,7 @@ edintkos-foi:AcousticEnvironment a skos:Concept, sosa:FeatureOfInterest ;
 # AGUA POTABLE
 # ---------------------------------------------------------------------------
 
-edintkos-foi:DrinkingWater a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:DrinkingWater a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "Drinking water"@en ;
     skos:prefLabel "Agua potable"@es ;
@@ -197,7 +198,7 @@ edintkos-foi:DrinkingWater a skos:Concept, sosa:FeatureOfInterest ;
 # SENSOR IoT
 # ---------------------------------------------------------------------------
 
-edintkos-foi:IoTSensor a skos:Concept, sosa:FeatureOfInterest ;
+edintkos-foi:IoTSensor a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:inScheme edintkos-foi:FeaturesOfInterest ;
     skos:prefLabel "IoT sensor"@en ;
     skos:prefLabel "Sensor IoT"@es ;
