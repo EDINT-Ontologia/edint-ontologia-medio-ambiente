@@ -129,7 +129,6 @@ edintmed:EnvironmentalFeatureOfInterest a owl:Class ;
     rdfs:label "Característica de interés de la propiedad medioambiental"@es ;
 
 
-
 # ---------------------------------------------------------------------------
 # OBJECT PROPERTIES
 # ---------------------------------------------------------------------------
