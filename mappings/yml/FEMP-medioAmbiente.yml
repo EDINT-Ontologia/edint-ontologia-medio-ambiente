@@ -1,0 +1,133 @@
+prefixes:
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  dct: http://purl.org/dc/terms/
+  sosa: http://www.w3.org/ns/sosa/
+  skos: http://www.w3.org/2004/02/skos/core#
+  geo: http://www.w3.org/2003/01/geo/wgs84_pos#
+  gsp: http://www.opengis.net/ont/geosparql#
+  qudt: http://qudt.org/schema/qudt/
+  unit: http://qudt.org/vocab/unit/
+  time: http://www.w3.org/2006/time#
+  schema: http://schema.org/
+  edintmed: http://vocab.linkeddata.es/datosabiertos/def/medioambiente/
+  edintkos-vars: http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/
+  edintkos-foi: http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/
+  edintkos-sensortypes: http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/
+  # recurso: http://vocab.linkeddata.es/datosabiertos/recurso/
+
+sources:
+  data-source: ['mediciones_ambientales.csv~csv']
+
+mappings:
+
+  sensor_platform:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/$(STATION_ID)
+    po:
+      - [a, edintmed:SensorPlatform] # Clase actualizada del PR
+      - [dct:identifier, "$(STATION_ID)"]
+      - [rdfs:label, "$(STATION_NAME_ES)"]
+      - [rdfs:comment, "$(STATION_DESC_ES)"]
+      - [geo:lat, $(LAT), xsd:float]
+      - [geo:long, $(LONG), xsd:float]
+      - [geo:alt, $(ALT), xsd:float]
+      - [sosa:hosts, "http://vocab.linkeddata.es/datosabiertos/recurso/sensor/$(SENSOR_ID)~iri"]
+      - [gsp:hasGeometry, "http://vocab.linkeddata.es/datosabiertos/recurso/geometria/$(STATION_ID)~iri"]
+
+
+  station_geometry:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/geometria/$(STATION_ID)
+    po:
+      - [a, gsp:Geometry]
+      - [gsp:asWKT, "POINT ($(LONG) $(LAT)", gsp:wktLiteral]
+
+
+  environmental_sensor:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/sensor/$(SENSOR_ID)
+    po:
+      - [a, edintmed:EnvironmentalSensor]
+      - [dct:identifier, "$(SENSOR_ID)"]
+      - [rdfs:label, "$(SENSOR_NAME_ES)"]
+      - [rdfs:comment, "$(SENSOR_DESC_ES)"]
+      - [schema:manufacturer, "$(MANUFACTURER)"]
+      - [sosa:isHostedBy, "http://vocab.linkeddata.es/datosabiertos/recurso/estacionDeMedida/$(STATION_ID)~iri"]
+      - [sosa:observes, "edintkos-vars:$(OBS_PROPERTY)~iri"] # SKOS
+
+
+  physical_sample:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/muestra/$(SAMPLE_ID)
+    po:
+      - [a, sosa:Sample]
+      - [dct:identifier, "$(SAMPLE_ID)"]
+      - [rdfs:label, "$(SAMPLE_LABEL_ES)"]
+      - [sosa:isSampleOf, "edintkos-foi:$(SAMPLE_OF)~iri"]
+
+  observation:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/observacion/$(OBS_ID)
+    po:
+      - [a, sosa:Observation]
+      - [rdfs:label, "$(OBS_LABEL_ES)"]
+      - [sosa:madeBySensor, "http://vocab.linkeddata.es/datosabiertos/recurso/sensor/$(SENSOR_ID)~iri"]
+      - [sosa:observedProperty, "edintkos-vars:$(OBS_PROPERTY)~iri"]
+
+      # Generador dinámico de FeatureOfInterest.
+      # Nota: Si el FOI es una muestra en tu CSV, FOI_PREFIX será "recurso" y FOI_URI_SUFFIX será "muestra/$(SAMPLE_ID)".
+#      - [sosa:hasFeatureOfInterest, "$(FOI_PREFIX):$(FOI_URI_SUFFIX)~iri"]
+
+      - [sosa:resultTime, "$(RESULT_TIME)", xsd:dateTime]
+      - [sosa:hasResult, "http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/$(OBS_ID)~iri"]
+      - [sosa:phenomenonTime, "http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/$(OBS_ID)_$(PHENOMENON_START)~iri"]
+
+
+  observation_result:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/resultadoObservacion/$(OBS_ID)
+    po:
+      - [a, qudt:QuantityValue]
+      - [qudt:numericValue, $(VALUE), xsd:decimal]
+      - [qudt:unit, "unit:$(UNIT)~iri"]
+
+  phenomenon_event:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/eventoFenomeno/$(OBS_ID)_$(PHENOMENON_START)
+    po:
+      - [a, time:InstantaneousEvent]
+      - [time:inXSDTimeInterval, "http://vocab.linkeddata.es/datosabiertos/recurso/periodoFenomeno/$(OBS_ID)_$(PHENOMENON_START)~iri"]
+
+  phenomenon_period:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/periodoFenomeno/$(OBS_ID)_$(PHENOMENON_START)
+    po:
+      - [a, time:TimePeriod]
+      - [time:hasBeginning, "http://vocab.linkeddata.es/datosabiertos/recurso/instante/$(OBS_ID)_$(PHENOMENON_START)~iri"]
+      - [time:hasEnd, "http://vocab.linkeddata.es/datosabiertos/recurso/instante/$(OBS_ID)_$(PHENOMENON_END)~iri"]
+
+  phenomenon_instant_start:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/instante/$(OBS_ID)_$(PHENOMENON_START)
+    po:
+      - [a, time:Instant]
+      - [time:inXSDDateTime, "$(PHENOMENON_START)", xsd:dateTime]
+
+  phenomenon_instant_end:
+    sources:
+      - data-source
+    s: http://vocab.linkeddata.es/datosabiertos/recurso/instante/$(OBS_ID)_$(PHENOMENON_END)
+    po:
+      - [a, time:Instant]
+      - [time:inXSDDateTime, "$(PHENOMENON_END)", xsd:dateTime]
