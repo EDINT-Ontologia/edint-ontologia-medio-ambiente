@@ -12,7 +12,7 @@ El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` public
 
 # Modelo conceptual (Ontology conceptualization)
 
-![Ontology Conceptualization Diagram](diagrams/diagram.png)
+![Ontology Conceptualization Diagram](diagrams/diagrama-conceptual.drawio.png)
 
 # Estructura del repositorio (Repository structure)
 
