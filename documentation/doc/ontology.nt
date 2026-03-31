@@ -1,4 +1,5 @@
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://www.w3.org/2002/07/owl#imports> <http://qudt.org/2.1/schema/qudt> .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql#> .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/sosa/> .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/creator> "Daniel Doña"@es .
@@ -10,7 +11,7 @@
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/description> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/issued> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/modified> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/modified> "2026-03-27"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://purl.org/dc/terms/title> "Ontología EDINT de Sensores Medioambientales"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> <http://www.w3.org/2002/07/owl#versionInfo> "0.1.0" .
@@ -38,6 +39,19 @@
 # #################################################################
 # 
 # 
+# http://schema.org/manufacturer
+<http://schema.org/manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an environmental sensor to its type classification."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#comment> "Vincula un sensor medioambiental a su clasificación de tipo."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#label> "has sensor type"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> <http://www.w3.org/2000/01/rdf-schema#label> "tiene tipo de sensor"@es .
+# 
 # http://www.opengis.net/ont/geosparql#hasGeometry
 <http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
@@ -53,48 +67,99 @@
 # #################################################################
 # 
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
-<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
-_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/geosparql#Geometry> .
-<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
-_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
-_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> .
-_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hosts> .
-_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical platform or facility (e.g., air quality cabin, water buoy, meteorological tower) that hosts sensors for environmental monitoring."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#comment> "Plataforma física o instalación (ej. cabina de calidad del aire, boya acuática, torre meteorológica) que alberga sensores para la monitorización del medio ambiente."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental measuring station"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> <http://www.w3.org/2000/01/rdf-schema#label> "Estación de medición medioambiental"@es .
+# http://qudt.org/schema/qudt/QuantityKind
+<http://qudt.org/schema/qudt/QuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 # 
-# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
-_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation> .
-_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/isHostedBy> .
+# http://schema.org/Organization
+<http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Característica de interés de la propiedad medioambiental"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Feature of Interest"@en .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Observation> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest> .
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "An observation of an environmental property made by an environmental sensor."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "Una observación de una propiedad medioambiental realizada por un sensor medioambiental."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental observation"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Observación medioambiental"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://qudt.org/schema/qudt/QuantityKind> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/ObservableProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical, chemical, or acoustic property of the environment that can be observed by sensors."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Una propiedad física, química o acústica del medio ambiente que puede ser observada por sensores."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental property"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Propiedad medioambiental"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.org/Organization> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/manufacturer> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid5 .
-_:genid5 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorVariables> .
-<http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorVariables> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observes> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/isHostedBy> .
 _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device designed to observe and measure physical, chemical, or acoustic properties of the environment."@en .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente."@es .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental sensor"@en .
-<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor medioambiental"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes> .
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#hasValue> <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables> .
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observes> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device designed to observe and measure physical, chemical, or acoustic properties of the environment."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental sensor"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor medioambiental"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/geosparql#Geometry> .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hosts> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical platform or facility that hosts environmental sensors for monitoring."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "Plataforma física o instalación que alberga sensores medioambientales para monitorización."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Plataforma de sensor"@es .
+<http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor platform"@en .
 # 
 # http://www.opengis.net/ont/geosparql#Feature
 # 
 # http://www.opengis.net/ont/geosparql#Geometry
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
 # 
 # 
 # 
@@ -105,6 +170,10 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
-# http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorVariables
+# http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest
+# 
+# http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes
+# 
+# http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

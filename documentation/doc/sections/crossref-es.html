@@ -3,14 +3,44 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Clases</h3>
  <ul class="hlist">
-  <li><a href="#MeasuringStation" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation">Estación de medición medioambiental</a></li>
-  <li><a href="#Sensor" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor">Sensor medioambiental</a></li>
+  <li><a href="#EnvironmentalFeatureOfInterest" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest">Característica de interés de la propiedad medioambiental</a></li>
+  <li><a href="#EnvironmentalObservation" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation">Observación medioambiental</a></li>
+  <li><a href="#SensorPlatform" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform">Plataforma de sensor</a></li>
+  <li><a href="#EnvironmentalProperty" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty">Propiedad medioambiental</a></li>
+  <li><a href="#EnvironmentalSensor" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor">Sensor medioambiental</a></li>
  </ul>
- <div class="entity" id="MeasuringStation">
-  <h3>Estación de medición medioambiental<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation</p>
+ <div class="entity" id="EnvironmentalFeatureOfInterest">
+  <h3>Característica de interés de la propiedad medioambiental<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest</p>
+  <dl class="description">
+   <dt>
+    tiene superclases
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/sosa/FeatureOfInterest" target="_blank" title="http://www.w3.org/ns/sosa/FeatureOfInterest">Feature Of Interest</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EnvironmentalObservation">
+  <h3>Observación medioambiental<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation</p>
   <div class="comment">
-   <span class="markdown">Plataforma física o instalación (ej. cabina de calidad del aire, boya acuática, torre meteorológica) que alberga sensores para la monitorización del medio ambiente.</span>
+   <span class="markdown">Una observación de una propiedad medioambiental realizada por un sensor medioambiental.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    tiene superclases
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/sosa/Observation" target="_blank" title="http://www.w3.org/ns/sosa/Observation">Observation</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SensorPlatform">
+  <h3>Plataforma de sensor<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform</p>
+  <div class="comment">
+   <span class="markdown">Plataforma física o instalación que alberga sensores medioambientales para monitorización.</span>
   </div>
   <dl class="description">
    <dt>
@@ -21,9 +51,24 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dd>
   </dl>
  </div>
- <div class="entity" id="Sensor">
+ <div class="entity" id="EnvironmentalProperty">
+  <h3>Propiedad medioambiental<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty</p>
+  <div class="comment">
+   <span class="markdown">Una propiedad física, química o acústica del medio ambiente que puede ser observada por sensores.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    tiene superclases
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/sosa/ObservableProperty" target="_blank" title="http://www.w3.org/ns/sosa/ObservableProperty">Observable Property</a> <sup class="type-c" title="clase">c</sup>, <a href="http://qudt.org/schema/qudt/QuantityKind" target="_blank" title="http://qudt.org/schema/qudt/QuantityKind">Quantity Kind</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="EnvironmentalSensor">
   <h3>Sensor medioambiental<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor</p>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor</p>
   <div class="comment">
    <span class="markdown">Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente.</span>
   </div>
@@ -34,11 +79,46 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    <dd>
     <a href="http://www.w3.org/ns/sosa/Sensor" target="_blank" title="http://www.w3.org/ns/sosa/Sensor">Sensor</a> <sup class="type-c" title="clase">c</sup>
    </dd>
+   <dt>
+    en dominio de
+   </dt>
+   <dd>
+    <a href="#hasSensorType" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType">tiene tipo de sensor</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
   </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h2>Propiedades entre objetos</h2>
+ <ul class="hlist">
+  <li><a href="#hasSensorType" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType">tiene tipo de sensor</a></li>
+ </ul>
+ <div class="entity" id="hasSensorType">
+  <h3>tiene tipo de sensor<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType</p>
+  <div class="comment">
+   <span class="markdown">Vincula un sensor medioambiental a su clasificación de tipo.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#EnvironmentalSensor" title="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor">Sensor medioambiental</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2004/02/skos/core#Concept" target="_blank" title="http://www.w3.org/2004/02/skos/core#Concept">Concept</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
  </div>
 </div><div id="legend">
 <h2>Leyenda <span class="backlink"> volver a <a href="#toc">ToC</a></span></h2>
 <div   class="entity">
 <sup class="type-c" title="Clases">c</sup>: Clases <br/>
+<sup class="type-op" title="Propiedades de objeto">op</sup>: Propiedades de objeto <br/>
 </div>
 </div>

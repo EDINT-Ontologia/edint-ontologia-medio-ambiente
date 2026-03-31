@@ -16,15 +16,16 @@ El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` public
 
 # Estructura del repositorio (Repository structure)
 
-| Folder | Description |
+| Carpeta | Descripción |
 |--------|--------------|
-| **diagrams/** | Stores diagrams and other resources representing the conceptual model of the ontology (e.g., class hierarchies, relationships). |
-| **docs/** | Stores the HTML or human oriented documentation of the ontology and related artefacts. |
-| **examples/** | Includes examples that demonstrate how to instantiate or apply the ontology in real data scenarios. |
-| **kos/** | Stores controlled vocabularies or KOS implementation, usually SKOS implementations in rdf. |
-| **ontology/** | Contains the actual ontology implementation files in formats such as `.owl`, `.rdf`, `.ttl`, or `.jsonld`. |
-| **requirements/** | Contains all documents used to define the ontology’s requirements: data example, competency questions, functional requirements, use cases, etc. |
-| **shapes/** | Contains the SHACL shapes used to define and validate ontology constraints. |
+| **diagrams/**     | Almacena diagramas y otros recursos que representan el modelo conceptual de la ontología (por ejemplo, jerarquías de clases, relaciones).                                     |
+| **documentation/**         | Almacena la documentación HTML u orientada a humanos de la ontología y artefactos relacionados.                                                                               |
+| **examples/**     | Incluye ejemplos que demuestran cómo instanciar o aplicar la ontología en escenarios de datos reales.                                                                         |
+| **kos/**          | Almacena vocabularios controlados o implementación de KOS, generalmente implementaciones SKOS en RDF.                                                                         |
+| **ontology/**     | Contiene los archivos de implementación reales de la ontología en formatos como `.owl`, `.rdf`, `.ttl` o `.jsonld`.                                                           |
+| **requirements/** | Contiene todos los documentos utilizados para definir los requisitos de la ontología: ejemplos de datos, preguntas de competencia, requisitos funcionales, casos de uso, etc. |
+| **shapes/**       | Contiene los SHACL shapes utilizadas para definir y validar las restricciones de la ontología.                                                                                |
+
 
 # Mantenimiento y evolución (Maintenance and evolution)
 

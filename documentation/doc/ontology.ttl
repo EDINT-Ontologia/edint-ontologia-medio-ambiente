@@ -7,7 +7,8 @@
 @base <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
 
 <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> rdf:type owl:Ontology ;
-                                                               owl:imports <http://www.opengis.net/ont/geosparql#> ,
+                                                               owl:imports <http://qudt.org/2.1/schema/qudt> ,
+                                                                           <http://www.opengis.net/ont/geosparql#> ,
                                                                            <http://www.w3.org/ns/sosa/> ;
                                                                <http://purl.org/dc/terms/creator> "Daniel Doña"@es ,
                                                                                                   "Edna Ruckhaus" ,
@@ -18,7 +19,7 @@
                                                                                                       "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es ;
                                                                <http://purl.org/dc/terms/issued> "2026-03-18"^^xsd:date ;
                                                                <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
-                                                               <http://purl.org/dc/terms/modified> "2026-03-18"^^xsd:date ;
+                                                               <http://purl.org/dc/terms/modified> "2026-03-27"^^xsd:date ;
                                                                <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology"@en ,
                                                                                                 "Ontología EDINT de Sensores Medioambientales"@es ;
                                                                owl:versionInfo "0.1.0" .
@@ -39,6 +40,20 @@
 #    Object Properties
 #################################################################
 
+###  http://schema.org/manufacturer
+<http://schema.org/manufacturer> rdf:type owl:ObjectProperty .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType
+:hasSensorType rdf:type owl:ObjectProperty ;
+               rdfs:domain :EnvironmentalSensor ;
+               rdfs:range <http://www.w3.org/2004/02/skos/core#Concept> ;
+               rdfs:comment "Links an environmental sensor to its type classification."@en ,
+                            "Vincula un sensor medioambiental a su clasificación de tipo."@es ;
+               rdfs:label "has sensor type"@en ,
+                          "tiene tipo de sensor"@es .
+
+
 ###  http://www.opengis.net/ont/geosparql#hasGeometry
 <http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
 
@@ -51,42 +66,94 @@
 #    Classes
 #################################################################
 
-###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/MeasuringStation
-:MeasuringStation rdf:type owl:Class ;
-                  rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
-                                  <http://www.w3.org/ns/sosa/Platform> ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
-                                    owl:someValuesFrom <http://www.opengis.net/ont/geosparql#Geometry>
-                                  ] ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty <http://www.w3.org/ns/sosa/hosts> ;
-                                    owl:someValuesFrom :Sensor
-                                  ] ;
-                  rdfs:comment "Physical platform or facility (e.g., air quality cabin, water buoy, meteorological tower) that hosts sensors for environmental monitoring."@en ,
-                               "Plataforma física o instalación (ej. cabina de calidad del aire, boya acuática, torre meteorológica) que alberga sensores para la monitorización del medio ambiente."@es ;
-                  rdfs:label "Environmental measuring station"@en ,
-                             "Estación de medición medioambiental"@es .
+###  http://qudt.org/schema/qudt/QuantityKind
+<http://qudt.org/schema/qudt/QuantityKind> rdf:type owl:Class .
 
 
-###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/Sensor
-:Sensor rdf:type owl:Class ;
-        rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty <http://www.w3.org/ns/sosa/isHostedBy> ;
-                          owl:someValuesFrom :MeasuringStation
-                        ] ,
-                        [ rdf:type owl:Restriction ;
-                          owl:onProperty <http://www.w3.org/ns/sosa/observes> ;
-                          owl:allValuesFrom [ rdf:type owl:Restriction ;
-                                              owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
-                                              owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorVariables>
-                                            ]
-                        ] ;
-        rdfs:comment "Device designed to observe and measure physical, chemical, or acoustic properties of the environment."@en ,
-                     "Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente."@es ;
-        rdfs:label "Environmental sensor"@en ,
-                   "Sensor medioambiental"@es .
+###  http://schema.org/Organization
+<http://schema.org/Organization> rdf:type owl:Class .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest
+:EnvironmentalFeatureOfInterest rdf:type owl:Class ;
+                                rdfs:subClassOf <http://www.w3.org/ns/sosa/FeatureOfInterest> ;
+                                rdfs:label "Característica de interés de la propiedad medioambiental"@es ,
+                                           "Environmental Feature of Interest"@en .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation
+:EnvironmentalObservation rdf:type owl:Class ;
+                          rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+                                            owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                                owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest>
+                                                              ]
+                                          ] ;
+                          rdfs:comment "An observation of an environmental property made by an environmental sensor."@en ,
+                                       "Una observación de una propiedad medioambiental realizada por un sensor medioambiental."@es ;
+                          rdfs:label "Environmental observation"@en ,
+                                     "Observación medioambiental"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty
+:EnvironmentalProperty rdf:type owl:Class ;
+                       rdfs:subClassOf <http://qudt.org/schema/qudt/QuantityKind> ,
+                                       <http://www.w3.org/ns/sosa/ObservableProperty> ;
+                       rdfs:comment "A physical, chemical, or acoustic property of the environment that can be observed by sensors."@en ,
+                                    "Una propiedad física, química o acústica del medio ambiente que puede ser observada por sensores."@es ;
+                       rdfs:label "Environmental property"@en ,
+                                  "Propiedad medioambiental"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor
+:EnvironmentalSensor rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/sosa/Sensor> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://schema.org/manufacturer> ;
+                                       owl:someValuesFrom <http://schema.org/Organization>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/sosa/isHostedBy> ;
+                                       owl:someValuesFrom :SensorPlatform
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasSensorType ;
+                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                           owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes>
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <http://www.w3.org/ns/sosa/observes> ;
+                                       owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <http://www.w3.org/2004/02/skos/core#inScheme> ;
+                                                           owl:hasValue <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables>
+                                                         ]
+                                     ] ;
+                     rdfs:comment "Device designed to observe and measure physical, chemical, or acoustic properties of the environment."@en ,
+                                  "Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente."@es ;
+                     rdfs:label "Environmental sensor"@en ,
+                                "Sensor medioambiental"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform
+:SensorPlatform rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                <http://www.w3.org/ns/sosa/Platform> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                  owl:someValuesFrom <http://www.opengis.net/ont/geosparql#Geometry>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.w3.org/ns/sosa/hosts> ;
+                                  owl:someValuesFrom :EnvironmentalSensor
+                                ] ;
+                rdfs:comment "Physical platform or facility that hosts environmental sensors for monitoring."@en ,
+                             "Plataforma física o instalación que alberga sensores medioambientales para monitorización."@es ;
+                rdfs:label "Plataforma de sensor"@es ,
+                           "Sensor platform"@en .
 
 
 ###  http://www.opengis.net/ont/geosparql#Feature
@@ -97,12 +164,24 @@
 <http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class .
 
 
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorVariables
-<http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorVariables> rdf:type owl:NamedIndividual .
+###  http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest> rdf:type owl:NamedIndividual .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes> rdf:type owl:NamedIndividual .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables
+<http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables> rdf:type owl:NamedIndividual .
 
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
