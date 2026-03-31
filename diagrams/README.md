@@ -1,24 +1,24 @@
-# Ontology Conceptualization Resources
+# Recursos de conceptualización de la ontología
 
-This folder contains all the **resources related to the conceptualization and design phase** of the ontology.
+Esta carpeta contiene todos los **recursos relacionados con la fase de conceptualización y diseño** de la ontología.
 
-#  Purpose
-The goal of this directory is to store **visual and structural materials** that support the understanding and definition of the ontology’s concepts, relationships, and structure **of their formal implementation** (e.g., in OWL or RDF).
+# Propósito
+El objetivo de este directorio es almacenar **materiales visuales y estructurales** que apoyen la comprensión y definición de los conceptos, relaciones y estructura de la ontología **antes de su implementación formal** (por ejemplo, en OWL o RDF).
 
-# Contents
-Include here any files that represent or support the ontology’s conceptual model, such as:
+# Contenido
+Incluye aquí cualquier archivo que represente o apoye el modelo conceptual de la ontología, como:
 
-- **Diagrams** illustrating classes, relationships, or hierarchies  
+- **Diagramas** que ilustran clases, relaciones o jerarquías  
 
-# Accepted Formats
-Please store resources in one of the following formats:
-- `.svg` — Scalable vector graphics  
-- `.png` — Image snapshots of diagrams  
-- `.drawio` — Editable diagrams created with [diagrams.net (draw.io)](https://app.diagrams.net/)  
+# Formatos aceptados
+Almacena los recursos en uno de los siguientes formatos:
+- `.svg` — Gráficos vectoriales escalables  
+- `.png` — Capturas de imagen de diagramas  
+- `.drawio` — Diagramas editables creados con [diagrams.net (draw.io)](https://app.diagrams.net/)  
 
-Other formats (e.g., `.pdf`, `.jpg`, `.pptx`) can be included if relevant for conceptual discussions.
+Otros formatos (por ejemplo, `.pdf`, `.jpg`, `.pptx`) pueden incluirse si son relevantes para discusiones conceptuales.
 
-# Notes
-- Keep versions of diagrams when major conceptual changes occur.  
-- This folder does **not** contain ontology code or OWL/RDF files — those belong in the implementation folder.  
-- Ensure all diagrams are consistent with the latest ontology specifications.
+# Notas
+- Mantén versiones de los diagramas cuando ocurran cambios conceptuales importantes.  
+- Esta carpeta **no** contiene código de ontología ni archivos OWL/RDF — esos pertenecen a la carpeta de implementación.  
+- Asegura que todos los diagramas sean consistentes con las especificaciones más recientes de la ontología.

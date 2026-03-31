@@ -1,1 +1,174 @@
 <h2 id="desc" class="list">medioambiente: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+
+<div style="padding: 25px; background-color: white; width: 100%; box-sizing: border-box; overflow: hidden;">
+    <a href="img/diagram.png" target="_blank" style="display: block;">
+        <img src="img/diagram.png" style="width: 100%; height: auto; display: block;"/>
+    </a>
+</div>
+
+An example of instances from this ontology: 
+
+<pre>
+    <textarea style="resize:none" readonly id="code1" name="code" rows="75" cols="200">
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix schema: <http://schema.org/> .
+
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix ex: <http://example.org/> .
+
+# ---------------------------------------------------------------------------
+# ESTACIÓN DE MEDICIÓN
+# ---------------------------------------------------------------------------
+
+ex:Station_AQ_001 a edintmed:SensorPlatform ;
+    rdfs:label "Estación de calidad del aire - Plaza España"@es ;
+    rdfs:label "Air quality station - Plaza España"@en ;
+    dct:identifier "AQ-001-MAD" ;
+    geo:lat "40.4230"^^xsd:float ;
+    geo:long "-3.7120"^^xsd:float ;
+    geo:alt "640"^^xsd:float ;
+    rdfs:comment "Estación urbana de tráfico para monitorización de calidad del aire"@es ;
+    rdfs:comment "Urban traffic station for air quality monitoring"@en ;
+    
+    # La estación aloja sensores
+    sosa:hosts ex:Sensor_Temp_001 ;
+    sosa:hosts ex:Sensor_NO2_001 ;
+    sosa:hosts ex:Sensor_Press_001 ;
+    gsp:hasGeometry [
+        a gsp:Geometry ;
+        gsp:asWKT "POINT(-3.7120 40.4230)"^^xsd:string .
+    ] .
+
+# ---------------------------------------------------------------------------
+# SENSORES
+# ---------------------------------------------------------------------------
+
+ex:Sensor_Temp_001 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de temperatura del aire - PT100"@es ;
+    rdfs:label "Air temperature sensor - PT100"@en ;
+    dct:identifier "TEMP-001-PT100" ;
+    schema:manufacturer ex:Manufacturer_PT100 ;
+    edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor ;
+    sosa:isHostedBy ex:Station_AQ_001 ;
+    sosa:observes edintkos-vars:AirTemperature ,
+                  edintkos-vars:BatteryLevel .
+
+ex:Sensor_NO2_001 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de dióxido de nitrógeno - Chemiluminiscencia"@es ;
+    rdfs:label "Nitrogen dioxide sensor - Chemiluminescence"@en ;
+    dct:identifier "NO2-001-CHEM" ;
+    schema:manufacturer ex:Manufacturer_CHEM ;
+    edintmed:hasSensorType edintkos-sensortypes:AirQualitySensor ;
+    sosa:isHostedBy ex:Station_AQ_001 ;
+    sosa:observes edintkos-vars:NO2Concentration .
+
+ex:Sensor_Press_001 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de presión atmosférica - Barométrico"@es ;
+    rdfs:label "Atmospheric pressure sensor - Barometric"@en ;
+    dct:identifier "PRESS-001-BARO" ;
+    schema:manufacturer ex:Manufacturer_BARO ;
+    edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor ;
+    sosa:isHostedBy ex:Station_AQ_001 ;
+    sosa:observes edintkos-vars:AtmosphericPressure .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES
+# ---------------------------------------------------------------------------
+
+# Temperatura del aire
+
+ex:Observation_Temp_001_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de temperatura - 18/03/2026 14:00"@es ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:AirTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "18.5"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+# Estado interno del sensor
+
+ex:Observation_BatteryLevel_001 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Nivel de batería del sensor - 18/03/2026 14:00"@es ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:BatteryLevel ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "87"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+# NO2
+
+ex:Observation_NO2_001_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de NO2 - 18/03/2026 14:00"@es ;
+    sosa:madeBySensor ex:Sensor_NO2_001 ;
+    sosa:observedProperty edintkos-vars:NO2Concentration ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "42.3"^^xsd:decimal ;
+        qudt:unit unit:MicroGM-PER-M3
+    ] .
+
+# Presión atmosférica
+
+ex:Observation_Press_001_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de presión atmosférica - 18/03/2026 14:00"@es ;
+    sosa:madeBySensor ex:Sensor_Press_001 ;
+    sosa:observedProperty edintkos-vars:AtmosphericPressure ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T14:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "1018.5"^^xsd:decimal ;
+        qudt:unit unit:HectoPA
+    ] .
+
+# ---------------------------------------------------------------------------
+# MANUFACTURERS
+# ---------------------------------------------------------------------------
+
+ex:Manufacturer_PT100 a schema:Organization ;
+    rdfs:label "PT100 Sensors Inc."@en ;
+    rdfs:label "PT100 Sensores S.A."@es .
+
+ex:Manufacturer_CHEM a schema:Organization ;
+    rdfs:label "Chemiluminescence Technologies"@en ;
+    rdfs:label "Tecnologías Chemiluminiscencia"@es .
+
+ex:Manufacturer_BARO a schema:Organization ;
+    rdfs:label "Barometric Instruments Ltd."@en ;
+    rdfs:label "Instrumentos Barométricos S.L."@es .
+
+
+    </textarea>
+</pre>
+
+
+<script>
+    var editor1 = CodeMirror.fromTextArea(document.getElementById("code1"), {
+        mode: "text/turtle",
+        matchBrackets: true
+    });
+
+</script>
