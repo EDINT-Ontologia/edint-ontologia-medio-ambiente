@@ -1,0 +1,11 @@
+
+# MED02: ¿Qué sensores están alojados en una estación?
+
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+
+SELECT ?sensor
+WHERE {
+  ?sensor a edintmed:EnvironmentalSensor ;
+          sosa:isHostedBy <URI-ESTACION> .
+}

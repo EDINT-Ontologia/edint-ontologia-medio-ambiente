@@ -1,0 +1,29 @@
+
+# MED05: ¿Qué observaciones ha generado cada sensor?
+
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+
+SELECT ?sensor ?observation
+WHERE {
+  ?observation a edintmed:EnvironmentalObservation ;
+               sosa:madeBySensor ?sensor .
+}
+
+
+# Variante: Para un sensor concreto
+
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?observation ?observedProperty ?result ?resultTime
+WHERE {
+  ?observation a edintmed:EnvironmentalObservation ;
+               sosa:madeBySensor <URI-del-sensor> ;
+               sosa:observedProperty ?observedProperty .
+
+  OPTIONAL { ?observation sosa:hasSimpleResult ?result }
+  OPTIONAL { ?observation sosa:resultTime ?resultTime }
+}
+ORDER BY ?resultTime
