@@ -1,0 +1,10 @@
+Identifier,Responsible partner,"Version (optional)
+","Competency Question /
+ Natural language sentence (fact)",Answer (For Competency Questions),"Status (Proposed, Accepted, Rejected, Deprecated)",Comments (optional),Extracted from (provenance),"Priority 
+(High, Medium, Low) (optional)",Relation with other requirements (optional),Associated ontology elements,Relation to ontology elements in other domains
+MED01,UPM,v0.1.0,¿Qué estaciones hay?,,Proposed,,,,,,
+MED02,UPM,v0.1.0,¿Qué sensores están alojados en una estación?,,Proposed,,,,,,
+MED03,UPM,v0.1.0,¿De qué tipo es cada sensor?,,Proposed,,,,,,
+MED04,UPM,v0.1.0, ¿Quién ha fabricado cada sensor?,,Proposed,,,,,,
+MED05,UPM,v0.1.0,¿Qué observaciones ha generado cada sensor?,,Proposed,,,,,,
+MED06,UPM,v0.1.0,¿Qué observaciones se han hecho para una propiedad concreta en un lugar concreto?,,Proposed,,,,,,

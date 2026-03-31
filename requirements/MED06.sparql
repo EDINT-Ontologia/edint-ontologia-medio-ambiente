@@ -1,0 +1,27 @@
+
+# MED06: ¿Qué observaciones se han hecho para una propiedad concreta en un lugar concreto?
+
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+
+SELECT ?observation ?sensor ?platform ?time ?result
+WHERE {
+  # Observaciones de la propiedad concreta
+  ?observation a edintmed:EnvironmentalObservation ;
+               sosa:observedProperty <URI-de-la-propiedad> ;
+               sosa:madeBySensor ?sensor .
+
+  # Sensor es una Feature, que tiene una geometría
+  ?sensor hasGeometry ?sensorgeo .
+  
+  # Geometría del lugar
+  <URI-del-lugar> geo:hasGeometry ?areaGeom.
+
+ # Relación espacial
+  FILTER( geo:sfWithin(?sensorgeo, ?areaGeom) )
+
+  OPTIONAL { ?observation sosa:resultTime ?time }
+  OPTIONAL { ?observation sosa:hasSimpleResult ?result }
+}
+ORDER BY ?time

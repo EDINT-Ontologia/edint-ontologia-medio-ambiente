@@ -1,0 +1,30 @@
+
+# MED03: ¿De qué tipo es cada sensor?
+
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintST: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?sensor ?type ?typeLabel
+WHERE {
+  ?sensor a edintmed:EnvironmentalSensor ;
+          edintmed:hasSensorType ?type .
+  OPTIONAL { ?type rdfs:label ?typeLabel }
+}
+
+# Variante: ¿Cuántos sensores de cada tipo?
+
+
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintST: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?sensorType ?sensorTypeLabel (COUNT(?sensor) AS ?numSensors)
+WHERE {
+  ?sensor a edintmed:EnvironmentalSensor ;
+          edintmed:hasSensorType ?sensorType .
+
+  OPTIONAL { ?sensorType rdfs:label ?sensorTypeLabel }
+}
+GROUP BY ?sensorType ?sensorTypeLabel
+ORDER BY ?sensorTypeLabel

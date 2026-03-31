@@ -1,0 +1,13 @@
+
+# MED01: ¿Qué estaciones hay?
+
+PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?platform ?label
+WHERE {
+  ?platform a edintmed:SensorPlatform ;
+            rdfs:label ?label .
+}
+
+
