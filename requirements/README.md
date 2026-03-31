@@ -1,40 +1,40 @@
-# Ontology Requirements
+# Requisitos de la ontología
 
-This folder contains all the **requirements and supporting materials** used during the development of the ontology.
+Esta carpeta contiene todos los **requisitos y materiales de apoyo** utilizados durante el desarrollo de la ontología.
 
-# Purpose
-The goal of this directory is to store and organize the **foundational information** that guides the ontology’s design and implementation.  
-These requirements define **what the ontology should represent**, **why it is being developed**, and **how it should support the intended use cases**.
+# Propósito
+El objetivo de este directorio es almacenar y organizar la **información fundamental** que guía el diseño y la implementación de la ontología.  
+Estos requisitos definen **qué debe representar la ontología**, **por qué se está desarrollando** y **cómo debe soportar los casos de uso previstos**.
 
-# Contents
-Include here any documents or resources that describe or justify the ontology requirements, such as:
+# Contenido
+Incluye aquí cualquier documento o recurso que describa o justifique los requisitos de la ontología, como:
 
-- **Competency questions** — Questions the ontology must be able to answer.  
-- **Use cases and scenarios** — Descriptions of real-world contexts where the ontology will be applied.  
-- **Domain requirements** — Lists of key concepts, relationships, or constraints gathered from experts.  
-- **Stakeholder requirements** — Functional and non-functional needs from users or organizations.  
+- **Preguntas de competencia** — Preguntas que la ontología debe ser capaz de responder.  
+- **Casos de uso y escenarios** — Descripciones de contextos del mundo real donde se aplicará la ontología.  
+- **Requisitos de dominio** — Listas de conceptos clave, relaciones o restricciones recopiladas de expertos.  
+- **Requisitos de los interesados** — Necesidades funcionales y no funcionales de usuarios u organizaciones.  
 
-# Accepted Formats
-You can use the following formats:
-- `.md` — Markdown documents  
-- `.docx` / `.pdf` — Formal requirement documents  
-- `.csv` / `.xlsx` — Requirement lists or traceability matrices  
-- `.txt` — Notes or preliminary requirement drafts  
+# Formatos aceptados
+Puedes utilizar los siguientes formatos:
+- `.md` — Documentos Markdown  
+- `.docx` / `.pdf` — Documentos formales de requisitos  
+- `.csv` / `.xlsx` — Listas de requisitos o matrices de trazabilidad  
+- `.txt` — Notas o borradores preliminares de requisitos  
 
-# Best Practices
-- Keep requirements **traceable** — link each one to ontology elements (classes, properties, etc. See template).  
-- Maintain version history as requirements evolve.  
-- Ensure consistency between requirements, conceptualization diagrams, and implementation.  
-- Review and validate requirements with domain experts before ontology development begins. The [LOT methodology](https://doi.org/10.1016/j.engappai.2022.104755) proposes some guidelines:
-  - A set of requirements is correct if each requirement refers to some features of the ontology to be developed.
-   A set of requirements is complete if users and domain experts review the requirements and confirm that they are not aware of additional requirements.
-  - A set of requirements is internally consistent if no conflicts exist between them.
-  -A set of requirements is verifiable if there is a finite process with a reasonable cost that tests whether the final ontology satisfies each requirement.
-  - A set of requirements is comprehensible if each and every requirements is understandable to users and domain experts.
-  - A set of requirements is unambiguous if each and every requirements has only one possible interpretation; that is, if it does not admit any doubt or misunderstanding.
-  - A set of requirements is concise if each and every requirement is relevant, and no duplicated or irrelevant requirements exist.
+# Mejores prácticas
+- Mantén los requisitos **trazables** — vincula cada uno con elementos de la ontología (clases, propiedades, etc. Véase la plantilla).  
+- Mantén el historial de versiones a medida que evolucionan los requisitos.  
+- Asegura la consistencia entre los requisitos, los diagramas de conceptualización y la implementación.  
+- Revisa y valida los requisitos con expertos de dominio antes de que comience el desarrollo de la ontología. La [metodología LOT](https://doi.org/10.1016/j.engappai.2022.104755) propone algunas pautas:
+  - Un conjunto de requisitos es correcto si cada requisito se refiere a algunas características de la ontología a desarrollar.
+  - Un conjunto de requisitos es completo si los usuarios y expertos de dominio revisan los requisitos y confirman que no son conscientes de requisitos adicionales.
+  - Un conjunto de requisitos es internamente consistente si no existen conflictos entre ellos.
+  - Un conjunto de requisitos es verificable si existe un proceso finito con un costo razonable que comprueba si la ontología final satisface cada requisito.
+  - Un conjunto de requisitos es comprensible si cada uno de los requisitos es comprensible para usuarios y expertos de dominio.
+  - Un conjunto de requisitos es no ambiguo si cada uno de los requisitos tiene solo una interpretación posible; es decir, si no admite ninguna duda o malentendido.
+  - Un conjunto de requisitos es conciso si cada uno de los requisitos es relevante, y no existen requisitos duplicados o irrelevantes.
 
 
-# Notes
-- This folder is intended for **requirement documentation only** — not for ontology diagrams or implementation files.  
-- Use subfolders if needed (e.g., `/competency-questions/`, `/use-cases/`, `/traceability/`).
+# Notas
+- Esta carpeta está destinada solo para **documentación de requisitos** — no para diagramas de ontología o archivos de implementación.  
+- Utiliza subcarpetas si es necesario (por ejemplo, `/preguntas-competencia/`, `/casos-uso/`, `/trazabilidad/`).

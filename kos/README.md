@@ -1,38 +1,38 @@
-# KOS (Kind of Service) Implementation
+# Implementación KOS (Vocabulario Controlado)
 
-This folder contains the **implementation files of controlled vocabulary or KOS**, representing the formal and machine-readable definition of needed vocabularies.
+Esta carpeta contiene los **archivos de implementación de vocabulario controlado o KOS**, que representan la definición formal y legible por máquina de los vocabularios necesarios.
 
-## Purpose
+## Propósito
 
-The goal of this directory is to store the **vocabulary or KOS files**, which describe the concepts and relations among them.
+El objetivo de este directorio es almacenar los **archivos de vocabulario o KOS**, que describen los conceptos y las relaciones entre ellos.
 
-## Contents
+## Contenido
 
-This implementation includes two SKOS vocabularies for urban environmental monitoring:
+Esta implementación incluye dos vocabularios SKOS para monitorización ambiental urbana:
 
-- [`sensor-variables.ttl`](sensor-variables.ttl) - The sensor variables thesaurus
-- [`feature-of-interest.ttl`](feature-of-interest.ttl) - The features of interest vocabulary
+- [`sensor-variables.ttl`](sensor-variables.ttl) - El tesauro de variables de sensor
+- [`feature-of-interest.ttl`](feature-of-interest.ttl) - El vocabulario de características de interés
 
-## SKOS Vocabularies Design
+## Diseño de Vocabularios SKOS
 
-This KOS implementation defines two interconnected SKOS concept schemes that work together to describe sensor observations in urban environments.
+Esta implementación KOS define dos esquemas de conceptos SKOS interconectados que trabajan juntos para describir observaciones de sensores en entornos urbanos.
 
 ### 1. SensorVariables (kos/sensor-variables.ttl)
 
-A concept scheme that groups properties and magnitudes measured by sensors in urban environments. It follows a hierarchical structure with top-level categories and nested subcategories.
+Un esquema de conceptos que agrupa propiedades y magnitudes medidas por sensores en entornos urbanos. Sigue una estructura jerárquica con categorías de nivel superior y subcategorías anidadas.
 
-**Top-level categories:**
-- MeteorologicalVariables
-- AirQualityVariables
-- AcousticVariables
-- WaterQualityVariables
-- SoilVariables
-- TrafficVariables
-- EnergyVariables
-- WasteVariables
-- SensorStatusVariables
+**Categorías de nivel superior:**
+- MeteorologicalVariables (Variables Meteorológicas)
+- AirQualityVariables (Variables de Calidad del Aire)
+- AcousticVariables (Variables Acústicas)
+- WaterQualityVariables (Variables de Calidad del Agua)
+- SoilVariables (Variables del Suelo)
+- TrafficVariables (Variables de Tráfico)
+- EnergyVariables (Variables Energéticas)
+- WasteVariables (Variables de Residuos)
+- SensorStatusVariables (Variables de Estado del Sensor)
 
-**Hierarchical tree structure:**
+**Estructura jerárquica:**
 ```
 SensorVariables
 ├── MeteorologicalVariables
@@ -189,9 +189,9 @@ SensorVariables
 
 ### 2. FeaturesOfInterest (kos/feature-of-interest.ttl)
 
-A concept scheme that groups features of interest observable by sensors according to SOSA ontology. Each feature has direct links to observable properties via `sosa:hasProperty` relationships.
+Un esquema de conceptos que agrupa características de interés observables por sensores según la ontología SOSA. Cada característica tiene enlaces directos a propiedades observables a través de relaciones `sosa:hasProperty`.
 
-**Hierarchical tree structure with property links:**
+**Estructura jerárquica con enlaces a propiedades:**
 ```
 FeaturesOfInterest
 ├── Air
@@ -228,39 +228,39 @@ FeaturesOfInterest
     └── hasProperty → BatteryLevel, BatteryVoltage, InternalSensorTemperature
 ```
 
-## Design Principles
+## Principios de Diseño
 
-### Integration with SOSA Ontology
-- Concepts in **SensorVariables** are typed as `sosa:ObservableProperty` and `qudt:QuantityKind`
-- Concepts in **FeaturesOfInterest** are typed as `sosa:FeatureOfInterest`
-- Features link to properties using `sosa:hasProperty` relationships
+### Integración con la ontología SOSA
+- Los conceptos en **SensorVariables** están tipados como `sosa:ObservableProperty` y `qudt:QuantityKind`
+- Los conceptos en **FeaturesOfInterest** están tipados como `sosa:FeatureOfInterest`
+- Las características enlazan a propiedades usando relaciones `sosa:hasProperty`
 
-### Integration with QUDT
-- Standardized units defined via `qudt:applicableUnit` for each observable property
-- Uses QUDT unit vocabulary (e.g., `unit:DEG_C`, `unit:PERCENT`, `unit:DeciB`)
+### Integración con QUDT
+- Unidades estandarizadas definidas vía `qudt:applicableUnit` para cada propiedad observable
+- Utiliza vocabulario de unidades QUDT (por ejemplo, `unit:DEG_C`, `unit:PERCENT`, `unit:DeciB`)
 
-### Bilingual Labels
-- All concepts include English (`@en`) and Spanish (`@es`) labels
-- PrefLabels, AltLabels, Definitions, and Comments are provided in both languages
+### Etiquetas Bilingües
+- Todos los conceptos incluyen etiquetas en inglés (`@en`) y español (`@es`)
+- PrefLabels, AltLabels, Definitions y Comments se proporcionan en ambos idiomas
 
-### Hierarchical Organization
-- Uses `skos:narrower` and `skos:broader` for hierarchical relationships
-- Top concepts defined via `skos:hasTopConcept` in the concept scheme
+### Organización Jerárquica
+- Utiliza `skos:narrower` y `skos:broader` para relaciones jerárquicas
+- Conceptos top definidos vía `skos:hasTopConcept` en el esquema de conceptos
 
-## Relationship Between Vocabularies
+## Relación entre Vocabularios
 
-The two vocabularies work together to enable complete sensor observation modeling:
+Los dos vocabularios trabajan juntos para permitir el modelado completo de observaciones de sensores:
 
-1. **FeaturesOfInterest** reference **ObservableProperties** from SensorVariables via `sosa:hasProperty` relationships
-2. This separation allows:
-   - Reusable property definitions in SensorVariables
-   - Contextual grouping of properties by what is being observed (FeatureOfInterest)
-   - Flexible observation modeling following SOSA patterns
+1. **FeaturesOfInterest** referencia **ObservableProperties** de SensorVariables a través de relaciones `sosa:hasProperty`
+2. Esta separación permite:
+   - Definiciones de propiedades reutilizables en SensorVariables
+   - Agrupamiento contextual de propiedades por lo que se está observando (FeatureOfInterest)
+   - Modelado flexible de observaciones siguiendo patrones SOSA
 
-### Example Observation Pattern
+### Patrón de Observación de Ejemplo
 
 ```turtle
-# A sensor observes a property of a feature
+# Un sensor observa una propiedad de una característica
 :observation1 a sosa:Observation ;
     sosa:observedBy :sensor1 ;
     sosa:observes edintkos-vars:AirTemperature ;
@@ -269,25 +269,25 @@ The two vocabularies work together to enable complete sensor observation modelin
     qudt:unit unit:DEG_C .
 ```
 
-In this pattern:
-- `edintkos-foi:Air` (FeatureOfInterest) has `edintkos-vars:AirTemperature` as a property
-- The observation links both the feature and the property being measured
+En este patrón:
+- `edintkos-foi:Air` (FeatureOfInterest) tiene `edintkos-vars:AirTemperature` como propiedad
+- La observación enlaza tanto la característica como la propiedad siendo medida
 
-## File Structure
+## Estructura de Archivos
 
-| File | Description |
+| Archivo | Descripción |
 |------|-------------|
-| [`kos/sensor-variables.ttl`](sensor-variables.ttl) | The sensor variables thesaurus - defines all observable properties with hierarchical categorization |
-| [`kos/feature-of-interest.ttl`](feature-of-interest.ttl) | The features of interest vocabulary - defines observable features with links to properties |
+| [`kos/sensor-variables.ttl`](sensor-variables.ttl) | El tesauro de variables de sensor - define todas las propiedades observables con categorización jerárquica |
+| [`kos/feature-of-interest.ttl`](feature-of-interest.ttl) | El vocabulario de características de interés - define características observables con enlaces a propiedades |
 
-## Best Practices
+## Mejores Prácticas
 
-- Keep vocabulary versions clearly labeled and documented
-- Validate syntax and semantics before committing changes
-- Maintain consistency with conceptual diagrams and documentation
-- Use standardized namespace and prefix strategy
+- Mantén las versiones del vocabulario claramente etiquetadas y documentadas
+- Valida la sintaxis y semántica antes de confirmar cambios
+- Mantén la consistencia con los diagramas conceptuales y la documentación
+- Utiliza un espacio de nombres estandarizado y una estrategia de prefijos
 
-## Notes
+## Notas
 
-- This folder contains only **implementation files** — not diagrams, notes, or documentation
-- Consider adding a changelog or version history if multiple vocabulary versions are maintained
+- Esta carpeta contiene solo **archivos de implementación** — no diagramas, notas o documentación
+- Considera agregar un registro de cambios o historial de versiones si se mantienen múltiples versiones del vocabulario
