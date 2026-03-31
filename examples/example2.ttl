@@ -4,21 +4,24 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix schema: <http://schema.org/> .
 
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
 @prefix ex: <http://example.org/> .
 
 # ---------------------------------------------------------------------------
 # ESTACION ACUSTICA
 # ---------------------------------------------------------------------------
 
-ex:Station_Acoustic_001 a edintmed:MeasuringStation ;
+ex:Station_Acoustic_001 a edintmed:SensorPlatform ;
     rdfs:label "Estación de monitorización acústica - Plaza Mayor"@es ;
     rdfs:label "Acoustic monitoring station - Plaza Mayor"@en ;
     dct:identifier "ACOUSTIC-001-MAD" ;
@@ -27,6 +30,10 @@ ex:Station_Acoustic_001 a edintmed:MeasuringStation ;
     geo:alt "635"^^xsd:float ;
     rdfs:comment "Estación urbana fija para monitorización de niveles de ruido ambiental"@es ;
     rdfs:comment "Fixed urban station for environmental noise level monitoring"@en ;
+    gsp:hasGeometry [
+        a gsp:Geometry ;
+        gsp:asWKT "POINT(-3.7074 40.4153)"^^xsd:string .
+    ] ;
 
     # estaciones aloja sensores
     sosa:hosts ex:Sensor_Noise_001 ;
@@ -36,19 +43,23 @@ ex:Station_Acoustic_001 a edintmed:MeasuringStation ;
 # SENSORS
 # ---------------------------------------------------------------------------
 
-ex:Sensor_Noise_001 a edintmed:Sensor ;
+ex:Sensor_Noise_001 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de ruido ambiental - Sonómetro clase 1"@es ;
     rdfs:label "Environmental noise sensor - Class 1 sound level meter"@en ;
     dct:identifier "NOISE-001-CLS1" ;
+    schema:manufacturer ex:Manufacturer_Sonometer ;
+    edintmed:hasSensorType edintkos-sensortypes:NoiseSensor ;
     sosa:isHostedBy ex:Station_Acoustic_001 ;
     sosa:observes edintkos-vars:EquivalentSoundPressureLevel ,
                   edintkos-vars:DayTimeNoiseLevel ,
                   edintkos-vars:NightTimeNoiseLevel .
 
-ex:Sensor_Audio_002 a edintmed:Sensor ;
+ex:Sensor_Audio_002 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de análisis acústico - Integrador"@es ;
     rdfs:label "Acoustic analysis sensor - Integrator"@en ;
     dct:identifier "AUDIO-002-INT" ;
+    schema:manufacturer ex:Manufacturer_Integrador ;
+    edintmed:hasSensorType edintkos-sensortypes:NoiseSensor ;
     sosa:isHostedBy ex:Station_Acoustic_001 ;
     sosa:observes edintkos-vars:DayEveningNightNoiseLevel .
 
@@ -57,7 +68,7 @@ ex:Sensor_Audio_002 a edintmed:Sensor ;
 # ---------------------------------------------------------------------------
 
 # Medición ruido dia mañana
-ex:Observation_Ld_001_Morning a sosa:Observation ;
+ex:Observation_Ld_001_Morning a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de ruido diurno - 18/03/2026 08:00"@es ;
     rdfs:label "Day-time noise measurement - 18/03/2026 08:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -85,7 +96,7 @@ ex:Observation_Ld_001_Morning a sosa:Observation ;
     ] .
 
 # Medición ruido dia tarde
-ex:Observation_Ld_001_Evening a sosa:Observation ;
+ex:Observation_Ld_001_Evening a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de ruido diurno - 18/03/2026 18:00"@es ;
     rdfs:label "Day-time noise measurement - 18/03/2026 18:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -113,7 +124,7 @@ ex:Observation_Ld_001_Evening a sosa:Observation ;
     ] .
 
 # Medición ruido noche
-ex:Observation_Ln_001 a sosa:Observation ;
+ex:Observation_Ln_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de ruido nocturno - 18/03/2026 23:00"@es ;
     rdfs:label "Night-time noise measurement - 18/03/2026 23:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -141,7 +152,7 @@ ex:Observation_Ln_001 a sosa:Observation ;
     ] .
 
 # Medición LAeq mañana
-ex:Observation_LAeq_001_Morning a sosa:Observation ;
+ex:Observation_LAeq_001_Morning a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de nivel sonoro equivalente - 18/03/2026 08:00"@es ;
     rdfs:label "Equivalent sound level measurement - 18/03/2026 08:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -169,7 +180,7 @@ ex:Observation_LAeq_001_Morning a sosa:Observation ;
     ] .
 
 # Medición LAeq tarde
-ex:Observation_LAeq_001_Evening a sosa:Observation ;
+ex:Observation_LAeq_001_Evening a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de nivel sonoro equivalente - 18/03/2026 18:00"@es ;
     rdfs:label "Equivalent sound level measurement - 18/03/2026 18:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -197,7 +208,7 @@ ex:Observation_LAeq_001_Evening a sosa:Observation ;
     ] .
 
 # Medición Lden
-ex:Observation_Lden_001 a sosa:Observation ;
+ex:Observation_Lden_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de nivel de ruido Lden - 18/03/2026 23:59"@es ;
     rdfs:label "Lden noise level measurement - 18/03/2026 23:59"@en ;
     sosa:madeBySensor ex:Sensor_Audio_002 ;
@@ -229,7 +240,7 @@ ex:Observation_Lden_001 a sosa:Observation ;
 # ---------------------------------------------------------------------------
 
 # Medición ruido dia dia2 mañana
-ex:Observation_Ld_002_Morning a sosa:Observation ;
+ex:Observation_Ld_002_Morning a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de ruido diurno - 19/03/2026 08:00"@es ;
     rdfs:label "Day-time noise measurement - 19/03/2026 08:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -257,7 +268,7 @@ ex:Observation_Ld_002_Morning a sosa:Observation ;
     ] .
 
 # Medición ruido dia dia2 tarde
-ex:Observation_Ld_002_Afternoon a sosa:Observation ;
+ex:Observation_Ld_002_Afternoon a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de ruido diurno - 19/03/2026 14:00"@es ;
     rdfs:label "Day-time noise measurement - 19/03/2026 14:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -285,7 +296,7 @@ ex:Observation_Ld_002_Afternoon a sosa:Observation ;
     ] .
 
 # Medición ruido noche dia2
-ex:Observation_Ln_002 a sosa:Observation ;
+ex:Observation_Ln_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de ruido nocturno - 19/03/2026 23:00"@es ;
     rdfs:label "Night-time noise measurement - 19/03/2026 23:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -313,7 +324,7 @@ ex:Observation_Ln_002 a sosa:Observation ;
     ] .
 
 # Medición LAeq dia2
-ex:Observation_LAeq_002 a sosa:Observation ;
+ex:Observation_LAeq_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de nivel sonoro equivalente - 19/03/2026 12:00"@es ;
     rdfs:label "Equivalent sound level measurement - 19/03/2026 12:00"@en ;
     sosa:madeBySensor ex:Sensor_Noise_001 ;
@@ -339,3 +350,16 @@ ex:Observation_LAeq_002 a sosa:Observation ;
         qudt:numericValue "64.2"^^xsd:decimal ;
         qudt:unit unit:DeciB
     ] .
+
+# ---------------------------------------------------------------------------
+# MANUFACTURERS
+# ---------------------------------------------------------------------------
+
+ex:Manufacturer_Sonometer a schema:Organization ;
+    rdfs:label "Sonometer Technologies"@en ;
+    rdfs:label "Tecnologías Sonómetro"@es .
+
+ex:Manufacturer_Integrador a schema:Organization ;
+    rdfs:label "Acoustic Integrators Ltd."@en ;
+    rdfs:label "Integradores Acústicos S.L."@es .
+

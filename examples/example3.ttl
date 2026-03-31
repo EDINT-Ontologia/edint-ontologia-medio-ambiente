@@ -4,20 +4,23 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix schema: <http://schema.org/> .
 
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
 @prefix ex: <http://example.org/> .
 
 # ---------------------------------------------------------------------------
 # ESTACION AGUA POTABLE
 # ---------------------------------------------------------------------------
 
-ex:Station_Water_001 a edintmed:MeasuringStation ;
+ex:Station_Water_001 a edintmed:SensorPlatform ;
     rdfs:label "Estación de calidad del agua potable - Planta de tratamiento Norte"@es ;
     rdfs:label "Drinking water quality station - North treatment plant"@en ;
     dct:identifier "WATER-001-MAD" ;
@@ -26,6 +29,10 @@ ex:Station_Water_001 a edintmed:MeasuringStation ;
     geo:alt "655"^^xsd:float ;
     rdfs:comment "Estación de monitorización de agua potable para consumo humano"@es ;
     rdfs:comment "Drinking water monitoring station for human consumption"@en ;
+    gsp:hasGeometry [
+        a gsp:Geometry ;
+        gsp:asWKT "POINT(-3.6850 40.4650)"^^xsd:string .
+    ] ;
 
     # estaciones aloja sensores
     sosa:hosts ex:Sensor_Temp_001 ;
@@ -38,38 +45,48 @@ ex:Station_Water_001 a edintmed:MeasuringStation ;
 # SENSORS
 # ---------------------------------------------------------------------------
 
-ex:Sensor_Temp_001 a edintmed:Sensor ;
+ex:Sensor_Temp_001 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de temperatura del agua - Termistor PT1000"@es ;
     rdfs:label "Water temperature sensor - PT1000 thermistor"@en ;
     dct:identifier "WTEMP-001-PT1000" ;
+    schema:manufacturer ex:Manufacturer_PT1000 ;
+    edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor ;
     sosa:isHostedBy ex:Station_Water_001 ;
     sosa:observes edintkos-vars:WaterTemperature .
 
-ex:Sensor_PH_001 a edintmed:Sensor ;
+ex:Sensor_PH_001 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de pH del agua - Electrodo combinado"@es ;
     rdfs:label "Water pH sensor - Combined electrode"@en ;
     dct:identifier "WPH-001-COMB" ;
+    schema:manufacturer ex:Manufacturer_Electrodo ;
+    edintmed:hasSensorType edintkos-sensortypes:AirQualitySensor ;
     sosa:isHostedBy ex:Station_Water_001 ;
     sosa:observes edintkos-vars:WaterPH .
 
-ex:Sensor_DO_001 a edintmed:Sensor ;
+ex:Sensor_DO_001 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de oxígeno disuelto - Óptica fluorescencia"@es ;
     rdfs:label "Dissolved oxygen sensor - Optical fluorescence"@en ;
     dct:identifier "WDO-001-OPT" ;
+    schema:manufacturer ex:Manufacturer_Optica ;
+    edintmed:hasSensorType edintkos-sensortypes:AirQualitySensor ;
     sosa:isHostedBy ex:Station_Water_001 ;
     sosa:observes edintkos-vars:DissolvedOxygen .
 
-ex:Sensor_Turbidity_001 a edintmed:Sensor ;
+ex:Sensor_Turbidity_001 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de turbidez del agua - Nefelómetro"@es ;
     rdfs:label "Water turbidity sensor - Nephelometer"@en ;
     dct:identifier "WTURB-001-NEPH" ;
+    schema:manufacturer ex:Manufacturer_Nefelometro ;
+    edintmed:hasSensorType edintkos-sensortypes:AirQualitySensor ;
     sosa:isHostedBy ex:Station_Water_001 ;
     sosa:observes edintkos-vars:WaterTurbidity .
 
-ex:Sensor_Chl_001 a edintmed:Sensor ;
+ex:Sensor_Chl_001 a edintmed:EnvironmentalSensor ;
     rdfs:label "Sensor de cloro libre residual - Amperométrico"@es ;
     rdfs:label "Residual free chlorine sensor - Amperometric"@en ;
     dct:identifier "WCL-001-AMP" ;
+    schema:manufacturer ex:Manufacturer_Amperometrico ;
+    edintmed:hasSensorType edintkos-sensortypes:AirQualitySensor ;
     sosa:isHostedBy ex:Station_Water_001 ;
     sosa:observes edintkos-vars:ResidualFreeChlorine .
 
@@ -78,7 +95,7 @@ ex:Sensor_Chl_001 a edintmed:Sensor ;
 # ---------------------------------------------------------------------------
 
 # Medición temperatura agua
-ex:Observation_WTemp_001 a sosa:Observation ;
+ex:Observation_WTemp_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de temperatura del agua - 18/03/2026 10:00"@es ;
     rdfs:label "Water temperature measurement - 18/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_Temp_001 ;
@@ -92,7 +109,7 @@ ex:Observation_WTemp_001 a sosa:Observation ;
     ] .
 
 # Medición pH
-ex:Observation_WPH_001 a sosa:Observation ;
+ex:Observation_WPH_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de pH del agua - 18/03/2026 10:00"@es ;
     rdfs:label "Water pH measurement - 18/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_PH_001 ;
@@ -106,7 +123,7 @@ ex:Observation_WPH_001 a sosa:Observation ;
     ] .
 
 # Medición oxígeno disuelto
-ex:Observation_DO_001 a sosa:Observation ;
+ex:Observation_DO_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de oxígeno disuelto - 18/03/2026 10:00"@es ;
     rdfs:label "Dissolved oxygen measurement - 18/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_DO_001 ;
@@ -120,7 +137,7 @@ ex:Observation_DO_001 a sosa:Observation ;
     ] .
 
 # Medición turbidez
-ex:Observation_Turbidity_001 a sosa:Observation ;
+ex:Observation_Turbidity_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de turbidez del agua - 18/03/2026 10:00"@es ;
     rdfs:label "Water turbidity measurement - 18/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_Turbidity_001 ;
@@ -134,7 +151,7 @@ ex:Observation_Turbidity_001 a sosa:Observation ;
     ] .
 
 # Medición cloro libre
-ex:Observation_Chl_001 a sosa:Observation ;
+ex:Observation_Chl_001 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de cloro libre residual - 18/03/2026 10:00"@es ;
     rdfs:label "Residual free chlorine measurement - 18/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_Chl_001 ;
@@ -152,7 +169,7 @@ ex:Observation_Chl_001 a sosa:Observation ;
 # ---------------------------------------------------------------------------
 
 # Medición temperatura agua dia2
-ex:Observation_WTemp_002 a sosa:Observation ;
+ex:Observation_WTemp_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de temperatura del agua - 19/03/2026 10:00"@es ;
     rdfs:label "Water temperature measurement - 19/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_Temp_001 ;
@@ -166,7 +183,7 @@ ex:Observation_WTemp_002 a sosa:Observation ;
     ] .
 
 # Medición pH dia2
-ex:Observation_WPH_002 a sosa:Observation ;
+ex:Observation_WPH_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de pH del agua - 19/03/2026 10:00"@es ;
     rdfs:label "Water pH measurement - 19/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_PH_001 ;
@@ -180,7 +197,7 @@ ex:Observation_WPH_002 a sosa:Observation ;
     ] .
 
 # Medición oxígeno disuelto dia2
-ex:Observation_DO_002 a sosa:Observation ;
+ex:Observation_DO_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de oxígeno disuelto - 19/03/2026 10:00"@es ;
     rdfs:label "Dissolved oxygen measurement - 19/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_DO_001 ;
@@ -194,7 +211,7 @@ ex:Observation_DO_002 a sosa:Observation ;
     ] .
 
 # Medición turbidez dia2
-ex:Observation_Turbidity_002 a sosa:Observation ;
+ex:Observation_Turbidity_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de turbidez del agua - 19/03/2026 10:00"@es ;
     rdfs:label "Water turbidity measurement - 19/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_Turbidity_001 ;
@@ -208,7 +225,7 @@ ex:Observation_Turbidity_002 a sosa:Observation ;
     ] .
 
 # Medición cloro libre dia2
-ex:Observation_Chl_002 a sosa:Observation ;
+ex:Observation_Chl_002 a edintmed:EnvironmentalObservation ;
     rdfs:label "Medición de cloro libre residual - 19/03/2026 10:00"@es ;
     rdfs:label "Residual free chlorine measurement - 19/03/2026 10:00"@en ;
     sosa:madeBySensor ex:Sensor_Chl_001 ;
@@ -220,3 +237,28 @@ ex:Observation_Chl_002 a sosa:Observation ;
         qudt:numericValue "0.52"^^xsd:decimal ;
         qudt:unit unit:MilliGM-PER-L
     ] .
+
+# ---------------------------------------------------------------------------
+# MANUFACTURERS
+# ---------------------------------------------------------------------------
+
+ex:Manufacturer_PT1000 a schema:Organization ;
+    rdfs:label "PT1000 Sensors Corp."@en ;
+    rdfs:label "Sensores PT1000 S.A."@es .
+
+ex:Manufacturer_Electrodo a schema:Organization ;
+    rdfs:label "Electrode Systems Ltd."@en ;
+    rdfs:label "Sistemas de Electrodo S.L."@es .
+
+ex:Manufacturer_Optica a schema:Organization ;
+    rdfs:label "Optical Fluorescence Inc."@en ;
+    rdfs:label "Fluorescencia Óptica S.A."@es .
+
+ex:Manufacturer_Nefelometro a schema:Organization ;
+    rdfs:label "Nephelometer Technologies"@en ;
+    rdfs:label "Tecnologías Nefelómetro"@es .
+
+ex:Manufacturer_Amperometrico a schema:Organization ;
+    rdfs:label "Amperometric Instruments"@en ;
+    rdfs:label "Instrumentos Amperométricos S.L."@es .
+
