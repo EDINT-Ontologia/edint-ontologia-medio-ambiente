@@ -1,0 +1,209 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---------------------------------------------------------------------------
+# ESQUEMA PRINCIPAL (Concept Scheme)
+# ---------------------------------------------------------------------------
+edintkos-foi:FeaturesOfInterest a skos:ConceptScheme ;
+    dct:issued "2026-03-18"^^xsd:date ;
+    dct:modified "2026-03-18"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Features of Interest"@en ;
+    rdfs:label "Características de interés"@es ;
+    dct:title "Concept scheme grouping features of interest observable by sensors according to SOSA ontology"@en ;
+    dct:title "Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA"@es ;
+    skos:note "Vocabulary of features of interest with direct links to observable properties in the SensorVariables concept scheme."@en ;
+    skos:note "Vocabulario de características de interés con enlaces directos a propiedades observables en el esquema SensorVariables."@es .
+
+# ---------------------------------------------------------------------------
+# AIRE
+# ---------------------------------------------------------------------------
+
+edintkos-foi:Air a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Air"@en ;
+    skos:prefLabel "Aire"@es ;
+    skos:altLabel "Ambient air"@en ;
+    skos:altLabel "Aire ambiente"@es ;
+    skos:altLabel "Atmosphere"@en ;
+    skos:altLabel "Atmósfera"@es ;
+    skos:definition "The mixture of gases constituting the atmosphere near ground level, subject to meteorological and air quality observations."@en ;
+    skos:definition "La mezcla de gases que constituye la atmósfera a nivel del suelo, objeto de observaciones meteorológicas y de calidad del aire."@es ;
+    sosa:hasProperty edintkos-vars:AirTemperature ;
+    sosa:hasProperty edintkos-vars:RelativeHumidity ;
+    sosa:hasProperty edintkos-vars:AtmosphericPressure ;
+    sosa:hasProperty edintkos-vars:NO2Concentration ;
+    sosa:hasProperty edintkos-vars:NOConcentration ;
+    sosa:hasProperty edintkos-vars:NOxConcentration ;
+    sosa:hasProperty edintkos-vars:O3Concentration ;
+    sosa:hasProperty edintkos-vars:SO2Concentration ;
+    sosa:hasProperty edintkos-vars:COConcentration ;
+    sosa:hasProperty edintkos-vars:NH3Concentration ;
+    sosa:hasProperty edintkos-vars:BenzeneConcentration ;
+    sosa:hasProperty edintkos-vars:TolueneConcentration ;
+    sosa:hasProperty edintkos-vars:XyleneConcentration .
+
+# ---------------------------------------------------------------------------
+# MATERIAL PARTICULADO
+# ---------------------------------------------------------------------------
+
+edintkos-foi:ParticulateMatter a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Particulate matter"@en ;
+    skos:prefLabel "Material particulado"@es ;
+    skos:definition "Suspension of fine solid particles or liquid droplets in the atmosphere."@en ;
+    skos:definition "Suspensión de partículas sólidas finas o gotas líquidas en la atmósfera."@es ;
+    sosa:hasProperty edintkos-vars:PM1Concentration ;
+    sosa:hasProperty edintkos-vars:PM25Concentration ;
+    sosa:hasProperty edintkos-vars:PM10Concentration ;
+    sosa:hasProperty edintkos-vars:ArsenicConcentration ;
+    sosa:hasProperty edintkos-vars:NickelConcentration ;
+    sosa:hasProperty edintkos-vars:CadmiumConcentration ;
+    sosa:hasProperty edintkos-vars:LeadConcentration ;
+    sosa:hasProperty edintkos-vars:BenzoAPyreneConcentration .
+
+# ---------------------------------------------------------------------------
+# SUELO
+# ---------------------------------------------------------------------------
+
+edintkos-foi:Soil a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Soil"@en ;
+    skos:prefLabel "Suelo"@es ;
+    skos:definition "The upper layer of earth in which plants grow."@en ;
+    skos:definition "La capa superior de la tierra en la que crecen las plantas."@es ;
+    sosa:hasProperty edintkos-vars:SoilTemperature ;
+    sosa:hasProperty edintkos-vars:SoilMoistureTension .
+
+# ---------------------------------------------------------------------------
+# CALZADA
+# ---------------------------------------------------------------------------
+
+edintkos-foi:RoadSurface a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Road surface"@en ;
+    skos:prefLabel "Calzada"@es ;
+    skos:altLabel "Asphalt"@en ;
+    skos:altLabel "Asfalto"@es ;
+    skos:definition "The paved surface of a road, typically made of asphalt or concrete."@en ;
+    skos:definition "La superficie pavimentada de una carretera, típicamente de asfalto u hormigón."@es ;
+    sosa:hasProperty edintkos-vars:RoadTemperature .
+
+# ---------------------------------------------------------------------------
+# VIENTO
+# ---------------------------------------------------------------------------
+
+edintkos-foi:Wind a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Wind"@en ;
+    skos:prefLabel "Viento"@es ;
+    skos:definition "The movement of air in the atmosphere."@en ;
+    skos:definition "El movimiento del aire en la atmósfera."@es ;
+    sosa:hasProperty edintkos-vars:WindSpeed ;
+    sosa:hasProperty edintkos-vars:MaximumWindSpeed ;
+    sosa:hasProperty edintkos-vars:WindDirection .
+
+# ---------------------------------------------------------------------------
+# PRECIPITACIÓN
+# ---------------------------------------------------------------------------
+
+edintkos-foi:Precipitation a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Precipitation"@en ;
+    skos:prefLabel "Precipitación"@es ;
+    skos:definition "Any form of water falling from the atmosphere to the Earth's surface."@en ;
+    skos:definition "Cualquier forma de agua que cae de la atmósfera a la superficie terrestre."@es ;
+    sosa:hasProperty edintkos-vars:PrecipitationAmount .
+
+# ---------------------------------------------------------------------------
+# RADIACIÓN SOLAR
+# ---------------------------------------------------------------------------
+
+edintkos-foi:SolarRadiation a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Solar radiation"@en ;
+    skos:prefLabel "Radiación solar"@es ;
+    skos:definition "Electromagnetic radiation emitted by the Sun reaching the Earth's surface."@en ;
+    skos:definition "Radiación electromagnética emitida por el Sol que alcanza la superficie terrestre."@es ;
+    sosa:hasProperty edintkos-vars:SolarIrradiance ;
+    sosa:hasProperty edintkos-vars:UVIndex ;
+    sosa:hasProperty edintkos-vars:PhotosyntheticallyActiveRadiation .
+
+# ---------------------------------------------------------------------------
+# LUZ AMBIENTAL
+# ---------------------------------------------------------------------------
+
+edintkos-foi:AmbientLight a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Ambient light"@en ;
+    skos:prefLabel "Luz ambiental"@es ;
+    skos:definition "Natural or artificial illumination in an environment."@en ;
+    skos:definition "Iluminación natural o artificial en un entorno."@es ;
+    sosa:hasProperty edintkos-vars:Illuminance .
+
+# ---------------------------------------------------------------------------
+# POLEN
+# ---------------------------------------------------------------------------
+
+edintkos-foi:AirbornePollen a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Airborne pollen"@en ;
+    skos:prefLabel "Polen atmosférico"@es ;
+    skos:definition "Pollen grains suspended in the atmosphere."@en ;
+    skos:definition "Granos de polen suspendidos en la atmósfera."@es ;
+    sosa:hasProperty edintkos-vars:PollenConcentration .
+
+# ---------------------------------------------------------------------------
+# ENTORNO ACÚSTICO
+# ---------------------------------------------------------------------------
+
+edintkos-foi:AcousticEnvironment a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Acoustic environment"@en ;
+    skos:prefLabel "Entorno acústico"@es ;
+    skos:definition "The acoustic conditions of a given area."@en ;
+    skos:definition "Las condiciones acústicas de un área determinada."@es ;
+    sosa:hasProperty edintkos-vars:EquivalentSoundPressureLevel ;
+    sosa:hasProperty edintkos-vars:DayTimeNoiseLevel ;
+    sosa:hasProperty edintkos-vars:NightTimeNoiseLevel ;
+    sosa:hasProperty edintkos-vars:DayEveningNightNoiseLevel .
+
+# ---------------------------------------------------------------------------
+# AGUA POTABLE
+# ---------------------------------------------------------------------------
+
+edintkos-foi:DrinkingWater a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "Drinking water"@en ;
+    skos:prefLabel "Agua potable"@es ;
+    skos:definition "Water safe enough for human consumption."@en ;
+    skos:definition "Agua suficientemente segura para el consumo humano."@es ;
+    sosa:hasProperty edintkos-vars:ResidualFreeChlorine ;
+    sosa:hasProperty edintkos-vars:WaterTurbidity ;
+    sosa:hasProperty edintkos-vars:WaterPH ;
+    sosa:hasProperty edintkos-vars:WaterElectricalConductivity ;
+    sosa:hasProperty edintkos-vars:DissolvedOxygen ;
+    sosa:hasProperty edintkos-vars:WaterTemperature .
+
+# ---------------------------------------------------------------------------
+# SENSOR IoT
+# ---------------------------------------------------------------------------
+
+edintkos-foi:IoTSensor a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
+    skos:inScheme edintkos-foi:FeaturesOfInterest ;
+    skos:prefLabel "IoT sensor"@en ;
+    skos:prefLabel "Sensor IoT"@es ;
+    skos:definition "A device that detects and responds to physical stimuli and monitors its own status."@en ;
+    skos:definition "Un dispositivo que detecta y responde a estímulos físicos y monitoriza su propio estado."@es ;
+    sosa:hasProperty edintkos-vars:BatteryLevel ;
+    sosa:hasProperty edintkos-vars:BatteryVoltage ;
+    sosa:hasProperty edintkos-vars:InternalSensorTemperature .
