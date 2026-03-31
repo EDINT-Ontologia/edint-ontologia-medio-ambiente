@@ -30,7 +30,7 @@ edintmed: a owl:Ontology ;
                 "Maria del Socorro Bernardos" ,
                 "Oscar Corcho" ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-    owl:versionInfo "0.2.0" ;
+    owl:versionInfo "0.1.0" ;
     owl:imports <http://www.w3.org/ns/sosa/> ,
                 <http://www.opengis.net/ont/geosparql#> ,
                 <http://qudt.org/2.1/schema/qudt> .
@@ -77,7 +77,11 @@ edintmed:EnvironmentalSensor a owl:Class ;
     rdfs:subClassOf[
         a owl:Restriction ;
         owl:onProperty edintmed:hasSensorType ;
-        owl:allValuesFrom edintkos-sensortypes:SensorTypes
+        owl:allValuesFrom [
+            a owl:Restriction ;
+            owl:onProperty skos:inScheme ;
+            owl:hasValue edintkos-sensortypes:SensorTypes
+        ]
     ] ;
 
     rdfs:subClassOf[
@@ -126,7 +130,7 @@ edintmed:EnvironmentalProperty a owl:Class ;
 edintmed:EnvironmentalFeatureOfInterest a owl:Class ;
     rdfs:subClassOf sosa:FeatureOfInterest ;
     rdfs:label "Environmental Feature of Interest"@en ;
-    rdfs:label "Característica de interés de la propiedad medioambiental"@es ;
+    rdfs:label "Característica de interés de la propiedad medioambiental"@es .
 
 
 # ---------------------------------------------------------------------------
@@ -136,7 +140,7 @@ edintmed:EnvironmentalFeatureOfInterest a owl:Class ;
 ### Has Sensor Type
 edintmed:hasSensorType a owl:ObjectProperty ;
     rdfs:domain edintmed:EnvironmentalSensor ;
-    rdfs:range edintkos-sensortypes:SensorTypes ;
+    rdfs:range skos:Concept ;
     rdfs:label "has sensor type"@en ;
     rdfs:label "tiene tipo de sensor"@es ;
     rdfs:comment "Links an environmental sensor to its type classification."@en ;
