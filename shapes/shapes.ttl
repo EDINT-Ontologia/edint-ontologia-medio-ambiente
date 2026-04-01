@@ -1,0 +1,105 @@
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+
+<https://astrea.linkeddata.es/shapes#5b98d605be50f7a888ba19684b148989> a sh:NodeShape ;
+    rdfs:label "Environmental Feature of Interest"@en,
+        "Característica de interés de la propiedad medioambiental"@es ;
+    sh:name "Environmental Feature of Interest"@en,
+        "Característica de interés de la propiedad medioambiental"@es ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass edintmed:EnvironmentalFeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#b88425c168498d807a85acf98cd7d34f> a sh:NodeShape ;
+    rdfs:label "Environmental sensor"@en,
+        "Sensor medioambiental"@es ;
+    sh:description "Device designed to observe and measure physical, chemical, or acoustic properties of the environment."@en,
+        "Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente."@es ;
+    sh:name "Environmental sensor"@en,
+        "Sensor medioambiental"@es ;
+    sh:nodeKind sh:IRI ;
+    sh:property <https://astrea.linkeddata.es/shapes#105a1b3b7f5e397e0bcb18fce7b94941>,
+        <https://astrea.linkeddata.es/shapes#6b3cefeaf86a253dacd3b07a90c3d7fc>,
+        <https://astrea.linkeddata.es/shapes#a38cf6325d64c2841db22790fd962986>,
+        <https://astrea.linkeddata.es/shapes#c5d56032533c82b405f706f01b9570bd>,
+        <https://astrea.linkeddata.es/shapes#f3a96dfc16ecf2429233b4fc87f6136d> ;
+    sh:targetClass edintmed:EnvironmentalSensor .
+
+<https://astrea.linkeddata.es/shapes#cae1acb74bbe10d997554d18d50dafe3> a sh:NodeShape ;
+    rdfs:label "Environmental observation"@en,
+        "Observación medioambiental"@es ;
+    sh:description "An observation of an environmental property made by an environmental sensor."@en,
+        "Una observación de una propiedad medioambiental realizada por un sensor medioambiental."@es ;
+    sh:name "Environmental observation"@en,
+        "Observación medioambiental"@es ;
+    sh:nodeKind sh:IRI ;
+    sh:property <https://astrea.linkeddata.es/shapes#796c2a521870f06914310d4f9d870404> ;
+    sh:targetClass edintmed:EnvironmentalObservation .
+
+<https://astrea.linkeddata.es/shapes#e24c21afafe2256822f17b47b07ac575> a sh:NodeShape ;
+    rdfs:label "Environmental property"@en,
+        "Propiedad medioambiental"@es ;
+    sh:description "A physical, chemical, or acoustic property of the environment that can be observed by sensors."@en,
+        "Una propiedad física, química o acústica del medio ambiente que puede ser observada por sensores."@es ;
+    sh:name "Environmental property"@en,
+        "Propiedad medioambiental"@es ;
+    sh:nodeKind sh:IRI ;
+    sh:targetClass edintmed:EnvironmentalProperty .
+
+<https://astrea.linkeddata.es/shapes#f964ae358270d76fbeec5d5ea05161a4> a sh:NodeShape ;
+    rdfs:label "Sensor platform"@en,
+        "Plataforma de sensor"@es ;
+    sh:description "Physical platform or facility that hosts environmental sensors for monitoring."@en,
+        "Plataforma física o instalación que alberga sensores medioambientales para monitorización."@es ;
+    sh:name "Sensor platform"@en,
+        "Plataforma de sensor"@es ;
+    sh:nodeKind sh:IRI ;
+    sh:property <https://astrea.linkeddata.es/shapes#a61de4f6d151a548aee7a15f3867b36b>,
+        <https://astrea.linkeddata.es/shapes#b8a740dec4380289c9184d1b0dff7dbc> ;
+    sh:targetClass edintmed:SensorPlatform .
+
+<https://astrea.linkeddata.es/shapes#105a1b3b7f5e397e0bcb18fce7b94941> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path schema1:manufacturer .
+
+<https://astrea.linkeddata.es/shapes#6b3cefeaf86a253dacd3b07a90c3d7fc> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path sosa:observes .
+
+<https://astrea.linkeddata.es/shapes#796c2a521870f06914310d4f9d870404> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path sosa:hasFeatureOfInterest .
+
+<https://astrea.linkeddata.es/shapes#a38cf6325d64c2841db22790fd962986> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path sosa:isHostedBy .
+
+<https://astrea.linkeddata.es/shapes#a61de4f6d151a548aee7a15f3867b36b> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path gsp:hasGeometry .
+
+<https://astrea.linkeddata.es/shapes#b8a740dec4380289c9184d1b0dff7dbc> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path sosa:hosts .
+
+<https://astrea.linkeddata.es/shapes#c5d56032533c82b405f706f01b9570bd> a sh:PropertyShape ;
+    sh:nodeKind sh:IRIOrLiteral ;
+    sh:path edintmed:hasSensorType .
+
+<https://astrea.linkeddata.es/shapes#f3a96dfc16ecf2429233b4fc87f6136d> a sh:PropertyShape ;
+    rdfs:label "Links an environmental sensor to its type classification."@en,
+        "has sensor type"@en,
+        "Vincula un sensor medioambiental a su clasificación de tipo."@es,
+        "tiene tipo de sensor"@es ;
+    sh:class skos:Concept ;
+    sh:description "Links an environmental sensor to its type classification."@en,
+        "Vincula un sensor medioambiental a su clasificación de tipo."@es ;
+    sh:name "has sensor type"@en,
+        "tiene tipo de sensor"@es ;
+    sh:nodeKind sh:BlankNodeOrIRI ;
+    sh:path edintmed:hasSensorType .
+
