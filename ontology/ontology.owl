@@ -29,6 +29,7 @@
         <dcterms:creator>Lucía Sánchez</dcterms:creator>
         <dcterms:creator>Maria del Socorro Bernardos</dcterms:creator>
         <dcterms:creator>Oscar Corcho</dcterms:creator>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</dcterms:created>
         <dcterms:description xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</dcterms:description>
         <dcterms:description xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:description>
         <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</dcterms:issued>
