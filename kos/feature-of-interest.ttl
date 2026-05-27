@@ -206,4 +206,6 @@ edintkos-foi:IoTSensor a skos:Concept, edintmed:EnvironmentalFeatureOfInterest ;
     skos:definition "Un dispositivo que detecta y responde a estímulos físicos y monitoriza su propio estado."@es ;
     sosa:hasProperty edintkos-vars:BatteryLevel ;
     sosa:hasProperty edintkos-vars:BatteryVoltage ;
-    sosa:hasProperty edintkos-vars:InternalSensorTemperature .
+    sosa:hasProperty edintkos-vars:InternalSensorTemperature ;
+    sosa:hasProperty edintkos-vars:SignalStrength ;
+    sosa:hasProperty edintkos-vars:SensorUptime .
