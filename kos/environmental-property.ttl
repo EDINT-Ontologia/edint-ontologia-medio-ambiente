@@ -4,6 +4,7 @@
 @prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix cc: <http://creativecommons.org/ns#> .
@@ -13,7 +14,7 @@
 # ---------------------------------------------------------------------------
 # ESQUEMA PRINCIPAL (Concept Scheme)
 # ---------------------------------------------------------------------------
-edintkos-vars:EnvironmentalProperty a skos:ConceptScheme ;
+edintkos:EnvironmentalProperty a skos:ConceptScheme ;
     dct:issued "2026-03-18"^^xsd:date ;
     dct:modified "2026-03-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
