@@ -92,7 +92,7 @@ ex:Observation_Ld_001_Morning a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "65.2"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición ruido dia tarde
@@ -120,7 +120,7 @@ ex:Observation_Ld_001_Evening a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "72.8"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición ruido noche
@@ -148,7 +148,7 @@ ex:Observation_Ln_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "52.4"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición LAeq mañana
@@ -176,7 +176,7 @@ ex:Observation_LAeq_001_Morning a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "62.5"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición LAeq tarde
@@ -204,7 +204,7 @@ ex:Observation_LAeq_001_Evening a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "68.9"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición Lden
@@ -232,7 +232,7 @@ ex:Observation_Lden_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "67.3"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # ---------------------------------------------------------------------------
@@ -264,7 +264,7 @@ ex:Observation_Ld_002_Morning a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "66.1"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición ruido dia dia2 tarde
@@ -292,7 +292,7 @@ ex:Observation_Ld_002_Afternoon a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "69.5"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición ruido noche dia2
@@ -320,7 +320,7 @@ ex:Observation_Ln_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "48.7"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # Medición LAeq dia2
@@ -348,7 +348,7 @@ ex:Observation_LAeq_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "64.2"^^xsd:decimal ;
-        qudt:unit unit:DeciB
+        qudt:hasUnit unit:DeciB
     ] .
 
 # ---------------------------------------------------------------------------

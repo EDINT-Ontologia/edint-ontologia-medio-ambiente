@@ -221,7 +221,7 @@
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
-                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables"/>
+                        <owl:hasValue rdf:resource="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/EnvironmentalProperties"/>
                     </owl:Restriction>
                 </owl:allValuesFrom>
             </owl:Restriction>
@@ -315,18 +315,34 @@
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest -->
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest"/>
-    
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">Concept scheme grouping features of interest observable by sensors according to SOSA ontology.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA</rdfs:comment>
+        <rdfs:label xml:lang="en">Features of Interest</rdfs:label>
+        <rdfs:label xml:lang="es">Características de Interés</rdfs:label>
+    </owl:NamedIndividual>
 
 
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes -->
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes"/>
-    
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">Concept scheme grouping sensor types according to their measurement domain.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Esquema de conceptos agrupando tipos de sensores según su dominio de medición</rdfs:comment>
+        <rdfs:label xml:lang="en">Sensor Types</rdfs:label>
+        <rdfs:label xml:lang="es">Tipos de Sensores</rdfs:label>
+    </owl:NamedIndividual>
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables -->
+    <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/EnvironmentalProperty -->
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/EnvironmentalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:comment xml:lang="en">Concept scheme grouping environmental properties according to their measurement domain.</rdfs:comment>
+        <rdfs:comment xml:lang="es">Esquema de conceptos agrupando propiedades ambientales según su dominio de medición</rdfs:comment>
+        <rdfs:label xml:lang="en">Environmental Property</rdfs:label>
+        <rdfs:label xml:lang="es">Propiedad Medioambiental</rdfs:label>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 

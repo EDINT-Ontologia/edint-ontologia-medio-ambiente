@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" version="29.6.3">
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
   <diagram name="Medio ambiente" id="YX50EUY3gUCsAtVor7Cb">
-    <mxGraphModel dx="4003" dy="1605" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="3128" dy="1214" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="9nYwCnnQ28_8oDObz2mp-0" />
         <mxCell id="9nYwCnnQ28_8oDObz2mp-1" parent="9nYwCnnQ28_8oDObz2mp-0" />
@@ -168,13 +167,13 @@
         <mxCell id="9nYwCnnQ28_8oDObz2mp-51" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fontSize=12;strokeColor=#000000;" value="&lt;font style=&quot;color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;edintmed:SensorPlatform&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;(EstaciónDeSensores)&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="150" x="-820" y="-380" as="geometry" />
         </mxCell>
-        <mxCell id="9nYwCnnQ28_8oDObz2mp-53" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos-vars:EnvironmentalProperty&amp;gt;&lt;/div&gt;&lt;div&gt;(PropiedadMedioambiental)&lt;/div&gt;" vertex="1">
+        <mxCell id="9nYwCnnQ28_8oDObz2mp-53" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:EnvironmentalProperty&amp;gt;&lt;/div&gt;&lt;div&gt;(PropiedadMedioambiental)&lt;/div&gt;" vertex="1">
           <mxGeometry height="70" width="240" x="-720" y="-279" as="geometry" />
         </mxCell>
         <mxCell id="9nYwCnnQ28_8oDObz2mp-63" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fontSize=12;strokeColor=#000000;" value="&lt;font style=&quot;color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;edintmed:EnvironmentalObservation&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(0, 0, 0); direction: ltr; letter-spacing: 0px; line-height: 120%; opacity: 1;&quot;&gt;(ObservaciónMedioambiental)&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="38" width="200" x="-1415" y="-378" as="geometry" />
         </mxCell>
-        <mxCell id="9nYwCnnQ28_8oDObz2mp-64" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos-sensortypes:SensorType&amp;gt;&lt;/div&gt;&lt;div&gt;(TipoDeSensor)&lt;/div&gt;" vertex="1">
+        <mxCell id="9nYwCnnQ28_8oDObz2mp-64" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:SensorType&amp;gt;&lt;/div&gt;&lt;div&gt;(TipoDeSensor)&lt;/div&gt;" vertex="1">
           <mxGeometry height="69" width="280" x="-1040" y="-279" as="geometry" />
         </mxCell>
         <mxCell id="VvLcM3KVRfw1F5U1ozEa-0" parent="9nYwCnnQ28_8oDObz2mp-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;fontSize=11;strokeColor=#000000;" value="" vertex="1">
@@ -196,7 +195,7 @@
             <mxPoint x="-1280" y="-681" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VvLcM3KVRfw1F5U1ozEa-4" connectable="0" parent="VvLcM3KVRfw1F5U1ozEa-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" value="qudt:unit" vertex="1">
+        <mxCell id="VvLcM3KVRfw1F5U1ozEa-4" connectable="0" parent="VvLcM3KVRfw1F5U1ozEa-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" value="qudt:hasUnit" vertex="1">
           <mxGeometry relative="1" x="0.156" y="1" as="geometry">
             <mxPoint x="12" y="-1" as="offset" />
           </mxGeometry>
@@ -375,7 +374,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="FXX04wTt2daNRe3fm8Yz-2" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos-foi:FeaturesOfInterest&amp;gt;&lt;/div&gt;&lt;div&gt;(FoI)&lt;/div&gt;" vertex="1">
+        <mxCell id="FXX04wTt2daNRe3fm8Yz-2" parent="9nYwCnnQ28_8oDObz2mp-1" style="verticalAlign=middle;align=center;vsdxID=334;shape=stencil(nZBLDoAgDERP0z3SIyjew0SURgSD+Lu9kMZoXLhwN9O+tukAlrNpJg1SzDH4QW/URgNYgZTkjA4UkwJUgGXng+6DX1zLfmoymdXo17xh5zmRJ6Q42BWCfc2oJfdAr+Yv+AP9Cb7OJ3H/2JG1HNGz/84klThPVCc=);labelBackgroundColor=none;rounded=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;div&gt;skos:Concept&lt;/div&gt;&lt;div&gt;&amp;lt;&amp;lt;skos:inScheme edintkos:FeaturesOfInterest&amp;gt;&lt;/div&gt;&lt;div&gt;(FoI)&lt;/div&gt;" vertex="1">
           <mxGeometry height="69" width="245" x="-1682" y="-279" as="geometry" />
         </mxCell>
         <mxCell id="FXX04wTt2daNRe3fm8Yz-9" edge="1" parent="9nYwCnnQ28_8oDObz2mp-1" source="FXX04wTt2daNRe3fm8Yz-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;" target="9nYwCnnQ28_8oDObz2mp-7">

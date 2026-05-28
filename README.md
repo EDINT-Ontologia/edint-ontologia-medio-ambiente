@@ -16,16 +16,17 @@ El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` public
 
 # Estructura del repositorio (Repository structure)
 
-| Carpeta | Descripción |
-|--------|--------------|
-| **diagrams/**     | Almacena diagramas y otros recursos que representan el modelo conceptual de la ontología (por ejemplo, jerarquías de clases, relaciones).                                     |
-| **documentation/**         | Almacena la documentación HTML u orientada a humanos de la ontología y artefactos relacionados.                                                                               |
-| **examples/**     | Incluye ejemplos que demuestran cómo instanciar o aplicar la ontología en escenarios de datos reales.                                                                         |
-| **kos/**          | Almacena vocabularios controlados o implementación de KOS, generalmente implementaciones SKOS en RDF.                                                                         |
-| **ontology/**     | Contiene los archivos de implementación reales de la ontología en formatos como `.owl`, `.rdf`, `.ttl` o `.jsonld`.                                                           |
-| **requirements/** | Contiene todos los documentos utilizados para definir los requisitos de la ontología: ejemplos de datos, preguntas de competencia, requisitos funcionales, casos de uso, etc. |
-| **shapes/**       | Contiene los SHACL shapes utilizadas para definir y validar las restricciones de la ontología.                                                                                |
-
+| Carpeta                  | Descripción                                                                                                                                                                   |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **diagrams/**      | Almacena diagramas y otros recursos que representan el modelo conceptual de la ontología (por ejemplo, jerarquías de clases, relaciones).                                    |
+| **documentation/** | Almacena la documentación HTML u orientada a humanos de la ontología y artefactos relacionados.                                                                              |
+| **examples/**      | Incluye ejemplos que demuestran cómo instanciar o aplicar la ontología en escenarios de datos reales.                                                                        |
+| **kos/**           | Almacena vocabularios controlados o implementación de KOS, generalmente implementaciones SKOS en RDF.                                                                         |
+| **mappings/**      | Incluye mappings RML que ejemplifican la transformación de orígenes de datos en datos enlazados.                                                                             |
+| **ontology/**      | Contiene los archivos de implementación reales de la ontología en formatos como `.owl`, `.rdf`, `.ttl` o `.jsonld`.                                                  |
+| **requirements/**  | Contiene todos los documentos utilizados para definir los requisitos de la ontología: ejemplos de datos, preguntas de competencia, requisitos funcionales, casos de uso, etc. |
+| **resources/**     | Incluye los logos del proyecto                                                                                                                                                 |
+| **shapes/**        | Contiene los SHACL shapes utilizadas para definir y validar las restricciones de la ontología.                                                                                |
 
 # Mantenimiento y evolución (Maintenance and evolution)
 

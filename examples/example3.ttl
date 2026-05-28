@@ -105,7 +105,7 @@ ex:Observation_WTemp_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "14.2"^^xsd:decimal ;
-        qudt:unit unit:DEG_C
+        qudt:hasUnit unit:DEG_C
     ] .
 
 # Medición pH
@@ -119,7 +119,7 @@ ex:Observation_WPH_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "7.65"^^xsd:decimal ;
-        qudt:unit unit:PH
+        qudt:hasUnit unit:PH
     ] .
 
 # Medición oxígeno disuelto
@@ -133,7 +133,7 @@ ex:Observation_DO_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "9.8"^^xsd:decimal ;
-        qudt:unit unit:MilliGM-PER-L
+        qudt:hasUnit unit:MilliGM-PER-L
     ] .
 
 # Medición turbidez
@@ -147,7 +147,7 @@ ex:Observation_Turbidity_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "0.35"^^xsd:decimal ;
-        qudt:unit unit:NTU
+        qudt:hasUnit unit:NTU
     ] .
 
 # Medición cloro libre
@@ -161,7 +161,7 @@ ex:Observation_Chl_001 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "0.45"^^xsd:decimal ;
-        qudt:unit unit:MilliGM-PER-L
+        qudt:hasUnit unit:MilliGM-PER-L
     ] .
 
 # ---------------------------------------------------------------------------
@@ -179,7 +179,7 @@ ex:Observation_WTemp_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "14.5"^^xsd:decimal ;
-        qudt:unit unit:DEG_C
+        qudt:hasUnit unit:DEG_C
     ] .
 
 # Medición pH dia2
@@ -193,7 +193,7 @@ ex:Observation_WPH_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "7.58"^^xsd:decimal ;
-        qudt:unit unit:PH
+        qudt:hasUnit unit:PH
     ] .
 
 # Medición oxígeno disuelto dia2
@@ -207,7 +207,7 @@ ex:Observation_DO_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "9.5"^^xsd:decimal ;
-        qudt:unit unit:MilliGM-PER-L
+        qudt:hasUnit unit:MilliGM-PER-L
     ] .
 
 # Medición turbidez dia2
@@ -221,7 +221,7 @@ ex:Observation_Turbidity_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "0.28"^^xsd:decimal ;
-        qudt:unit unit:NTU
+        qudt:hasUnit unit:NTU
     ] .
 
 # Medición cloro libre dia2
@@ -235,7 +235,7 @@ ex:Observation_Chl_002 a edintmed:EnvironmentalObservation ;
     sosa:hasResult [
         a qudt:QuantityValue ;
         qudt:numericValue "0.52"^^xsd:decimal ;
-        qudt:unit unit:MilliGM-PER-L
+        qudt:hasUnit unit:MilliGM-PER-L
     ] .
 
 # ---------------------------------------------------------------------------

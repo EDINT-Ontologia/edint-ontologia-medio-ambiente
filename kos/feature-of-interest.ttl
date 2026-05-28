@@ -11,7 +11,7 @@
 # ---------------------------------------------------------------------------
 # ESQUEMA PRINCIPAL (Concept Scheme)
 # ---------------------------------------------------------------------------
-edintkos-foi:FeaturesOfInterest a skos:ConceptScheme ;
+edintkos:FeaturesOfInterest a skos:ConceptScheme ;
     dct:issued "2026-03-18"^^xsd:date ;
     dct:modified "2026-03-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;

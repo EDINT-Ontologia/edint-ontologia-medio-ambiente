@@ -13,7 +13,7 @@
 # ---------------------------------------------------------------------------
 # ESQUEMA PRINCIPAL (Concept Scheme)
 # ---------------------------------------------------------------------------
-edintkos-vars:SensorVariables a skos:ConceptScheme ;
+edintkos:SensorVariables a skos:ConceptScheme ;
     dct:issued "2026-03-18"^^xsd:date ;
     dct:modified "2026-03-18"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
@@ -928,6 +928,24 @@ edintkos-vars:DayEveningNightNoiseLevel a skos:Concept, edintmed:EnvironmentalPr
     skos:prefLabel "Nivel de ruido día-tarde-noche"@es ;
     skos:altLabel "Lden"@en ;
     qudt:applicableUnit unit:DeciB .
+
+edintkos-vars:SoundPressureLevel a skos:Concept, edintmed:EnvironmentalProperty ;
+    skos:inScheme edintkos-vars:EnvironmentalProperty ;
+    skos:broader edintkos-vars:AcousticVariables ;
+    skos:prefLabel "Sound pressure level"@en ;
+    skos:prefLabel "Nivel de presión sonora "@es ;
+    skos:definition "Representa la intensidad del sonido en una escala logarítmica y puede tomar distintos tipos de valores según cómo se mida o interprete."@es ;
+	skos:definition: "It represents the intensity of sound on a logarithmic scale and can take different types of values ​​depending on how it is measured or interpreted."@en ;
+	qudt:applicableUnit unit:DeciB .
+
+edintkos-vars:SoundVibrationRate a skos:Concept, edintmed:EnvironmentalProperty ;
+    skos:inScheme edintkos-vars:EnvironmentalProperty ;
+    skos:broader edintkos-vars:AcousticVariables ;
+    skos:prefLabel "Sound pressure level"@en ;
+    skos:prefLabel "Nivel de presión sonora "@es ;
+	qudt:applicableUnit unit:MilliM-PER-SEC2 ;
+    skos:definition "Índice de vibración que se utiliza para evaluar la molestia, los efectos nocivos y los niveles de vibración máximos, que se producen durante el periodo temporal de evaluación (diurno, nocturno), en el espacio interior de edificios"@es ;
+    skos:definition "Vibration rate used to assess discomfort, harmful effects, and maximum vibration levels, occurring during the assessment time period (daytime, night-time), within the indoor space of buildings" @en .
 
 # ===========================================================================
 # VARIABLES DE CALIDAD DEL AGUA
