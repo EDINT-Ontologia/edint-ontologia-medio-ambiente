@@ -1,0 +1,379 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix schema: <http://schema.org/> .
+
+@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/> .
+@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
+@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix ex: <http://example.org/> .
+
+# ---------------------------------------------------------------------------
+# ESTACIÓN IoT SOLAR — PARQUE NATURAL SIERRA DE GUADARRAMA
+# ---------------------------------------------------------------------------
+# Estación autónoma alimentada por energía solar, instalada en una zona
+# remota del parque natural. Al no tener acceso a red eléctrica ni cableado,
+# la monitorización del estado operativo del sensor es crítica:
+# nivel y voltaje de batería, temperatura interna, intensidad de señal
+# LoRaWAN y tiempo de actividad.
+# ---------------------------------------------------------------------------
+
+ex:Station_Guadarrama_001 a edintmed:SensorPlatform ;
+    rdfs:label "Estación IoT solar - Parque Natural Sierra de Guadarrama"@es ;
+    rdfs:label "Solar IoT station - Sierra de Guadarrama Natural Park"@en ;
+    dct:identifier "IOT-GUAD-001" ;
+    geo:lat "40.7934"^^xsd:float ;
+    geo:long "-4.0396"^^xsd:float ;
+    geo:alt "1220"^^xsd:float ;
+    rdfs:comment "Estación autónoma solar para monitorización ambiental en zona remota del parque natural"@es ;
+    rdfs:comment "Autonomous solar-powered station for environmental monitoring in a remote area of the natural park"@en ;
+    gsp:hasGeometry [
+        a gsp:Geometry ;
+        gsp:asWKT "POINT(-4.0396 40.7934)"^^xsd:string .
+    ] ;
+    sosa:hosts ex:Sensor_PM25_001 ;
+    sosa:hosts ex:Sensor_Temp_001 .
+
+# ---------------------------------------------------------------------------
+# SENSORES
+# ---------------------------------------------------------------------------
+
+ex:Sensor_PM25_001 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de partículas finas PM2.5 - Nefelométrico"@es ;
+    rdfs:label "Fine particulate matter sensor PM2.5 - Nephelometric"@en ;
+    dct:identifier "PM25-001-NEPH" ;
+    schema:manufacturer ex:Manufacturer_Nefelometrico ;
+    edintmed:hasSensorType edintkos-sensortypes:AirQualitySensor ;
+    sosa:isHostedBy ex:Station_Guadarrama_001 ;
+    sosa:observes edintkos-vars:PM25Concentration ,                # variable ambiental
+                  edintkos-vars:BatteryLevel ,                      # variable de estado
+                  edintkos-vars:BatteryVoltage ,                    # variable de estado
+                  edintkos-vars:InternalSensorTemperature ,         # variable de estado
+                  edintkos-vars:SignalStrength ,                    # variable de estado
+                  edintkos-vars:SensorUptime .                      # variable de estado
+
+ex:Sensor_Temp_001 a edintmed:EnvironmentalSensor ;
+    rdfs:label "Sensor de temperatura del aire - PT100"@es ;
+    rdfs:label "Air temperature sensor - PT100"@en ;
+    dct:identifier "TEMP-001-PT100" ;
+    schema:manufacturer ex:Manufacturer_PT100 ;
+    edintmed:hasSensorType edintkos-sensortypes:ClimaticSensor ;
+    sosa:isHostedBy ex:Station_Guadarrama_001 ;
+    sosa:observes edintkos-vars:AirTemperature ,                   # variable ambiental
+                  edintkos-vars:BatteryLevel ,                      # variable de estado
+                  edintkos-vars:InternalSensorTemperature ,         # variable de estado
+                  edintkos-vars:SignalStrength .                    # variable de estado
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES AMBIENTALES — 18/03/2026 12:00
+# ---------------------------------------------------------------------------
+# Estas observaciones miden el ENTORNO. FeatureOfInterest = Air / ParticulateMatter
+# ---------------------------------------------------------------------------
+
+ex:Observation_PM25_001_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de PM2.5 - 18/03/2026 12:00"@es ;
+    rdfs:label "PM2.5 measurement - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:PM25Concentration ;
+    sosa:hasFeatureOfInterest edintkos-foi:ParticulateMatter ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "8.7"^^xsd:decimal ;
+        qudt:unit unit:MicroGM-PER-M3
+    ] .
+
+ex:Observation_AirTemp_001_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de temperatura del aire - 18/03/2026 12:00"@es ;
+    rdfs:label "Air temperature measurement - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:AirTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "12.3"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES DE ESTADO DEL SENSOR — 18/03/2026 12:00
+# ---------------------------------------------------------------------------
+# Estas observaciones miden el PROPIO SENSOR. FeatureOfInterest = IoTSensor
+# El sensor PM25_001 informa de las 5 variables de estado;
+# el sensor Temp_001 informa de 3 de ellas.
+# ---------------------------------------------------------------------------
+
+# --- Sensor PM25_001 ---
+
+ex:Observation_BatteryLevel_PM25_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Nivel de batería sensor PM2.5 - 18/03/2026 12:00"@es ;
+    rdfs:label "Battery level PM2.5 sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:BatteryLevel ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "92"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+ex:Observation_BatteryVoltage_PM25_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Voltaje de batería sensor PM2.5 - 18/03/2026 12:00"@es ;
+    rdfs:label "Battery voltage PM2.5 sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:BatteryVoltage ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "4.08"^^xsd:decimal ;
+        qudt:unit unit:V
+    ] .
+
+ex:Observation_InternalTemp_PM25_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Temperatura interna sensor PM2.5 - 18/03/2026 12:00"@es ;
+    rdfs:label "Internal temperature PM2.5 sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:InternalSensorTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "38.2"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+ex:Observation_SignalStrength_PM25_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Intensidad de señal LoRaWAN sensor PM2.5 - 18/03/2026 12:00"@es ;
+    rdfs:label "LoRaWAN signal strength PM2.5 sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:SignalStrength ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "-87"^^xsd:decimal ;
+        qudt:unit unit:DeciB-M
+    ] .
+
+ex:Observation_Uptime_PM25_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Tiempo de actividad sensor PM2.5 - 18/03/2026 12:00"@es ;
+    rdfs:label "Sensor uptime PM2.5 sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:SensorUptime ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "2184"^^xsd:decimal ;
+        qudt:unit unit:HR
+    ] .
+
+# --- Sensor Temp_001 ---
+
+ex:Observation_BatteryLevel_Temp_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Nivel de batería sensor temperatura - 18/03/2026 12:00"@es ;
+    rdfs:label "Battery level temperature sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:BatteryLevel ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "88"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+ex:Observation_InternalTemp_Temp_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Temperatura interna sensor temperatura - 18/03/2026 12:00"@es ;
+    rdfs:label "Internal temperature temperature sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:InternalSensorTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "35.6"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+ex:Observation_SignalStrength_Temp_20260318 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Intensidad de señal LoRaWAN sensor temperatura - 18/03/2026 12:00"@es ;
+    rdfs:label "LoRaWAN signal strength temperature sensor - 18/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:SignalStrength ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-18T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "-91"^^xsd:decimal ;
+        qudt:unit unit:DeciB-M
+    ] .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES AMBIENTALES — 19/03/2026 12:00 (día nublado, batería baja)
+# ---------------------------------------------------------------------------
+
+ex:Observation_PM25_001_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de PM2.5 - 19/03/2026 12:00"@es ;
+    rdfs:label "PM2.5 measurement - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:PM25Concentration ;
+    sosa:hasFeatureOfInterest edintkos-foi:ParticulateMatter ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "15.4"^^xsd:decimal ;
+        qudt:unit unit:MicroGM-PER-M3
+    ] .
+
+ex:Observation_AirTemp_001_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Medición de temperatura del aire - 19/03/2026 12:00"@es ;
+    rdfs:label "Air temperature measurement - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:AirTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:Air ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "9.1"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+# ---------------------------------------------------------------------------
+# OBSERVACIONES DE ESTADO DEL SENSOR — 19/03/2026 12:00
+# ---------------------------------------------------------------------------
+# Día nublado → la batería ha bajado respecto al día anterior.
+# La temperatura interna del sensor también es menor.
+# La señal se ha degradado ligeramente.
+# ---------------------------------------------------------------------------
+
+# --- Sensor PM25_001 ---
+
+ex:Observation_BatteryLevel_PM25_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Nivel de batería sensor PM2.5 - 19/03/2026 12:00"@es ;
+    rdfs:label "Battery level PM2.5 sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:BatteryLevel ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "71"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+ex:Observation_BatteryVoltage_PM25_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Voltaje de batería sensor PM2.5 - 19/03/2026 12:00"@es ;
+    rdfs:label "Battery voltage PM2.5 sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:BatteryVoltage ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "3.72"^^xsd:decimal ;
+        qudt:unit unit:V
+    ] .
+
+ex:Observation_InternalTemp_PM25_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Temperatura interna sensor PM2.5 - 19/03/2026 12:00"@es ;
+    rdfs:label "Internal temperature PM2.5 sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:InternalSensorTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "28.7"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+ex:Observation_SignalStrength_PM25_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Intensidad de señal LoRaWAN sensor PM2.5 - 19/03/2026 12:00"@es ;
+    rdfs:label "LoRaWAN signal strength PM2.5 sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:SignalStrength ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "-102"^^xsd:decimal ;
+        qudt:unit unit:DeciB-M
+    ] .
+
+ex:Observation_Uptime_PM25_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Tiempo de actividad sensor PM2.5 - 19/03/2026 12:00"@es ;
+    rdfs:label "Sensor uptime PM2.5 sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_PM25_001 ;
+    sosa:observedProperty edintkos-vars:SensorUptime ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "2208"^^xsd:decimal ;
+        qudt:unit unit:HR
+    ] .
+
+# --- Sensor Temp_001 ---
+
+ex:Observation_BatteryLevel_Temp_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Nivel de batería sensor temperatura - 19/03/2026 12:00"@es ;
+    rdfs:label "Battery level temperature sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:BatteryLevel ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "64"^^xsd:decimal ;
+        qudt:unit unit:PERCENT
+    ] .
+
+ex:Observation_InternalTemp_Temp_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Temperatura interna sensor temperatura - 19/03/2026 12:00"@es ;
+    rdfs:label "Internal temperature temperature sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:InternalSensorTemperature ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "26.1"^^xsd:decimal ;
+        qudt:unit unit:DEG_C
+    ] .
+
+ex:Observation_SignalStrength_Temp_20260319 a edintmed:EnvironmentalObservation ;
+    rdfs:label "Intensidad de señal LoRaWAN sensor temperatura - 19/03/2026 12:00"@es ;
+    rdfs:label "LoRaWAN signal strength temperature sensor - 19/03/2026 12:00"@en ;
+    sosa:madeBySensor ex:Sensor_Temp_001 ;
+    sosa:observedProperty edintkos-vars:SignalStrength ;
+    sosa:hasFeatureOfInterest edintkos-foi:IoTSensor ;
+    sosa:resultTime "2026-03-19T12:00:00+01:00"^^xsd:dateTime ;
+    sosa:hasResult [
+        a qudt:QuantityValue ;
+        qudt:numericValue "-105"^^xsd:decimal ;
+        qudt:unit unit:DeciB-M
+    ] .
+
+# ---------------------------------------------------------------------------
+# MANUFACTURERS
+# ---------------------------------------------------------------------------
+
+ex:Manufacturer_Nefelometrico a schema:Organization ;
+    rdfs:label "Nephelometric Sensors Corp."@en ;
+    rdfs:label "Sensores Nefelométricos S.A."@es .
+
+ex:Manufacturer_PT100 a schema:Organization ;
+    rdfs:label "PT100 Sensors Inc."@en ;
+    rdfs:label "PT100 Sensores S.A."@es .
