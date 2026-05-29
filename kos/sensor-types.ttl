@@ -10,7 +10,7 @@
 # ---------------------------------------------------------------------------
 # ESQUEMA PRINCIPAL (Concept Scheme)
 # ---------------------------------------------------------------------------
-edintkos-sensortypes:SensorTypes a skos:ConceptScheme ;
+edintkos:SensorTypes a skos:ConceptScheme ;
     dct:issued "2026-03-27"^^xsd:date ;
     dct:modified "2026-03-27"^^xsd:date ;
     cc:license <https://creativecommons.org/licenses/by/4.0/> ;
