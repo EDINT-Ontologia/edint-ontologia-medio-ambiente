@@ -316,6 +316,7 @@
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping features of interest observable by sensors according to SOSA ontology.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA</rdfs:comment>
         <rdfs:label xml:lang="en">Features of Interest</rdfs:label>
@@ -338,6 +339,7 @@
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping environmental properties according to their measurement domain.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando propiedades ambientales según su dominio de medición</rdfs:comment>
         <rdfs:label xml:lang="en">Environmental Property</rdfs:label>
