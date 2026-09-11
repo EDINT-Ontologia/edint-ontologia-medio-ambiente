@@ -20,7 +20,7 @@
   "@id" : "_:genid2",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#inScheme"
@@ -56,7 +56,7 @@
   "@id" : "_:genid6",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorTypes"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#inScheme"
@@ -74,7 +74,7 @@
   "@id" : "_:genid8",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#hasValue" : [ {
-    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables"
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "http://www.w3.org/2004/02/skos/core#inScheme"
@@ -288,13 +288,13 @@
     "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
   } ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest",
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes",
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorTypes",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
-  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/SensorVariables",
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 }, {
   "@id" : "http://www.opengis.net/ont/geosparql#Feature",

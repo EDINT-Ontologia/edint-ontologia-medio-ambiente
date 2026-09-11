@@ -18,7 +18,7 @@
      xmlns:edintmed="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/"
      xmlns:edintkos-foi="http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/"
      xmlns:quantitykind="http://qudt.org/vocab/quantitykind/"
-     xmlns:edintkos-vars="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/"
+     xmlns:edintkos-vars="http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/"
      xmlns:edintkos-sensortypes="http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/">
     <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/">
         <owl:imports rdf:resource="http://qudt.org/2.1/schema/qudt"/>

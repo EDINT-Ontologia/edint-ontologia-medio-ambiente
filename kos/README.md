@@ -10,14 +10,14 @@ El objetivo de este directorio es almacenar los **archivos de vocabulario o KOS*
 
 Esta implementación incluye dos vocabularios SKOS para monitorización ambiental urbana:
 
-- [`sensor-variables.ttl`](sensor-variables.ttl) - El tesauro de variables de sensor
+- [`environmental-property.ttl`](environmental-property.ttl) - El tesauro de variables de sensor
 - [`feature-of-interest.ttl`](feature-of-interest.ttl) - El vocabulario de características de interés
 
 ## Diseño de Vocabularios SKOS
 
 Esta implementación KOS define dos esquemas de conceptos SKOS interconectados que trabajan juntos para describir observaciones de sensores en entornos urbanos.
 
-### 1. SensorVariables (kos/sensor-variables.ttl)
+### 1. EnvironmentalProperty (kos/environmental-property.ttl)
 
 Un esquema de conceptos que agrupa propiedades y magnitudes medidas por sensores en entornos urbanos. Sigue una estructura jerárquica con categorías de nivel superior y subcategorías anidadas.
 
@@ -34,7 +34,7 @@ Un esquema de conceptos que agrupa propiedades y magnitudes medidas por sensores
 
 **Estructura jerárquica:**
 ```
-SensorVariables
+EnvironmentalProperty
 ├── MeteorologicalVariables
 │   ├── TemperatureVariables
 │   │   ├── AirTemperature
@@ -231,7 +231,7 @@ FeaturesOfInterest
 ## Principios de Diseño
 
 ### Integración con la ontología SOSA
-- Los conceptos en **SensorVariables** están tipados como `sosa:ObservableProperty` y `qudt:QuantityKind`
+- Los conceptos en **EnvironmentalProperty** están tipados como `sosa:ObservableProperty` y `qudt:QuantityKind`
 - Los conceptos en **FeaturesOfInterest** están tipados como `sosa:FeatureOfInterest`
 - Las características enlazan a propiedades usando relaciones `sosa:hasProperty`
 
@@ -251,9 +251,9 @@ FeaturesOfInterest
 
 Los dos vocabularios trabajan juntos para permitir el modelado completo de observaciones de sensores:
 
-1. **FeaturesOfInterest** referencia **ObservableProperties** de SensorVariables a través de relaciones `sosa:hasProperty`
+1. **FeaturesOfInterest** referencia **ObservableProperties** de EnvironmentalProperty a través de relaciones `sosa:hasProperty`
 2. Esta separación permite:
-   - Definiciones de propiedades reutilizables en SensorVariables
+   - Definiciones de propiedades reutilizables en EnvironmentalProperty
    - Agrupamiento contextual de propiedades por lo que se está observando (FeatureOfInterest)
    - Modelado flexible de observaciones siguiendo patrones SOSA
 
@@ -277,7 +277,7 @@ En este patrón:
 
 | Archivo | Descripción |
 |------|-------------|
-| [`kos/sensor-variables.ttl`](sensor-variables.ttl) | El tesauro de variables de sensor - define todas las propiedades observables con categorización jerárquica |
+| [`kos/environmental-property.ttl`](environmental-property.ttl) | El tesauro de variables de sensor - define todas las propiedades observables con categorización jerárquica |
 | [`kos/feature-of-interest.ttl`](feature-of-interest.ttl) | El vocabulario de características de interés - define características observables con enlaces a propiedades |
 
 ## Mejores Prácticas

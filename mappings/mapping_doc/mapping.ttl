@@ -11,7 +11,7 @@
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix schema: <http://schema.org/>.
 @prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>.
-@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/>.
+@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/>.
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/>.
 @prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/>.
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
@@ -263,7 +263,7 @@ map:rules_000 schema:contributor map:person_000 ;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
-			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/{OBS_PROPERTY}";
+			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/{OBS_PROPERTY}";
 			rr:termType rr:IRI
 		];
 	].
@@ -374,7 +374,7 @@ map:rules_000 schema:contributor map:person_000 ;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
-			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/{OBS_PROPERTY}";
+			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/{OBS_PROPERTY}";
 			rr:termType rr:IRI
 		];
 	];

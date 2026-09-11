@@ -22,8 +22,8 @@ edintkos:FeaturesOfInterest a skos:ConceptScheme ;
     rdfs:label "Características de interés"@es ;
     dct:title "Concept scheme grouping features of interest observable by sensors according to SOSA ontology"@en ;
     dct:title "Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA"@es ;
-    skos:note "Vocabulary of features of interest with direct links to observable properties in the SensorVariables concept scheme."@en ;
-    skos:note "Vocabulario de características de interés con enlaces directos a propiedades observables en el esquema SensorVariables."@es .
+    skos:note "Vocabulary of features of interest with direct links to observable properties in the EnvironmentalProperty concept scheme."@en ;
+    skos:note "Vocabulario de características de interés con enlaces directos a propiedades observables en el esquema EnvironmentalProperty."@es .
 
 # ---------------------------------------------------------------------------
 # AIRE
