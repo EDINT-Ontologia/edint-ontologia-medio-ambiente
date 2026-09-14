@@ -314,7 +314,7 @@
 
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest -->
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/FeaturesOfInterest">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping features of interest observable by sensors according to SOSA ontology.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA</rdfs:comment>
@@ -325,7 +325,7 @@
 
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes -->
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/SensorTypes">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping sensor types according to their measurement domain.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando tipos de sensores según su dominio de medición</rdfs:comment>
@@ -336,7 +336,7 @@
 
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/EnvironmentalProperty -->
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/EnvironmentalProperty"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/EnvironmentalProperty">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping environmental properties according to their measurement domain.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando propiedades ambientales según su dominio de medición</rdfs:comment>
