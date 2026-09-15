@@ -289,21 +289,29 @@
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest -->
 
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorTypes -->
 
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorTypes"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/SensorTypes">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty -->
 
 
-    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty"/>
+    <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
