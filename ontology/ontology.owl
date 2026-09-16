@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/"
-     xml:base="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/"
+<rdf:RDF xmlns="https://edint.es/def/medio-ambiente#"
+     xml:base="https://edint.es/def/medio-ambiente#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:gsp="http://www.opengis.net/ont/geosparql#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -15,12 +15,12 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dtype="http://www.linkedmodel.org/schema/dtype#"
      xmlns:schema="http://schema.org/"
-     xmlns:edintmed="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/"
+     xmlns:edintmed="https://edint.es/def/medio-ambiente#"
      xmlns:edintkos-foi="http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/"
      xmlns:quantitykind="http://qudt.org/vocab/quantitykind/"
      xmlns:edintkos-vars="http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/"
      xmlns:edintkos-sensortypes="http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/">
-    <owl:Ontology rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/">
+    <owl:Ontology rdf:about="https://edint.es/def/medio-ambiente#">
         <owl:imports rdf:resource="http://qudt.org/2.1/schema/qudt"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql#"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
@@ -82,10 +82,10 @@
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType -->
+    <!-- https://edint.es/def/medio-ambiente#hasSensorType -->
 
-    <owl:ObjectProperty rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType">
-        <rdfs:domain rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor"/>
+    <owl:ObjectProperty rdf:about="https://edint.es/def/medio-ambiente#hasSensorType">
+        <rdfs:domain rdf:resource="https://edint.es/def/medio-ambiente#EnvironmentalSensor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:comment xml:lang="en">Links an environmental sensor to its type classification.</rdfs:comment>
         <rdfs:comment xml:lang="es">Vincula un sensor medioambiental a su clasificación de tipo.</rdfs:comment>
@@ -142,9 +142,9 @@
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest -->
+    <!-- https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest -->
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest">
+    <owl:Class rdf:about="https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
         <rdfs:label xml:lang="es">Característica de interés de la propiedad medioambiental</rdfs:label>
         <rdfs:label xml:lang="en">Environmental Feature of Interest</rdfs:label>
@@ -152,9 +152,9 @@
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation -->
+    <!-- https://edint.es/def/medio-ambiente#EnvironmentalObservation -->
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalObservation">
+    <owl:Class rdf:about="https://edint.es/def/medio-ambiente#EnvironmentalObservation">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -175,9 +175,9 @@
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty -->
+    <!-- https://edint.es/def/medio-ambiente#EnvironmentalProperty -->
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty">
+    <owl:Class rdf:about="https://edint.es/def/medio-ambiente#EnvironmentalProperty">
         <rdfs:subClassOf rdf:resource="http://qudt.org/schema/qudt/QuantityKind"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
         <rdfs:comment xml:lang="en">A physical, chemical, or acoustic property of the environment that can be observed by sensors.</rdfs:comment>
@@ -188,9 +188,9 @@
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor -->
+    <!-- https://edint.es/def/medio-ambiente#EnvironmentalSensor -->
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor">
+    <owl:Class rdf:about="https://edint.es/def/medio-ambiente#EnvironmentalSensor">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -201,12 +201,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
-                <owl:someValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform"/>
+                <owl:someValuesFrom rdf:resource="https://edint.es/def/medio-ambiente#SensorPlatform"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/hasSensorType"/>
+                <owl:onProperty rdf:resource="https://edint.es/def/medio-ambiente#hasSensorType"/>
                 <owl:allValuesFrom>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
@@ -234,9 +234,9 @@
     
 
 
-    <!-- http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform -->
+    <!-- https://edint.es/def/medio-ambiente#SensorPlatform -->
 
-    <owl:Class rdf:about="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/SensorPlatform">
+    <owl:Class rdf:about="https://edint.es/def/medio-ambiente#SensorPlatform">
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
         <rdfs:subClassOf>
@@ -248,7 +248,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hosts"/>
-                <owl:someValuesFrom rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalSensor"/>
+                <owl:someValuesFrom rdf:resource="https://edint.es/def/medio-ambiente#EnvironmentalSensor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Physical platform or facility that hosts environmental sensors for monitoring.</rdfs:comment>
@@ -316,7 +316,7 @@
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/FeaturesOfInterest">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalFeatureOfInterest"/>
+        <rdf:type rdf:resource="https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping features of interest observable by sensors according to SOSA ontology.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA</rdfs:comment>
         <rdfs:label xml:lang="en">Features of Interest</rdfs:label>
@@ -339,7 +339,7 @@
 
     <owl:NamedIndividual rdf:about="http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty">
         <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-        <rdf:type rdf:resource="http://vocab.linkeddata.es/datosabiertos/def/medioambiente/EnvironmentalProperty"/>
+        <rdf:type rdf:resource="https://edint.es/def/medio-ambiente#EnvironmentalProperty"/>
         <rdfs:comment xml:lang="en">Concept scheme grouping environmental properties according to their measurement domain.</rdfs:comment>
         <rdfs:comment xml:lang="es">Esquema de conceptos agrupando propiedades ambientales según su dominio de medición</rdfs:comment>
         <rdfs:label xml:lang="en">Environmental Property</rdfs:label>

@@ -2,7 +2,7 @@
 # MED04  ¿Quién ha fabricado cada sensor?
 
 PREFIX schema: <http://schema.org/>
-PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
 
 SELECT ?manufacturer ?manufacturerLabel ?sensor 
 WHERE {
@@ -16,7 +16,7 @@ ORDER BY ?manufacturer
 # Variante: Para un sensor concreto
 
 PREFIX schema: <http://schema.org/>
-PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
 
 SELECT ?manufacturer ?manufacturerLabel 
 WHERE {

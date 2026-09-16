@@ -1,7 +1,7 @@
 
 # MED06: ¿Qué observaciones se han hecho para una propiedad concreta en un lugar concreto?
 
-PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 

@@ -1,4 +1,4 @@
-@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintmed: <https://edint.es/def/medio-ambiente#> .
 @prefix gsp: <http://www.opengis.net/ont/geosparql#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema1: <http://schema.org/> .
