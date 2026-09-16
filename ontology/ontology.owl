@@ -57,7 +57,11 @@
         <dcterms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales</dcterms:title>
         <owl:versionInfo>0.2.1</owl:versionInfo>
         <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0"/>
-        <dcterms:publisher rdf:resource="https://www.femp.es/"/>
+        <dcterms:publisher rdf:parseType="Resource">
+            <foaf:name>FEMP</foaf:name>
+            <foaf:homepage rdf:resource="https://www.femp.es/"/>
+            <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
+        </dcterms:publisher>
         <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Sensores Medioambientales. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
         <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
         <dcterms:abstract xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:abstract>
