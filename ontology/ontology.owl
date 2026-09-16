@@ -19,16 +19,34 @@
      xmlns:edintkos-foi="https://edint.es/kos/FeaturesOfInterest/"
      xmlns:quantitykind="http://qudt.org/vocab/quantitykind/"
      xmlns:edintkos-vars="https://edint.es/kos/EnvironmentalProperty/"
-     xmlns:edintkos-sensortypes="https://edint.es/kos/SensorTypes/">
+     xmlns:edintkos-sensortypes="https://edint.es/kos/SensorTypes/"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/">
     <owl:Ontology rdf:about="https://edint.es/def/medio-ambiente#">
+        <owl:versionIRI rdf:resource="https://edint.es/def/medio-ambiente/0.2.1"/>
         <owl:imports rdf:resource="http://qudt.org/2.1/schema/qudt"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql#"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
-        <dcterms:creator xml:lang="es">Daniel Doña</dcterms:creator>
-        <dcterms:creator>Edna Ruckhaus</dcterms:creator>
-        <dcterms:creator>Lucía Sánchez</dcterms:creator>
-        <dcterms:creator>Maria del Socorro Bernardos</dcterms:creator>
-        <dcterms:creator>Oscar Corcho</dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Daniel Doña</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Edna Ruckhaus</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Lucía Sánchez</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Maria del Socorro Bernardos</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Oscar Corcho</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
         <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</dcterms:created>
         <dcterms:description xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</dcterms:description>
         <dcterms:description xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:description>
@@ -37,8 +55,17 @@
         <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-27</dcterms:modified>
         <dcterms:title xml:lang="en">EDINT Environmental Sensors Ontology</dcterms:title>
         <dcterms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales</dcterms:title>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <owl:versionInfo>0.2.1</owl:versionInfo>
+        <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0"/>
+        <dcterms:publisher rdf:resource="https://www.femp.es/"/>
+        <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Sensores Medioambientales. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
+        <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
+        <dcterms:abstract xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:abstract>
+        <dcterms:abstract xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</dcterms:abstract>
     </owl:Ontology>
+    <foaf:Organization rdf:about="https://oeg.fi.upm.es/">
+        <foaf:name>Ontology Engineering Group, UPM</foaf:name>
+    </foaf:Organization>
     
 
 
