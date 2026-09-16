@@ -11,9 +11,9 @@
 @prefix time: <http://www.w3.org/2006/time#>.
 @prefix schema: <http://schema.org/>.
 @prefix edintmed: <https://edint.es/def/medio-ambiente#>.
-@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/>.
-@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/>.
-@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/>.
+@prefix edintkos-vars: <https://edint.es/kos/EnvironmentalProperty/>.
+@prefix edintkos-foi: <https://edint.es/kos/FeaturesOfInterest/>.
+@prefix edintkos-sensortypes: <https://edint.es/kos/SensorTypes/>.
 @prefix rr: <http://www.w3.org/ns/r2rml#>.
 @prefix rml: <http://semweb.mmlab.be/ns/rml#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
@@ -252,7 +252,7 @@
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
-			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/{OBS_PROPERTY}";
+			rr:template "https://edint.es/kos/EnvironmentalProperty/{OBS_PROPERTY}";
 			rr:termType rr:IRI
 		];
 	].
@@ -307,7 +307,7 @@
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
-			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/{SAMPLE_OF}";
+			rr:template "https://edint.es/kos/FeaturesOfInterest/{SAMPLE_OF}";
 			rr:termType rr:IRI
 		];
 	].
@@ -363,7 +363,7 @@
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
-			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/{OBS_PROPERTY}";
+			rr:template "https://edint.es/kos/EnvironmentalProperty/{OBS_PROPERTY}";
 			rr:termType rr:IRI
 		];
 	];

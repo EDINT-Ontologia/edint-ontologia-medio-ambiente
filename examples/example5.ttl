@@ -11,9 +11,9 @@
 @prefix schema: <http://schema.org/> .
 
 @prefix edintmed: <https://edint.es/def/medio-ambiente#> .
-@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/> .
-@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
-@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix edintkos-vars: <https://edint.es/kos/EnvironmentalProperty/> .
+@prefix edintkos-foi: <https://edint.es/kos/FeaturesOfInterest/> .
+@prefix edintkos-sensortypes: <https://edint.es/kos/SensorTypes/> .
 @prefix ex: <http://example.org/> .
 
 # ---------------------------------------------------------------------------
@@ -30,7 +30,7 @@ ex:Station_Sampling_Malaga_001 a edintmed:SensorPlatform ;
     rdfs:comment "Fixed station for collecting drinking water samples"@en ;
     gsp:hasGeometry [
         a gsp:Geometry ;
-        gsp:asWKT "POINT(-4.4214 36.7213)"^^xsd:string .
+        gsp:asWKT "POINT(-4.4214 36.7213)"^^xsd:string ;
     ] ;
     sosa:hosts ex:Sensor_SampleAnalyzer_001 .
 

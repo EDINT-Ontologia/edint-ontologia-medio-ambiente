@@ -12,9 +12,9 @@ prefixes:
   time: http://www.w3.org/2006/time#
   schema: http://schema.org/
   edintmed: https://edint.es/def/medio-ambiente#
-  edintkos-vars: http://vocab.linkeddata.es/datosabiertos/kos/edint/variables/
-  edintkos-foi: http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/
-  edintkos-sensortypes: http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/
+  edintkos-vars: https://edint.es/kos/variables/
+  edintkos-foi: https://edint.es/kos/FeaturesOfInterest/
+  edintkos-sensortypes: https://edint.es/kos/SensorTypes/
   # recurso: http://vocab.linkeddata.es/datosabiertos/recurso/
 
 sources:
