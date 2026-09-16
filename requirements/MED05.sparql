@@ -2,7 +2,7 @@
 # MED05: ¿Qué observaciones ha generado cada sensor?
 
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
-PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
 
 SELECT ?sensor ?observation
 WHERE {
@@ -13,7 +13,7 @@ WHERE {
 
 # Variante: Para un sensor concreto
 
-PREFIX edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/>
+PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 

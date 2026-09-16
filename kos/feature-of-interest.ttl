@@ -1,6 +1,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintmed: <https://edint.es/def/medio-ambiente#> .
 @prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/> .

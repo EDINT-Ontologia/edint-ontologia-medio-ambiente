@@ -8,7 +8,7 @@ Actualmente, existen vocabularios consolidados para la representación de sensor
 
 # Prefijo y espacio de nombres (Prefix and namespace)
 
-El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` publicado bajo el espacio de nombres:[http://vocab.linkeddata.es/datosabiertos/def/medioambiente/](http://vocab.linkeddata.es/datosabiertos/def/medioambiente/)
+El prefijo de la ontología de *Sensores Medioambientales* es: `edintmed` publicado bajo el espacio de nombres:[https://edint.es/def/medio-ambiente#](https://edint.es/def/medio-ambiente#)
 
 # Modelo conceptual (Ontology conceptualization)
 

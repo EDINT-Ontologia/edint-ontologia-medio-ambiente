@@ -11,7 +11,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix schema: <http://schema.org/> .
 
-@prefix edintmed: <http://vocab.linkeddata.es/datosabiertos/def/medioambiente/> .
+@prefix edintmed: <https://edint.es/def/medio-ambiente#> .
 @prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/> .
 @prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
 @prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
