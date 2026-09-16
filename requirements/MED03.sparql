@@ -2,7 +2,7 @@
 # MED03: ¿De qué tipo es cada sensor?
 
 PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
-PREFIX edintST: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/>
+PREFIX edintST: <https://edint.es/kos/SensorTypes/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?sensor ?type ?typeLabel
@@ -16,7 +16,7 @@ WHERE {
 
 
 PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
-PREFIX edintST: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/>
+PREFIX edintST: <https://edint.es/kos/SensorTypes/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?sensorType ?sensorTypeLabel (COUNT(?sensor) AS ?numSensors)

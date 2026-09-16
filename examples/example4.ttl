@@ -12,9 +12,9 @@
 @prefix schema: <http://schema.org/> .
 
 @prefix edintmed: <https://edint.es/def/medio-ambiente#> .
-@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/> .
-@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
-@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix edintkos-vars: <https://edint.es/kos/EnvironmentalProperty/> .
+@prefix edintkos-foi: <https://edint.es/kos/FeaturesOfInterest/> .
+@prefix edintkos-sensortypes: <https://edint.es/kos/SensorTypes/> .
 @prefix ex: <http://example.org/> .
 
 # ---------------------------------------------------------------------------
@@ -32,7 +32,7 @@ ex:Station_Met_001 a edintmed:SensorPlatform ;
     rdfs:comment "Automatic weather station for climate parameters monitoring"@en ;
     gsp:hasGeometry [
         a gsp:Geometry ;
-        gsp:asWKT "POINT(-3.6845 40.4153)"^^xsd:string .
+        gsp:asWKT "POINT(-3.6845 40.4153)"^^xsd:string ;
     ] ;
 
     # estaciones aloja sensores

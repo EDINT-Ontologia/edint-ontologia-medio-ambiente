@@ -212,7 +212,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     <div class="query-block">
                         <span class="query-title">MED03: ¿De qué tipo es cada sensor?</span>
                         <div class="sparql-code"><pre><span></span><span class="k">PREFIX</span> <span class="nn">edintmed</span><span class="p">:</span> <span class="nl">&lt;https://edint.es/def/medio-ambiente#&gt;</span>
-<span class="k">PREFIX</span> <span class="nn">edintST</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintST</span><span class="p">:</span> <span class="nl">&lt;https://edint.es/kos/SensorTypes/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
 <span class="k">SELECT</span> <span class="nv">?sensor</span> <span class="nv">?type</span> <span class="nv">?typeLabel</span>
@@ -228,7 +228,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     <div class="query-block">
                         <span class="query-title">Variante: ¿Cuántos sensores de cada tipo?</span>
                         <div class="sparql-code"><pre><span></span><span class="k">PREFIX</span> <span class="nn">edintmed</span><span class="p">:</span> <span class="nl">&lt;https://edint.es/def/medio-ambiente#&gt;</span>
-<span class="k">PREFIX</span> <span class="nn">edintST</span><span class="p">:</span> <span class="nl">&lt;http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/&gt;</span>
+<span class="k">PREFIX</span> <span class="nn">edintST</span><span class="p">:</span> <span class="nl">&lt;https://edint.es/kos/SensorTypes/&gt;</span>
 <span class="k">PREFIX</span> <span class="nn">rdfs</span><span class="p">:</span> <span class="nl">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span>
 
 <span class="k">SELECT</span> <span class="nv">?sensorType</span> <span class="nv">?sensorTypeLabel</span> <span class="p">(</span><span class="nf">COUNT</span><span class="p">(</span><span class="nv">?sensor</span><span class="p">)</span> <span class="k">AS</span> <span class="nv">?numSensors</span><span class="p">)</span>

@@ -11,9 +11,9 @@
 @prefix schema: <http://schema.org/> .
 
 @prefix edintmed: <https://edint.es/def/medio-ambiente#> .
-@prefix edintkos-vars: <http://vocab.linkeddata.es/datosabiertos/kos/edint/EnvironmentalProperty/> .
-@prefix edintkos-foi: <http://vocab.linkeddata.es/datosabiertos/kos/edint/foi/> .
-@prefix edintkos-sensortypes: <http://vocab.linkeddata.es/datosabiertos/kos/edint/sensortypes/> .
+@prefix edintkos-vars: <https://edint.es/kos/EnvironmentalProperty/> .
+@prefix edintkos-foi: <https://edint.es/kos/FeaturesOfInterest/> .
+@prefix edintkos-sensortypes: <https://edint.es/kos/SensorTypes/> .
 @prefix ex: <http://example.org/> .
 
 # ---------------------------------------------------------------------------
@@ -31,7 +31,7 @@ ex:Station_Water_001 a edintmed:SensorPlatform ;
     rdfs:comment "Drinking water monitoring station for human consumption"@en ;
     gsp:hasGeometry [
         a gsp:Geometry ;
-        gsp:asWKT "POINT(-3.6850 40.4650)"^^xsd:string .
+        gsp:asWKT "POINT(-3.6850 40.4650)"^^xsd:string ;
     ] ;
 
     # estaciones aloja sensores
