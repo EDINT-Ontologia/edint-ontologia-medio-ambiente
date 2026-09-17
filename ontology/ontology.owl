@@ -383,7 +383,42 @@
         <widoco:turtleSerialization>ontology.ttl</widoco:turtleSerialization>
         <widoco:ntSerialization>ontology.nt</widoco:ntSerialization>
         <widoco:jsonldSerialization>ontology.jsonld</widoco:jsonldSerialization>
-    </owl:Ontology>
+            <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://qudt.org/2.1/schema/qudt"/>
+                <rdfs:label xml:lang="es">QUDT</rdfs:label>
+                <rdfs:label xml:lang="en">QUDT</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://qudt.org/schema/qudt"/>
+                <rdfs:label xml:lang="es">QUDT</rdfs:label>
+                <rdfs:label xml:lang="en">QUDT</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql"/>
+                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.w3.org/ns/sosa/"/>
+                <rdfs:label xml:lang="es">SOSA/SSN</rdfs:label>
+                <rdfs:label xml:lang="en">SOSA/SSN</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+</owl:Ontology>
 </rdf:RDF>
 
 
