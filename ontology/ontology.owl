@@ -65,6 +65,7 @@
             <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
         </dcterms:publisher>
         <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Sensores Medioambientales. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
+        <dcterms:bibliographicCitation xml:lang="en">EDINT Environmental Sensors Ontology. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
         <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
         <dcterms:abstract xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:abstract>
         <dcterms:abstract xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</dcterms:abstract>
