@@ -14,7 +14,7 @@
      xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dtype="http://www.linkedmodel.org/schema/dtype#"
-     xmlns:schema="http://schema.org/"
+     xmlns:schema="https://schema.org/"
      xmlns:edintmed="https://edint.es/def/medio-ambiente#"
      xmlns:edintkos-foi="https://edint.es/kos/FeaturesOfInterest/"
      xmlns:quantitykind="http://qudt.org/vocab/quantitykind/"
