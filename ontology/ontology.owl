@@ -52,6 +52,8 @@
         <dcterms:description xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:description>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:title xml:lang="en">EDINT Environmental Sensors Ontology</dcterms:title>
+        <rdfs:label xml:lang="es">Sensores Medioambientales</rdfs:label>
+        <rdfs:label xml:lang="en">Environmental Sensors</rdfs:label>
         <dcterms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales</dcterms:title>
         <vann:preferredNamespacePrefix>edintmed</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/medio-ambiente#"/>
