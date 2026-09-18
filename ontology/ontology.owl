@@ -14,31 +14,70 @@
      xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:dtype="http://www.linkedmodel.org/schema/dtype#"
-     xmlns:schema="http://schema.org/"
+     xmlns:schema="https://schema.org/"
      xmlns:edintmed="https://edint.es/def/medio-ambiente#"
      xmlns:edintkos-foi="https://edint.es/kos/FeaturesOfInterest/"
      xmlns:quantitykind="http://qudt.org/vocab/quantitykind/"
      xmlns:edintkos-vars="https://edint.es/kos/EnvironmentalProperty/"
-     xmlns:edintkos-sensortypes="https://edint.es/kos/SensorTypes/">
+     xmlns:edintkos-sensortypes="https://edint.es/kos/SensorTypes/"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:widoco="https://w3id.org/widoco/vocab#">
     <owl:Ontology rdf:about="https://edint.es/def/medio-ambiente#">
+        <owl:versionIRI rdf:resource="https://edint.es/def/medio-ambiente/0.2.1"/>
         <owl:imports rdf:resource="http://qudt.org/2.1/schema/qudt"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql#"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
-        <dcterms:creator xml:lang="es">Daniel Doña</dcterms:creator>
-        <dcterms:creator>Edna Ruckhaus</dcterms:creator>
-        <dcterms:creator>Lucía Sánchez</dcterms:creator>
-        <dcterms:creator>Maria del Socorro Bernardos</dcterms:creator>
-        <dcterms:creator>Oscar Corcho</dcterms:creator>
-        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</dcterms:created>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Daniel Doña</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Edna Ruckhaus</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Lucía Sánchez</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Maria del Socorro Bernardos</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
+        <dcterms:creator rdf:parseType="Resource">
+            <foaf:name>Oscar Corcho</foaf:name>
+            <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
+        </dcterms:creator>
         <dcterms:description xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</dcterms:description>
         <dcterms:description xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:description>
-        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</dcterms:issued>
         <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-27</dcterms:modified>
         <dcterms:title xml:lang="en">EDINT Environmental Sensors Ontology</dcterms:title>
+        <rdfs:label xml:lang="es">Sensores Medioambientales</rdfs:label>
+        <rdfs:label xml:lang="en">Environmental Sensors</rdfs:label>
         <dcterms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales</dcterms:title>
-        <owl:versionInfo>0.1.0</owl:versionInfo>
+        <vann:preferredNamespacePrefix>edintmed</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/medio-ambiente#"/>
+        <owl:versionInfo>0.2.1</owl:versionInfo>
+        <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-03-18</dcterms:created>
+        <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</dcterms:issued>
+        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</dcterms:modified>
+        <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0"/>
+        <schema:codeRepository rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente"/>
+        <schema:funding>Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)</schema:funding>
+        <dcterms:publisher rdf:parseType="Resource">
+            <foaf:name>FEMP</foaf:name>
+            <foaf:homepage rdf:resource="https://www.femp.es/"/>
+            <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
+        </dcterms:publisher>
+        <dcterms:bibliographicCitation xml:lang="es">Ontología EDINT de Sensores Medioambientales. EDINT. Revisión: v0.2.1.</dcterms:bibliographicCitation>
+        <dcterms:bibliographicCitation xml:lang="en">EDINT Environmental Sensors Ontology. EDINT. Revision: v0.2.1.</dcterms:bibliographicCitation>
+        <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
+        <dcterms:abstract xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</dcterms:abstract>
+        <dcterms:abstract xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</dcterms:abstract>
     </owl:Ontology>
+    <foaf:Organization rdf:about="https://oeg.fi.upm.es/">
+        <foaf:name>Ontology Engineering Group, UPM</foaf:name>
+    </foaf:Organization>
     
 
 
@@ -345,6 +384,48 @@
         <rdfs:label xml:lang="en">Environmental Property</rdfs:label>
         <rdfs:label xml:lang="es">Propiedad Medioambiental</rdfs:label>
     </owl:NamedIndividual>
+    <!-- Nombres de fichero de las serializaciones generadas (vocabulario Widoco) -->
+    <owl:Ontology rdf:about="https://edint.es/def/medio-ambiente#">
+        <widoco:rdfxmlSerialization>ontology.rdf</widoco:rdfxmlSerialization>
+        <widoco:turtleSerialization>ontology.ttl</widoco:turtleSerialization>
+        <widoco:ntSerialization>ontology.nt</widoco:ntSerialization>
+        <widoco:jsonldSerialization>ontology.jsonld</widoco:jsonldSerialization>
+            <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://qudt.org/2.1/schema/qudt"/>
+                <rdfs:label xml:lang="es">QUDT</rdfs:label>
+                <rdfs:label xml:lang="en">QUDT</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://qudt.org/schema/qudt"/>
+                <rdfs:label xml:lang="es">QUDT</rdfs:label>
+                <rdfs:label xml:lang="en">QUDT</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql"/>
+                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+                <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+                <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+        <widoco:vocabularyLabel>
+            <rdf:Description>
+                <widoco:vocabularyIRI rdf:resource="http://www.w3.org/ns/sosa/"/>
+                <rdfs:label xml:lang="es">SOSA/SSN</rdfs:label>
+                <rdfs:label xml:lang="en">SOSA/SSN</rdfs:label>
+            </rdf:Description>
+        </widoco:vocabularyLabel>
+</owl:Ontology>
 </rdf:RDF>
 
 
