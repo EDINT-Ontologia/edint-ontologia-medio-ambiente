@@ -1,4 +1,4 @@
-# Ontología EDINT de Sensores Medioambientales
+# Ontología EDINT de Sensores Medioambientales (EDINT Environmental Sensors Ontology)
 
 Esta ontología tiene como propósito definir y representar estaciones de medición y sensores medioambientales en el contexto de las ciudades inteligentes y la gestión del medio ambiente. Se ha diseñado como una extensión ligera y modular de la ontología SOSA (Sensor, Observation, Sample, and Actuator) y de GeoSPARQL, restringiendo sus mediciones a vocabularios controlados específicos.
 
