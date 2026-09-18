@@ -8,40 +8,40 @@
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/bibliographicCitation> "Ontología EDINT de Sensores Medioambientales. EDINT. Revisión: v0.2.1."@es .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/created> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid1 .
+_:genid1 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid1 <http://xmlns.com/foaf/0.1/name> "Maria del Socorro Bernardos" .
-_:genid1 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid2 .
+_:genid2 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid2 <http://xmlns.com/foaf/0.1/name> "Lucía Sánchez" .
-_:genid2 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid3 .
+_:genid3 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid3 <http://xmlns.com/foaf/0.1/name> "Edna Ruckhaus" .
-_:genid3 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid4 .
+_:genid4 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid4 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" .
-_:genid4 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid5 <http://xmlns.com/foaf/0.1/name> "Oscar Corcho" .
-_:genid5 <http://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/description> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/description> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/issued> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/modified> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/publisher> _:genid6 .
+_:genid6 <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
 _:genid6 <http://xmlns.com/foaf/0.1/name> "FEMP" .
 _:genid6 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> .
-_:genid6 <http://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology"@en .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/title> "Ontología EDINT de Sensores Medioambientales"@es .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintmed" .
 <http://qudt.org/2.1/schema/qudt> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/medio-ambiente#> .
-<http://qudt.org/2.1/schema/qudt> <http://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente> .
-<http://qudt.org/2.1/schema/qudt> <http://schema.org/creativeWorkStatus> "Ontology Specification"@en .
-<http://qudt.org/2.1/schema/qudt> <http://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
 <http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Sensors"@en .
 <http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2000/01/rdf-schema#label> "Sensores Medioambientales"@es .
 <http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#priorVersion> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0> .
 <http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.1" .
+<http://qudt.org/2.1/schema/qudt> <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente> .
+<http://qudt.org/2.1/schema/qudt> <https://schema.org/creativeWorkStatus> "Ontology Specification"@en .
+<http://qudt.org/2.1/schema/qudt> <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
 <http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" .
 <http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" .
 <http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" .
@@ -93,20 +93,20 @@ _:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@en .
 # http://purl.org/dc/terms/publisher
 <http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
-# http://schema.org/affiliation
-<http://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://schema.org/codeRepository
-<http://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://schema.org/creativeWorkStatus
-<http://schema.org/creativeWorkStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# http://schema.org/funding
-<http://schema.org/funding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
 # http://xmlns.com/foaf/0.1/homepage
 <http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/affiliation
+<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/codeRepository
+<https://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/creativeWorkStatus
+<https://schema.org/creativeWorkStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/funding
+<https://schema.org/funding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # https://w3id.org/widoco/vocab#jsonldSerialization
 <https://w3id.org/widoco/vocab#jsonldSerialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

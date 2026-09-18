@@ -12,8 +12,8 @@
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:vocab="https://w3id.org/widoco/vocab#"
-     xmlns:schema="http://schema.org/"
-     xmlns:schema1="https://schema.org/">
+     xmlns:schema="https://schema.org/"
+     xmlns:schema1="http://schema.org/">
     <owl:Ontology rdf:about="http://qudt.org/2.1/schema/qudt">
         <owl:imports rdf:resource="http://qudt.org/2.1/schema/qudt"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql#"/>
@@ -38,13 +38,13 @@
         <terms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales</terms:title>
         <vann:preferredNamespacePrefix>edintmed</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/medio-ambiente#"/>
-        <schema:codeRepository rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente"/>
-        <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
-        <schema:funding>Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)</schema:funding>
         <rdfs:label xml:lang="en">Environmental Sensors</rdfs:label>
         <rdfs:label xml:lang="es">Sensores Medioambientales</rdfs:label>
         <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0"/>
         <owl:versionInfo>0.2.1</owl:versionInfo>
+        <schema:codeRepository rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente"/>
+        <schema:creativeWorkStatus xml:lang="en">Ontology Specification</schema:creativeWorkStatus>
+        <schema:funding>Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)</schema:funding>
         <vocab:jsonldSerialization>ontology.jsonld</vocab:jsonldSerialization>
         <vocab:ntSerialization>ontology.nt</vocab:ntSerialization>
         <vocab:rdfxmlSerialization>ontology.rdf</vocab:rdfxmlSerialization>
@@ -56,29 +56,29 @@
         <vocab:vocabularyLabel rdf:nodeID="genid11"/>
     </owl:Ontology>
     <rdf:Description rdf:nodeID="genid1">
-        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
         <foaf:name>Maria del Socorro Bernardos</foaf:name>
+        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid2">
-        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
         <foaf:name>Lucía Sánchez</foaf:name>
+        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid3">
-        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
         <foaf:name>Edna Ruckhaus</foaf:name>
+        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid4">
-        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
         <foaf:name>Daniel Doña</foaf:name>
+        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid5">
-        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
         <foaf:name>Oscar Corcho</foaf:name>
+        <schema:affiliation rdf:resource="https://oeg.fi.upm.es/"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid6">
-        <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
         <foaf:homepage rdf:resource="https://www.femp.es/"/>
         <foaf:name>FEMP</foaf:name>
+        <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid7">
         <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
@@ -162,38 +162,38 @@
     
 
 
-    <!-- http://schema.org/affiliation -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/affiliation"/>
-    
-
-
-    <!-- http://schema.org/codeRepository -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/codeRepository"/>
-    
-
-
-    <!-- http://schema.org/creativeWorkStatus -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/creativeWorkStatus"/>
-    
-
-
-    <!-- http://schema.org/funding -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/funding"/>
-    
-
-
     <!-- http://xmlns.com/foaf/0.1/homepage -->
 
 
     <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- https://schema.org/affiliation -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/affiliation"/>
+    
+
+
+    <!-- https://schema.org/codeRepository -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/codeRepository"/>
+    
+
+
+    <!-- https://schema.org/creativeWorkStatus -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/creativeWorkStatus"/>
+    
+
+
+    <!-- https://schema.org/funding -->
+
+
+    <owl:AnnotationProperty rdf:about="https://schema.org/funding"/>
     
 
 
