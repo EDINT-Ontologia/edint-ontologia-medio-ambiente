@@ -13,7 +13,7 @@ WHERE {
                sosa:madeBySensor ?sensor .
 
   # Sensor es una Feature, que tiene una geometría
-  ?sensor hasGeometry ?sensorgeo .
+  ?sensor geo:hasGeometry ?sensorgeo .
   
   # Geometría del lugar
   <URI-del-lugar> geo:hasGeometry ?areaGeom.
