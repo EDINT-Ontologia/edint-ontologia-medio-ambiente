@@ -1,0 +1,345 @@
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#imports> <http://qudt.org/2.1/schema/qudt> .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql#> .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/sosa/> .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/abstract> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/abstract> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/bibliographicCitation> "EDINT Environmental Sensors Ontology. EDINT. Revision: v0.2.1."@en .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/bibliographicCitation> "Ontología EDINT de Sensores Medioambientales. EDINT. Revisión: v0.2.1."@es .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/created> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid1 .
+_:genid1 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+_:genid1 <http://xmlns.com/foaf/0.1/name> "Maria del Socorro Bernardos" .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid2 .
+_:genid2 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+_:genid2 <http://xmlns.com/foaf/0.1/name> "Lucía Sánchez" .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid3 .
+_:genid3 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+_:genid3 <http://xmlns.com/foaf/0.1/name> "Edna Ruckhaus" .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid4 .
+_:genid4 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+_:genid4 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid5 .
+_:genid5 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
+_:genid5 <http://xmlns.com/foaf/0.1/name> "Oscar Corcho" .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/description> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/description> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/issued> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/modified> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/publisher> _:genid6 .
+_:genid6 <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
+_:genid6 <http://xmlns.com/foaf/0.1/name> "FEMP" .
+_:genid6 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology"@en .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/title> "Ontología EDINT de Sensores Medioambientales"@es .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintmed" .
+<http://qudt.org/2.1/schema/qudt> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/medio-ambiente#> .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Sensors"@en .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2000/01/rdf-schema#label> "Sensores Medioambientales"@es .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#priorVersion> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0> .
+<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.1" .
+<http://qudt.org/2.1/schema/qudt> <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente> .
+<http://qudt.org/2.1/schema/qudt> <https://schema.org/creativeWorkStatus> "Ontology Specification"@en .
+<http://qudt.org/2.1/schema/qudt> <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid7 .
+_:genid7 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql#> .
+_:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@es .
+_:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@en .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid8 .
+_:genid8 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
+_:genid8 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@es .
+_:genid8 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@en .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid9 .
+_:genid9 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://qudt.org/schema/qudt> .
+_:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@es .
+_:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@en .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid10 .
+_:genid10 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://qudt.org/2.1/schema/qudt> .
+_:genid10 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@es .
+_:genid10 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@en .
+<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid11 .
+_:genid11 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/sosa/> .
+_:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@es .
+_:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/affiliation
+<https://schema.org/affiliation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/codeRepository
+<https://schema.org/codeRepository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/creativeWorkStatus
+<https://schema.org/creativeWorkStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://schema.org/funding
+<https://schema.org/funding> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/widoco/vocab#jsonldSerialization
+<https://w3id.org/widoco/vocab#jsonldSerialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/widoco/vocab#ntSerialization
+<https://w3id.org/widoco/vocab#ntSerialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/widoco/vocab#rdfxmlSerialization
+<https://w3id.org/widoco/vocab#rdfxmlSerialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/widoco/vocab#turtleSerialization
+<https://w3id.org/widoco/vocab#turtleSerialization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/widoco/vocab#vocabularyIRI
+<https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# https://w3id.org/widoco/vocab#vocabularyLabel
+<https://w3id.org/widoco/vocab#vocabularyLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://schema.org/manufacturer
+<http://schema.org/manufacturer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/hasFeatureOfInterest
+<http://www.w3.org/ns/sosa/hasFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/hosts
+<http://www.w3.org/ns/sosa/hosts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/isHostedBy
+<http://www.w3.org/ns/sosa/isHostedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/ns/sosa/observes
+<http://www.w3.org/ns/sosa/observes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://edint.es/def/medio-ambiente#hasSensorType
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://edint.es/def/medio-ambiente#EnvironmentalSensor> .
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#Concept> .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/2000/01/rdf-schema#comment> "Links an environmental sensor to its type classification."@en .
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/2000/01/rdf-schema#comment> "Vincula un sensor medioambiental a su clasificación de tipo."@es .
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/2000/01/rdf-schema#label> "has sensor type"@en .
+<https://edint.es/def/medio-ambiente#hasSensorType> <http://www.w3.org/2000/01/rdf-schema#label> "tiene tipo de sensor"@es .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://qudt.org/schema/qudt/QuantityKind
+<http://qudt.org/schema/qudt/QuantityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://schema.org/Organization
+<http://schema.org/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2004/02/skos/core#Concept
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/FeatureOfInterest
+<http://www.w3.org/ns/sosa/FeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/ObservableProperty
+<http://www.w3.org/ns/sosa/ObservableProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Platform
+<http://www.w3.org/ns/sosa/Platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/ns/sosa/Sensor
+<http://www.w3.org/ns/sosa/Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest
+<https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/FeatureOfInterest> .
+<https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Característica de interés de la propiedad medioambiental"@es .
+<https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Feature of Interest"@en .
+# 
+# https://edint.es/def/medio-ambiente#EnvironmentalObservation
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Observation> .
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#hasValue> <https://edint.es/kos/FeaturesOfInterest> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hasFeatureOfInterest> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "An observation of an environmental property made by an environmental sensor."@en .
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#comment> "Una observación de una propiedad medioambiental realizada por un sensor medioambiental."@es .
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental observation"@en .
+<https://edint.es/def/medio-ambiente#EnvironmentalObservation> <http://www.w3.org/2000/01/rdf-schema#label> "Observación medioambiental"@es .
+# 
+# https://edint.es/def/medio-ambiente#EnvironmentalProperty
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://qudt.org/schema/qudt/QuantityKind> .
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/ObservableProperty> .
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "A physical, chemical, or acoustic property of the environment that can be observed by sensors."@en .
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Una propiedad física, química o acústica del medio ambiente que puede ser observada por sensores."@es .
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental property"@en .
+<https://edint.es/def/medio-ambiente#EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Propiedad medioambiental"@es .
+# 
+# https://edint.es/def/medio-ambiente#EnvironmentalSensor
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Sensor> .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://schema.org/Organization> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://schema.org/manufacturer> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://edint.es/def/medio-ambiente#SensorPlatform> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/isHostedBy> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#hasValue> <https://edint.es/kos/EnvironmentalProperty> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/observes> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#hasValue> <https://edint.es/kos/SensorTypes> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#inScheme> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://edint.es/def/medio-ambiente#hasSensorType> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Device designed to observe and measure physical, chemical, or acoustic properties of the environment."@en .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Dispositivo diseñado para observar y medir propiedades físicas, químicas o acústicas del medio ambiente."@es .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental sensor"@en .
+<https://edint.es/def/medio-ambiente#EnvironmentalSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor medioambiental"@es .
+# 
+# https://edint.es/def/medio-ambiente#SensorPlatform
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/sosa/Platform> .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.opengis.net/ont/geosparql#Geometry> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://edint.es/def/medio-ambiente#EnvironmentalSensor> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/ns/sosa/hosts> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "Physical platform or facility that hosts environmental sensors for monitoring."@en .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "Plataforma física o instalación que alberga sensores medioambientales para monitorización."@es .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Plataforma de sensor"@es .
+<https://edint.es/def/medio-ambiente#SensorPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor platform"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://edint.es/kos/EnvironmentalProperty
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://edint.es/def/medio-ambiente#EnvironmentalProperty> .
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Concept scheme grouping environmental properties according to their measurement domain."@en .
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#comment> "Esquema de conceptos agrupando propiedades ambientales según su dominio de medición"@es .
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Property"@en .
+<https://edint.es/kos/EnvironmentalProperty> <http://www.w3.org/2000/01/rdf-schema#label> "Propiedad Medioambiental"@es .
+# 
+# https://edint.es/kos/FeaturesOfInterest
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://edint.es/def/medio-ambiente#EnvironmentalFeatureOfInterest> .
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/2000/01/rdf-schema#comment> "Concept scheme grouping features of interest observable by sensors according to SOSA ontology."@en .
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/2000/01/rdf-schema#comment> "Esquema de conceptos agrupando características de interés observables por sensores según la ontología SOSA"@es .
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Características de Interés"@es .
+<https://edint.es/kos/FeaturesOfInterest> <http://www.w3.org/2000/01/rdf-schema#label> "Features of Interest"@en .
+# 
+# https://edint.es/kos/SensorTypes
+<https://edint.es/kos/SensorTypes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://edint.es/kos/SensorTypes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://edint.es/kos/SensorTypes> <http://www.w3.org/2000/01/rdf-schema#comment> "Concept scheme grouping sensor types according to their measurement domain."@en .
+<https://edint.es/kos/SensorTypes> <http://www.w3.org/2000/01/rdf-schema#comment> "Esquema de conceptos agrupando tipos de sensores según su dominio de medición"@es .
+<https://edint.es/kos/SensorTypes> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor Types"@en .
+<https://edint.es/kos/SensorTypes> <http://www.w3.org/2000/01/rdf-schema#label> "Tipos de Sensores"@es .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<https://oeg.fi.upm.es/> <http://xmlns.com/foaf/0.1/name> "Ontology Engineering Group, UPM" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
