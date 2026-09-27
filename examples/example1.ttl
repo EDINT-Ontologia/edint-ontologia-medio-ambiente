@@ -34,10 +34,7 @@ ex:Station_AQ_001 a edintmed:SensorPlatform ;
     sosa:hosts ex:Sensor_Temp_001 ;
     sosa:hosts ex:Sensor_NO2_001 ;
     sosa:hosts ex:Sensor_Press_001 ;
-    gsp:hasGeometry [
-        a gsp:Geometry ;
-        gsp:asWKT "POINT(-3.7120 40.4230)"^^xsd:string ;
-    ] .
+    gsp:hasGeometry ex:Geometry_AQ_001 .
 
 # ---------------------------------------------------------------------------
 # SENSORES
@@ -130,6 +127,13 @@ ex:Observation_Press_001_20260318 a edintmed:EnvironmentalObservation ;
         qudt:numericValue "1018.5"^^xsd:decimal ;
         qudt:hasUnit unit:HectoPA
     ] .
+
+# ---------------------------------------------------------------------------
+# GEOMETRÍAS
+# ---------------------------------------------------------------------------
+
+ex:Geometry_AQ_001 a gsp:Geometry ;
+    gsp:asWKT "POINT(-3.7120 40.4230)"^^xsd:string .
 
 # ---------------------------------------------------------------------------
 # MANUFACTURERS
