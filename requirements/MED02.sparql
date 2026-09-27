@@ -3,9 +3,15 @@
 
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
+PREFIX ex: <http://example.org/>
 
+# Valor por defecto para <URI-ESTACION>:
+#   Usa ex:Station_AQ_001 (Estación de calidad del aire - Plaza España)
+#   Definida en examples/example1.ttl
+#   Como alternativa, usa ex:Station_AQ_002 (ver example3.ttl)
 SELECT ?sensor
 WHERE {
+  BIND(ex:Station_AQ_001 AS ?estacion)
   ?sensor a edintmed:EnvironmentalSensor ;
-          sosa:isHostedBy <URI-ESTACION> .
+          sosa:isHostedBy ?estacion .
 }
