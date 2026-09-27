@@ -35,10 +35,7 @@ ex:Station_Guadarrama_001 a edintmed:SensorPlatform ;
     geo:alt "1220"^^xsd:float ;
     rdfs:comment "Estación autónoma solar para monitorización ambiental en zona remota del parque natural"@es ;
     rdfs:comment "Autonomous solar-powered station for environmental monitoring in a remote area of the natural park"@en ;
-    gsp:hasGeometry [
-        a gsp:Geometry ;
-        gsp:asWKT "POINT(-4.0396 40.7934)"^^xsd:string ;
-    ] ;
+    gsp:hasGeometry ex:Geometry_Guadarrama_001 ;
     sosa:hosts ex:Sensor_PM25_001 ;
     sosa:hosts ex:Sensor_Temp_001 .
 
@@ -365,6 +362,13 @@ ex:Observation_SignalStrength_Temp_20260319 a edintmed:EnvironmentalObservation 
         qudt:numericValue "-105"^^xsd:decimal ;
         qudt:hasUnit unit:DeciB-M
     ] .
+
+# ---------------------------------------------------------------------------
+# GEOMETRÍAS
+# ---------------------------------------------------------------------------
+
+ex:Geometry_Guadarrama_001 a gsp:Geometry ;
+    gsp:asWKT "POINT(-4.0396 40.7934)"^^xsd:string .
 
 # ---------------------------------------------------------------------------
 # MANUFACTURERS

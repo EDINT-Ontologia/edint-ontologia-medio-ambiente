@@ -28,10 +28,7 @@ ex:Station_Sampling_Malaga_001 a edintmed:SensorPlatform ;
     geo:long "-4.4214"^^xsd:float ;
     rdfs:comment "Estación fija para recolección de muestras de agua potable"@es ;
     rdfs:comment "Fixed station for collecting drinking water samples"@en ;
-    gsp:hasGeometry [
-        a gsp:Geometry ;
-        gsp:asWKT "POINT(-4.4214 36.7213)"^^xsd:string ;
-    ] ;
+    gsp:hasGeometry ex:Geometry_Sampling_Malaga_001 ;
     sosa:hosts ex:Sensor_SampleAnalyzer_001 .
 
 # ---------------------------------------------------------------------------
@@ -220,6 +217,13 @@ ex:Observation_Sample2_Conductivity a edintmed:EnvironmentalObservation ;
         qudt:numericValue "492.0"^^xsd:decimal ;
         qudt:hasUnit unit:MicroS-PER-CentiM
     ] .
+
+# ---------------------------------------------------------------------------
+# GEOMETRÍAS
+# ---------------------------------------------------------------------------
+
+ex:Geometry_Sampling_Malaga_001 a gsp:Geometry ;
+    gsp:asWKT "POINT(-4.4214 36.7213)"^^xsd:string .
 
 # ---------------------------------------------------------------------------
 # MANUFACTURERS
