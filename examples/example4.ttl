@@ -30,10 +30,7 @@ ex:Station_Met_001 a edintmed:SensorPlatform ;
     geo:alt "609"^^xsd:float ;
     rdfs:comment "Estación meteorológica automática para monitorización de parámetros climáticos"@es ;
     rdfs:comment "Automatic weather station for climate parameters monitoring"@en ;
-    gsp:hasGeometry [
-        a gsp:Geometry ;
-        gsp:asWKT "POINT(-3.6845 40.4153)"^^xsd:string ;
-    ] ;
+    gsp:hasGeometry ex:Geometry_Met_001 ;
 
     # estaciones aloja sensores
     sosa:hosts ex:Sensor_Wind_001 ;
@@ -400,6 +397,13 @@ ex:Observation_RelHumidity_002 a edintmed:EnvironmentalObservation ;
         qudt:numericValue "65.8"^^xsd:decimal ;
         qudt:hasUnit unit:PERCENT
     ] .
+
+# ---------------------------------------------------------------------------
+# GEOMETRÍAS
+# ---------------------------------------------------------------------------
+
+ex:Geometry_Met_001 a gsp:Geometry ;
+    gsp:asWKT "POINT(-3.6845 40.4153)"^^xsd:string .
 
 # ---------------------------------------------------------------------------
 # MANUFACTURERS
