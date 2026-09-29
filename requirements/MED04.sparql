@@ -17,10 +17,15 @@ ORDER BY ?manufacturer
 
 PREFIX schema: <http://schema.org/>
 PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
+PREFIX ex: <http://example.org/>
 
-SELECT ?manufacturer ?manufacturerLabel 
+# Valor por defecto para <URI-del-sensor>:
+#   Usa ex:Sensor_Temp_001 (Sensor de temperatura - PT100, en example1.ttl)
+#   O bien ex:Sensor_NO2_001, ex:Sensor_Press_001
+SELECT ?manufacturer ?manufacturerLabel
 WHERE {
-  <URI-del-sensor> a edintmed:EnvironmentalSensor ;
+  BIND(ex:Sensor_Temp_001 AS ?sensor)
+  ?sensor a edintmed:EnvironmentalSensor ;
           schema:manufacturer ?manufacturer .
   OPTIONAL { ?manufacturer rdfs:label ?manufacturerLabel }
 }
