@@ -29,10 +29,7 @@ ex:Station_Water_001 a edintmed:SensorPlatform ;
     geo:alt "655"^^xsd:float ;
     rdfs:comment "Estación de monitorización de agua potable para consumo humano"@es ;
     rdfs:comment "Drinking water monitoring station for human consumption"@en ;
-    gsp:hasGeometry [
-        a gsp:Geometry ;
-        gsp:asWKT "POINT(-3.6850 40.4650)"^^xsd:string ;
-    ] ;
+    gsp:hasGeometry ex:Geometry_Water_001 ;
 
     # estaciones aloja sensores
     sosa:hosts ex:Sensor_Temp_001 ;
@@ -237,6 +234,13 @@ ex:Observation_Chl_002 a edintmed:EnvironmentalObservation ;
         qudt:numericValue "0.52"^^xsd:decimal ;
         qudt:hasUnit unit:MilliGM-PER-L
     ] .
+
+# ---------------------------------------------------------------------------
+# GEOMETRÍAS
+# ---------------------------------------------------------------------------
+
+ex:Geometry_Water_001 a gsp:Geometry ;
+    gsp:asWKT "POINT(-3.6850 40.4650)"^^xsd:string .
 
 # ---------------------------------------------------------------------------
 # MANUFACTURERS
