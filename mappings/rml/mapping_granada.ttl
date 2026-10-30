@@ -1,0 +1,111 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix sosa: <http://www.w3.org/ns/sosa/>.
+@prefix qudt: <http://qudt.org/schema/qudt/>.
+@prefix unit: <http://qudt.org/vocab/unit/>.
+@prefix time: <http://www.w3.org/2006/time#>.
+@prefix edintmed: <https://edint.es/def/medio-ambiente#>.
+@prefix edintkos-vars: <https://edint.es/kos/EnvironmentalProperty/>.
+@prefix edintkos-foi: <https://edint.es/kos/FeaturesOfInterest/>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@base <http://example.com/ns#>.
+
+# ---------------------------------------------------------------------------
+# MAPPING para los CSVs de Granada (examples/datasets/granada_*.csv)
+#
+# Estos CSVs tienen una estructura especial con metadata en las primeras
+# filas y datos horarios a partir de la fila 8 (con header en fila 7).
+#
+# Columnas reales (fila 7):  hora | media | Maximo | fecha Max. | minimo | fecha Min.
+# Metadata (fila 0):  punto = nombre de estacion (CONGRESOS / NORTE)
+# Metadata (fila 1):  parametro = contaminante (O3 / SO2)
+#
+# Este mapping mapea cada fila de datos como una sosa:Observation con
+# qudt:QuantityValue para el valor medio, vinculada a una estacion y
+# propiedad derivadas de la metadata del CSV.
+#
+# Para que RML/ql:CSV funcione con este CSV, se usa el subconjunto
+# desde la fila 7 (header) hasta el final como fuente logica.
+# En produccion, se recomienda pre-procesar el CSV para eliminar la
+# metadata y dejar solo las columnas: hora,media,Maximo,fecha Max.,minimo,fecha Min.
+# ---------------------------------------------------------------------------
+
+# TriplesMap principal: cada fila de datos -> una sosa:Observation
+<granada_observation_0> a rr:TriplesMap;
+
+    rml:logicalSource [
+        a rml:LogicalSource;
+        rml:source "granada_2024_01_O3_congresos.csv";
+        rml:referenceFormulation ql:CSV
+    ];
+
+    rr:subjectMap [
+        a rr:SubjectMap;
+        rr:template "http://example.org/Granada/Obs/O3/hora_{hora}";
+        rr:class sosa:Observation;
+    ];
+
+    rdf:type edintmed:EnvironmentalObservation;
+
+    rr:predicateObjectMap [
+        rr:predicateMap [
+            a rr:PredicateMap;
+            rr:constant sosa:madeBySensor;
+        ];
+        rr:objectMap [
+            a rr:ObjectMap;
+            rr:constant <http://example.org/Granada/Sensor/CONGRESOS_O3>;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicateMap [
+            a rr:PredicateMap;
+            rr:constant sosa:observedProperty;
+        ];
+        rr:objectMap [
+            a rr:ObjectMap;
+            rr:constant <https://edint.es/kos/EnvironmentalProperty/O3>;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicateMap [
+            a rr:PredicateMap;
+            rr:constant sosa:hasFeatureOfInterest;
+        ];
+        rr:objectMap [
+            a rr:ObjectMap;
+            rr:constant edintkos-foi:Air;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicateMap [
+            a rr:PredicateMap;
+            rr:constant sosa:resultTime;
+        ];
+        rr:objectMap [
+            a rr:ObjectMap;
+            rml:reference "fecha Max.";
+            rr:template "{fecha Max.}T{hora}:00:00+01:00";
+            rr:datatype xsd:dateTime;
+        ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicateMap [
+            a rr:PredicateMap;
+            rr:constant sosa:hasSimpleResult;
+        ];
+        rr:objectMap [
+            a rr:ObjectMap;
+            rml:reference "media";
+            rr:datatype xsd:decimal;
+        ];
+    ].
