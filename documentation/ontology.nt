@@ -1,71 +1,72 @@
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#imports> <http://qudt.org/2.1/schema/qudt> .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql#> .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/sosa/> .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/abstract> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/abstract> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/bibliographicCitation> "EDINT Environmental Sensors Ontology. EDINT. Revision: v0.2.1."@en .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/bibliographicCitation> "Ontología EDINT de Sensores Medioambientales. EDINT. Revisión: v0.2.1."@es .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/created> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid1 .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2002/07/owl#versionIRI> <https://edint.es/def/medio-ambiente/0.2.1> .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2002/07/owl#imports> <http://qudt.org/2.1/schema/qudt> .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql#> .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/sosa/> .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/abstract> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/abstract> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/bibliographicCitation> "EDINT Environmental Sensors Ontology. EDINT. Revision: v0.2.1."@en .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/bibliographicCitation> "Ontología EDINT de Sensores Medioambientales. EDINT. Revisión: v0.2.1."@es .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/created> "2026-03-18"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/creator> _:genid1 .
 _:genid1 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid1 <http://xmlns.com/foaf/0.1/name> "Maria del Socorro Bernardos" .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid2 .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/creator> _:genid2 .
 _:genid2 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid2 <http://xmlns.com/foaf/0.1/name> "Lucía Sánchez" .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid3 .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/creator> _:genid3 .
 _:genid3 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid3 <http://xmlns.com/foaf/0.1/name> "Edna Ruckhaus" .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid4 .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/creator> _:genid4 .
 _:genid4 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid4 <http://xmlns.com/foaf/0.1/name> "Daniel Doña" .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/creator> _:genid5 .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/creator> _:genid5 .
 _:genid5 <https://schema.org/affiliation> <https://oeg.fi.upm.es/> .
 _:genid5 <http://xmlns.com/foaf/0.1/name> "Oscar Corcho" .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/description> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/description> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/issued> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/modified> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/publisher> _:genid6 .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/description> "A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary."@en .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/description> "Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT."@es .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/issued> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by-sa/4.0/> .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/modified> "2026-09-17"^^<http://www.w3.org/2001/XMLSchema#date> .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/publisher> _:genid6 .
 _:genid6 <https://schema.org/affiliation> "Federación Española de Municipios y Provincias" .
 _:genid6 <http://xmlns.com/foaf/0.1/name> "FEMP" .
 _:genid6 <http://xmlns.com/foaf/0.1/homepage> <https://www.femp.es/> .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology"@en .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/dc/terms/title> "Ontología EDINT de Sensores Medioambientales"@es .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintmed" .
-<http://qudt.org/2.1/schema/qudt> <http://purl.org/vocab/vann/preferredNamespaceUri> <https://edint.es/def/medio-ambiente#> .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Sensors"@en .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2000/01/rdf-schema#label> "Sensores Medioambientales"@es .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#priorVersion> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0> .
-<http://qudt.org/2.1/schema/qudt> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.1" .
-<http://qudt.org/2.1/schema/qudt> <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente> .
-<http://qudt.org/2.1/schema/qudt> <https://schema.org/creativeWorkStatus> "Ontology Specification"@en .
-<http://qudt.org/2.1/schema/qudt> <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid7 .
-_:genid7 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql#> .
-_:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@es .
-_:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@en .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid8 .
-_:genid8 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/title> "EDINT Environmental Sensors Ontology"@en .
+<https://edint.es/def/medio-ambiente> <http://purl.org/dc/terms/title> "Ontología EDINT de Sensores Medioambientales"@es .
+<https://edint.es/def/medio-ambiente> <http://purl.org/vocab/vann/preferredNamespacePrefix> "edintmed" .
+<https://edint.es/def/medio-ambiente> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://edint.es/def/medio-ambiente#" .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2000/01/rdf-schema#label> "Environmental Sensors"@en .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2000/01/rdf-schema#label> "Sensores Medioambientales"@es .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2002/07/owl#priorVersion> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0> .
+<https://edint.es/def/medio-ambiente> <http://www.w3.org/2002/07/owl#versionInfo> "0.2.1" .
+<https://edint.es/def/medio-ambiente> <https://schema.org/codeRepository> <https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente> .
+<https://edint.es/def/medio-ambiente> <https://schema.org/creativeWorkStatus> "Ontology Specification"@en .
+<https://edint.es/def/medio-ambiente> <https://schema.org/funding> "Espacio de Datos para las Infraestructuras Urbanas Inteligentes (EDINT)" .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#jsonldSerialization> "ontology.jsonld" .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#ntSerialization> "ontology.nt" .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#rdfxmlSerialization> "ontology.rdf" .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#turtleSerialization> "ontology.ttl" .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid7 .
+_:genid7 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/sosa/> .
+_:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@es .
+_:genid7 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@en .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid8 .
+_:genid8 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql#> .
 _:genid8 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@es .
 _:genid8 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@en .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid9 .
-_:genid9 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://qudt.org/schema/qudt> .
-_:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@es .
-_:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@en .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid10 .
-_:genid10 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://qudt.org/2.1/schema/qudt> .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid9 .
+_:genid9 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.opengis.net/ont/geosparql> .
+_:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@es .
+_:genid9 <http://www.w3.org/2000/01/rdf-schema#label> "GeoSPARQL"@en .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid10 .
+_:genid10 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://qudt.org/schema/qudt> .
 _:genid10 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@es .
 _:genid10 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@en .
-<http://qudt.org/2.1/schema/qudt> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid11 .
-_:genid11 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://www.w3.org/ns/sosa/> .
-_:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@es .
-_:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@en .
+<https://edint.es/def/medio-ambiente> <https://w3id.org/widoco/vocab#vocabularyLabel> _:genid11 .
+_:genid11 <https://w3id.org/widoco/vocab#vocabularyIRI> <http://qudt.org/2.1/schema/qudt> .
+_:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@es .
+_:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "QUDT"@en .
 # 
 # 
 # #################################################################
@@ -125,18 +126,6 @@ _:genid11 <http://www.w3.org/2000/01/rdf-schema#label> "SOSA/SSN"@en .
 # 
 # https://w3id.org/widoco/vocab#vocabularyLabel
 <https://w3id.org/widoco/vocab#vocabularyLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Datatypes
-# #
-# #################################################################
-# 
-# 
-# http://www.w3.org/2001/XMLSchema#date
-<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
 # 
 # 
 # 

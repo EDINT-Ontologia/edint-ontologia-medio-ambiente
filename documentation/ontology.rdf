@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://qudt.org/2.1/schema/qudt#"
-     xml:base="http://qudt.org/2.1/schema/qudt"
+<rdf:RDF xmlns="https://edint.es/def/medio-ambiente#"
+     xml:base="https://edint.es/def/medio-ambiente"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -14,7 +14,8 @@
      xmlns:vocab="https://w3id.org/widoco/vocab#"
      xmlns:schema="https://schema.org/"
      xmlns:schema1="http://schema.org/">
-    <owl:Ontology rdf:about="http://qudt.org/2.1/schema/qudt">
+    <owl:Ontology rdf:about="https://edint.es/def/medio-ambiente">
+        <owl:versionIRI rdf:resource="https://edint.es/def/medio-ambiente/0.2.1"/>
         <owl:imports rdf:resource="http://qudt.org/2.1/schema/qudt"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql#"/>
         <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
@@ -31,13 +32,13 @@
         <terms:description xml:lang="en">A lightweight ontology extending SOSA to represent environmental measuring stations and sensors, restricting their observations to the EDINT SKOS controlled vocabulary.</terms:description>
         <terms:description xml:lang="es">Una ontología ligera que extiende SOSA para representar estaciones de medición y sensores medioambientales, restringiendo sus mediciones al vocabulario controlado SKOS de EDINT.</terms:description>
         <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</terms:issued>
-        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-17</terms:modified>
         <terms:publisher rdf:nodeID="genid6"/>
         <terms:title xml:lang="en">EDINT Environmental Sensors Ontology</terms:title>
         <terms:title xml:lang="es">Ontología EDINT de Sensores Medioambientales</terms:title>
         <vann:preferredNamespacePrefix>edintmed</vann:preferredNamespacePrefix>
-        <vann:preferredNamespaceUri rdf:resource="https://edint.es/def/medio-ambiente#"/>
+        <vann:preferredNamespaceUri>https://edint.es/def/medio-ambiente#</vann:preferredNamespaceUri>
         <rdfs:label xml:lang="en">Environmental Sensors</rdfs:label>
         <rdfs:label xml:lang="es">Sensores Medioambientales</rdfs:label>
         <owl:priorVersion rdf:resource="https://github.com/EDINT-Ontologia/edint-ontologia-medio-ambiente/releases/tag/v0.2.0"/>
@@ -81,29 +82,29 @@
         <schema:affiliation>Federación Española de Municipios y Provincias</schema:affiliation>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid7">
-        <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
-        <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
-        <vocab:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+        <rdfs:label xml:lang="en">SOSA/SSN</rdfs:label>
+        <rdfs:label xml:lang="es">SOSA/SSN</rdfs:label>
+        <vocab:vocabularyIRI rdf:resource="http://www.w3.org/ns/sosa/"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid8">
         <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
         <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
-        <vocab:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql"/>
+        <vocab:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql#"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid9">
-        <rdfs:label xml:lang="en">QUDT</rdfs:label>
-        <rdfs:label xml:lang="es">QUDT</rdfs:label>
-        <vocab:vocabularyIRI rdf:resource="http://qudt.org/schema/qudt"/>
+        <rdfs:label xml:lang="en">GeoSPARQL</rdfs:label>
+        <rdfs:label xml:lang="es">GeoSPARQL</rdfs:label>
+        <vocab:vocabularyIRI rdf:resource="http://www.opengis.net/ont/geosparql"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid10">
         <rdfs:label xml:lang="en">QUDT</rdfs:label>
         <rdfs:label xml:lang="es">QUDT</rdfs:label>
-        <vocab:vocabularyIRI rdf:resource="http://qudt.org/2.1/schema/qudt"/>
+        <vocab:vocabularyIRI rdf:resource="http://qudt.org/schema/qudt"/>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid11">
-        <rdfs:label xml:lang="en">SOSA/SSN</rdfs:label>
-        <rdfs:label xml:lang="es">SOSA/SSN</rdfs:label>
-        <vocab:vocabularyIRI rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label xml:lang="en">QUDT</rdfs:label>
+        <rdfs:label xml:lang="es">QUDT</rdfs:label>
+        <vocab:vocabularyIRI rdf:resource="http://qudt.org/2.1/schema/qudt"/>
     </rdf:Description>
     
 
@@ -236,25 +237,6 @@
 
 
     <owl:AnnotationProperty rdf:about="https://w3id.org/widoco/vocab#vocabularyLabel"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#date -->
-
-
-    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
     
 
 
