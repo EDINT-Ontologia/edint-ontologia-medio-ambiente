@@ -16,11 +16,16 @@ WHERE {
 PREFIX edintmed: <https://edint.es/def/medio-ambiente#>
 PREFIX sosa: <http://www.w3.org/ns/sosa/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ex: <http://example.org/>
 
+# Valor por defecto para <URI-del-sensor>:
+#   Usa ex:Sensor_Temp_001 (Sensor de temperatura - PT100, en example1.ttl)
+#   O bien ex:Sensor_NO2_001, ex:Sensor_Press_001
 SELECT ?observation ?observedProperty ?result ?resultTime
 WHERE {
+  BIND(ex:Sensor_Temp_001 AS ?sensor)
   ?observation a edintmed:EnvironmentalObservation ;
-               sosa:madeBySensor <URI-del-sensor> ;
+               sosa:madeBySensor ?sensor ;
                sosa:observedProperty ?observedProperty .
 
   OPTIONAL { ?observation sosa:hasSimpleResult ?result }
